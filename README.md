@@ -1,41 +1,16 @@
-# Website
+# MobeeDocumentation
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+Mobee Documentation is a comprehensive guide that provides information and resources on setting up and using Mobee, a powerful platform for managing your community. Explore the different sections below to [learn more...](./ApplicationLifecycle.md)
 
-### Installation
 
-```
-$ yarn
-```
+## Mobee Setup   
+Set up your Mobee Community using the instructions provided in this guide. [Setup Mobee Community](https://github.com/jeandaher1/MobeeDocumentation/blob/main/SetupMobeeCommunity.md)   
 
-### Local Development
+## Mobee Limitations   
+Learn about the limitations and restrictions associated with Mobee. [Mobee Limitations](https://github.com/jeandaher1/MobeeDocumentation/blob/main/MobeeLimitations.md)   
 
-```
-$ yarn start
-```
+## Mobee Timesheet How to document    
+Refer to this documentation for a step-by-step guide on how to document Mobee Timesheets. [Link Text](path/to/other/page.md)   
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
-
-### Build
-
-```
-$ yarn build
-```
-
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-### Deployment
-
-Using SSH:
-
-```
-$ USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```
-$ GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+## Mobee Lifecycle   
+Understand the application lifecycle of Mobee and how it progresses through different stages. [Application Lifecycle](https://github.com/jeandaher1/MobeeDocumentation/blob/main/ApplicationLifecycle.md)   
