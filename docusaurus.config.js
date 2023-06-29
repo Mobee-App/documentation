@@ -11,15 +11,15 @@ const config = {
   favicon: 'https://i0.wp.com/mobee-app.com/wp-content/uploads/2022/09/logo-by-uprizon-final.png?fit=448%2C148&ssl=1',
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://mobee-app.github.io/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/documentation',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'Mobee-App', // Usually your GitHub org/user name.
+  projectName: 'Mobee Documentation', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
