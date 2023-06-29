@@ -39,5 +39,6 @@
   },
   "engines": {
     "node": ">=16.14"
-  }
+  },
+  "homepage": "https://BaccoucheTahaGit.github.io/documentation/"
 }

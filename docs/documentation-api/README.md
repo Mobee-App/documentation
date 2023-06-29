@@ -10,7 +10,8 @@ Set up your Mobee Community using the instructions provided in this guide. [Setu
 Learn about the limitations and restrictions associated with Mobee. [Mobee Limitations](https://github.com/jeandaher1/MobeeDocumentation/blob/main/MobeeLimitations.md)   
 
 ## Mobee Timesheet How to document    
-Refer to this documentation for a step-by-step guide on how to document Mobee Timesheets. [Link Text](path/to/other/page.md)   
+Refer to this documentation for a step-by-step guide on how to document Mobee Timesheets. [Link Text](./Community%20Supported%20Features.md
+)   
 
 ## Mobee Lifecycle   
 Understand the application lifecycle of Mobee and how it progresses through different stages. [Application Lifecycle](https://github.com/jeandaher1/MobeeDocumentation/blob/main/ApplicationLifecycle.md)   

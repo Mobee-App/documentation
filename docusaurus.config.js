@@ -61,6 +61,7 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      baseUrl: '/documentation/',
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
