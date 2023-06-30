@@ -13,9 +13,7 @@ We have the following three development models in Salesforce:
 These 3 models follow the same ALM process. But the models differ in the way that they let you manage changes to your org.
 Some changes can be done directley in Production Org such Reports and Dashboards others changes should be tested before making them available in production.
 
-<p align="center">
-  <img src="./img/download.png" alt="ALM" />
-</p>
+![ALM](./img/ALM.png)
 
 **Step 1: Plan Release**
 Start your customization or development project with a plan. Gather requirements and analyze them. Have your product manager (or equivalent) create design specifications and share them with the development team for implementation. Determine the various development and testing environments the team needs as the project progresses through the ALM cycle.

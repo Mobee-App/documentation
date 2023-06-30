@@ -8,18 +8,19 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Mobee-app',
   tagline: 'By Salesforce',
-  favicon: 'https://i0.wp.com/mobee-app.com/wp-content/uploads/2022/09/logo-by-uprizon-final.png?fit=448%2C148&ssl=1',
+  favicon: 'img/circle-32.png',
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://mobee-app.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/documentation',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'mobee-app', // Usually your GitHub org/user name.
+  projectName: 'documentation', // Usually your repo name.
+
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -44,13 +45,6 @@ const config = {
           editUrl:
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-        },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
@@ -68,7 +62,7 @@ const config = {
         title: 'Mobee-app',
         logo: {
           alt: 'My Site Logo',
-          src: 'img/logo.png',
+          src: 'img/appstore.png',
         },
         items: [
           {
@@ -76,12 +70,6 @@ const config = {
             sidebarId: 'tutorialSidebar',
             position: 'left',
             label: 'Docs',
-          },
-          {to: '/blog', label: 'Blog', position: 'left'},
-          {
-            href: 'https://github.com/facebook/docusaurus',
-            label: 'GitHub',
-            position: 'right',
           },
         ],
       },
@@ -92,43 +80,59 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                label: 'Documentation',
+                to: '/docs/documentation-api',
               },
             ],
           },
           {
             title: 'Community',
             items: [
-              {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
+              
+             
               {
                 label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                href: 'https://twitter.com/AppMobee',
               },
+              {
+                label: 'LinkedIn',
+                href: 'https://www.linkedin.com/company/mobee-app-by-uprizon/',
+              },
+              {
+                label: 'YouTube',
+                href: 'https://www.youtube.com/@mobeeapp/featured',
+              },
+              {
+                label: 'Play Store',
+                href: 'https://play.google.com/store/apps/details?id=com.mobee_app',
+              },
+              {
+                label: 'Apple Store',
+                href: 'https://apps.apple.com/fr/app/mobee-app/id1617645272',
+              },
+             
+              
             ],
           },
           {
             title: 'More',
             items: [
               {
-                label: 'Blog',
-                to: '/blog',
+                label: 'AppExchange get a free Demo',
+                href: 'https://appexchange.salesforce.com/listingDetail?listingId=a0N3u00000ONmC7EAL&tab=e',
+              },
+              {
+                label: 'Official Site',
+                href: 'https://mobee-app.com/',
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/Mobee-App/documentation',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `<a href="https://mobee-app.com/privacy-policy/">Privacy Policy</a>`,
       },
       prism: {
         theme: lightCodeTheme,

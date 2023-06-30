@@ -6,14 +6,14 @@ To install the Mobee App Package From the AppExchange:
 
 1. Open your web browser and go to the Mobee App page on AppExchange at [https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3u00000ONmC7EAL&tab=e](https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3u00000ONmC7EAL&tab=e).
 ![Sample Image](./img/app_exchange.png)
-
+<br />
 1. Click on the "Get It Now" button and then select the Salesforce org where you want to install the package.
 2. Go to the user management page in Salesforce and select a user to assign the required permission according to your needs (Mobee Administrator/Mobee User/Mobee Community Administrator/Mobee Community User/Mobee Time And Expenses Administrator/Mobee Time And Expenses User).
 ![Sample Image](./img/permission.png)
-
+<br />
 1. From the Setup Page, open the “Installed Packages” page and click on the “Manage Licenses” link next to the Mobee Package. Here you can assign licenses to your users.
 ![Sample Image](./img/installed_packages.png)
-
+<br />
 
 As a Mobee Administrator user, follow these steps to set up the Mobee Object Sync:
 
@@ -21,7 +21,7 @@ As a Mobee Administrator user, follow these steps to set up the Mobee Object Syn
 2. Define the objects that need to be synchronized with the mobile app.
 3. Fill the Object API Name and desired settings for each object.
 ![Sample Image](./img/mobee_object_setup.png)
-
+<br />
 
 Once you have completed setting up the objects to be synchronized, users with the appropriate permissions will be able to download and use the mobile application on iOS and Android.
 

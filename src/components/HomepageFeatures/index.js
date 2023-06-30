@@ -1,69 +1,3 @@
-// import React from 'react';
-// import clsx from 'clsx';
-// import styles from './styles.module.css';
-
-// const FeatureList = [
-//   {
-//     title: 'Watch What We Do',
-//     video: 'https://www.youtube.com/watch?v=pQfG4bZrTnM',
-//     description: (
-//       <>
-//         Docusaurus was designed from the ground up to be easily installed and
-//         used to get your website up and running quickly.
-//       </>
-//     ),
-//     buttonLabel: 'Watch Video',
-//   },
-//   // ... other features
-// ];
-
-// function Feature({ Svg, title, description, video, buttonLabel }) {
-//   const handleWatchVideo = () => {
-//     // Add your logic to handle the button click event here
-//     // For example, you can open a modal or navigate to a different page
-//     console.log('Watch video clicked');
-//   };
-
-//   return (
-//     <div className={clsx('col col--4')}>
-//       <div className="text--center">
-//         {Svg && <Svg className={styles.featureSvg} role="img" />}
-//         {video && (
-//           <iframe
-//             width="560"
-//             height="315"
-//             src={video}
-//             title="YouTube Video"
-//             frameBorder="0"
-//             allowFullScreen
-//           ></iframe>
-//         )}
-//       </div>
-//       <div className="text--center padding-horiz--md">
-//         <h3>{title}</h3>
-//         <p>{description}</p>
-//         {buttonLabel && (
-//           <button onClick={handleWatchVideo}>{buttonLabel}</button>
-//         )}
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default function HomepageFeatures() {
-//   return (
-//     <section className={styles.features}>
-//       <div className="container">
-//         <div className="row">
-//           {FeatureList.map((props, idx) => (
-//             <Feature key={idx} {...props} />
-//           ))}
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
-
   import React from 'react';
   import { Link } from 'react-router-dom';
   import clsx from 'clsx';
@@ -114,8 +48,9 @@
   function Feature({ Svg, imageUrl, title, description }) {
   const handleAskForDemo = () => {
     // Add your logic to handle the "Ask for a Demo" button click event here
-    console.log('Ask for a Demo clicked');
-  };
+    const url = 'https://appexchange.salesforce.com/listingDetail?listingId=a0N3u00000ONmC7EAL&tab=e';
+    window.open(url, '_blank');
+    };
 
   return (
     <div className={clsx('col col--4')}>
@@ -131,7 +66,7 @@
         {title === 'Watch What we do' && (
           <Link
             className={clsx('button button--secondary button--lg', styles.demoButton)}
-            to="/demo"
+            to="/documentation"
             onClick={handleAskForDemo}
           >
             Ask for a Demo

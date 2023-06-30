@@ -10,8 +10,10 @@
 1. Accédez à l'objet où vous souhaitez que le bouton de génération soit disponible, puis allez dans la section "Boutons, liens et actions" pour ajouter une nouvelle action.
 2. Choisissez l’option “Composant Web Lightning” pour le “Type d’action”, puis l’option “Mobee:documentGeneratorAction” pour le “Composant Web Lightning”.
 ![Sample Image](./img/ajouter_button_action.png)
-3. Une fois le bouton d'action créé, vous devrez l'ajouter à une “présentation de page” de votre choix.
+<br />
+1. Une fois le bouton d'action créé, vous devrez l'ajouter à une “présentation de page” de votre choix.
 ![Sample Image](./img/ajouter_button_action2.jpg)
+<br />
 
 
 ## Préparation du modèle word
@@ -19,12 +21,15 @@
    - Allez sur la page "Mobee Documents Templates" pour créer un nouveau modèle.
    - Appuyez sur le bouton “Nouveau” et remplissez le nom du modèle.
 ![Sample Image](./img/prep_word.png)
+<br />
 
    - Une fois le modèle créé, vous devrez le lier à un objet Salesforce en cliquant sur le bouton “Choisissez l’objet principal”.
    - L'objet peut être sélectionné à l'aide du champ de recherche.
 ![Sample Image](./img/prep_word2.png)
+<br />
    - La première étape devrait maintenant être terminée, et vous pouvez désormais télécharger votre modèle de document Word à la deuxième étape.
 ![Sample Image](./img/prep_word3.png)
+<br />
 
 
 ## Générer des documents à partir du modèle créé
@@ -34,12 +39,15 @@
 4. Le document doit être généré et téléchargé automatiquement.
 ![Sample Image](./img/generer_apartir_modele_creer.png)
 
+<br />
+
 ## Règles d’utilisations
 ### Type de balises
 - Le module de génération de document accepte n'importe quel document Word.
 - La syntaxe des balises est inspirée de l’annotation Moustache. Les balises normales commencent par un caractère alphabétique, et les autres types de balises commencent par des préfixes spéciaux, par exemple:
   - {#boucle} et {/} pour démarrer et fermer une boucle afin de parcourir des listes de données.
 - Les expressions logiques commencent aussi par le caractère “#” et acceptent les opérateurs suivants:
+````md
   - ET a && b
   - OU a || b
   - ADDITION a + b
@@ -62,11 +70,12 @@
   - {/}
   - La première condition affichera la section uniquement s'il y a 2 produits ou plus.
   - La deuxième condition affichera la section uniquement si le nom d'utilisateur est la chaîne "John".
-
+````
 ### Filtres et utilitaires
 Mobee offre plusieurs fonctionnalités qui aident les utilisateurs à personnaliser leurs documents.
 - Afin d’avoir la date du jour, vous pouvez vous servir de la valeur “docUtils.today”.
-  - Exemple:
+````md
+
     - Today is {docUtils.today}
 - Voici les filtres supportées:
   - lower: Une fonction qui convertit le texte en minuscules.
@@ -103,3 +112,4 @@ Mobee offre plusieurs fonctionnalités qui aident les utilisateurs à personnali
   formatMatcher: 'basic' | 'best fit'
 ]]
 
+````
