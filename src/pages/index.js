@@ -4,6 +4,8 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import Translate from '@docusaurus/Translate';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 
 import styles from './index.module.css';
 
@@ -27,7 +29,7 @@ function Feature({ imageUrl, title, description }) {
         {title === 'Watch What we do' && (
           <Link
             className={clsx('button button--secondary button--lg', styles.demoButton)}
-            to="/documentation"
+            to={useBaseUrl('/')}
             onClick={handleAskForDemo}
           >
             <Translate id="homepage.askForDemoButton" > Ask for a Demo </Translate>

@@ -2,6 +2,7 @@
   import { Link } from 'react-router-dom';
   import clsx from 'clsx';
   import styles from './styles.module.css';
+  import { useBaseUrl } from '@docusaurus/useBaseUrl';
 
   const FeatureList = [
     {
