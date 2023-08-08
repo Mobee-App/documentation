@@ -1,0 +1,54 @@
+{
+  "link.title.Docs": {
+    "message": "Docs",
+    "description": "The title of the footer links column with title=Docs in the footer"
+  },
+  "link.title.Community": {
+    "message": "Community",
+    "description": "The title of the footer links column with title=Community in the footer"
+  },
+  "link.title.More": {
+    "message": "More",
+    "description": "The title of the footer links column with title=More in the footer"
+  },
+  "link.item.label.Documentation": {
+    "message": "Documentation",
+    "description": "The label of footer link with label=Documentation linking to /docs/documentation-api"
+  },
+  "link.item.label.Twitter": {
+    "message": "Twitter",
+    "description": "The label of footer link with label=Twitter linking to https://twitter.com/AppMobee"
+  },
+  "link.item.label.LinkedIn": {
+    "message": "LinkedIn",
+    "description": "The label of footer link with label=LinkedIn linking to https://www.linkedin.com/company/mobee-app-by-uprizon/"
+  },
+  "link.item.label.YouTube": {
+    "message": "YouTube",
+    "description": "The label of footer link with label=YouTube linking to https://www.youtube.com/@mobeeapp/featured"
+  },
+  "link.item.label.Play Store": {
+    "message": "Play Store",
+    "description": "The label of footer link with label=Play Store linking to https://play.google.com/store/apps/details?id=com.mobee_app"
+  },
+  "link.item.label.Apple Store": {
+    "message": "Apple Store",
+    "description": "The label of footer link with label=Apple Store linking to https://apps.apple.com/fr/app/mobee-app/id1617645272"
+  },
+  "link.item.label.AppExchange get a free Demo": {
+    "message": "AppExchange get a free Demo",
+    "description": "The label of footer link with label=AppExchange get a free Demo linking to https://appexchange.salesforce.com/listingDetail?listingId=a0N3u00000ONmC7EAL&tab=e"
+  },
+  "link.item.label.Official Site": {
+    "message": "Official Site",
+    "description": "The label of footer link with label=Official Site linking to https://mobee-app.com/"
+  },
+  "link.item.label.GitHub": {
+    "message": "GitHub",
+    "description": "The label of footer link with label=GitHub linking to https://github.com/Mobee-App/documentation"
+  },
+  "copyright": {
+    "message": "<a href=\"https://mobee-app.com/privacy-policy/\">Privacy Policy</a>",
+    "description": "The footer copyright"
+  }
+}

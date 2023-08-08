@@ -1,0 +1,22 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.MobeeDocumentation": {
+    "message": "MobeeDocumentation",
+    "description": "The label for category MobeeDocumentation in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.document-generator": {
+    "message": "document-generator",
+    "description": "The label for category document-generator in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.mobee-installation-guide": {
+    "message": "mobee-installation-guide",
+    "description": "The label for category mobee-installation-guide in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.timesheet": {
+    "message": "timesheet",
+    "description": "The label for category timesheet in sidebar tutorialSidebar"
+  }
+}
