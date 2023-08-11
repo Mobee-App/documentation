@@ -18,5 +18,9 @@
   "sidebar.tutorialSidebar.category.timesheet": {
     "message": "timesheet",
     "description": "The label for category timesheet in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Classic Email Templater": {
+    "message": "Classic Email Templater",
+    "description": "The label for category Classic Email Templater in sidebar tutorialSidebar"
   }
 }
