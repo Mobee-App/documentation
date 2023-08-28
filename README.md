@@ -1,3 +1,9 @@
+## Deploy
+To deploy your changes, you need to execute these commands:
+```bash
+npm run build
+GIT_USER=BaccoucheTahaGit yarn deploy
+```
 ## Translate Markdown files
 1. Open the docusaurus.config.js file and add the following code snippet to enable language translation features:
 ```js
@@ -37,12 +43,6 @@ cp -r docs/** i18n/<language>/docusaurus-plugin-content-docs/current
 + Run the translation command for the documentation:
 ```bash
 npm run write-translations -- --locale <language>
-```
-## Deploy
-To deploy your changes, you need to execute these commands:
-```bash
-npm run build
-GIT_USER=BaccoucheTahaGit yarn deploy
 ```
 
 ```sql
