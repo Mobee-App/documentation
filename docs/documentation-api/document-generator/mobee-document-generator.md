@@ -52,7 +52,7 @@
      6. Check the "Disable Protocol Security" checkbox to allow retrieval over HTTP.
      7. Click "Save."
  <br />
-   ![Sample Image](./img/remote_site.png)
+   ![Sample Image](./img/remote_site.PNG)
 <br />
 
   + Now, you need to add the URL to the trusted URLs with all CSP (Content Security Policy) directives enabled:
@@ -63,10 +63,10 @@
      5. Check all CSP directives: "Connect," "Font," "Img," "Media," "Object," "Script," "Style."
      6. Click "Save." 
    <br />
-     ![Sample Image](./img/trusted_url.png)
+     ![Sample Image](./img/trusted_url.PNG)
      <br />
         <br />
-     ![Sample Image](./img/trusted_url2.png)
+     ![Sample Image](./img/trusted_url2.PNG)
      <br />
   + You have now set up remote site settings and trusted URLs to securely retrieve the image over HTTP. You can then use the `{% Profile_Picture}` tag to dynamically include the image in your generated documents.
 
