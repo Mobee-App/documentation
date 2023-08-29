@@ -1,96 +1,91 @@
-# Module de génération de documents Mobee
+# Mobee Document Generation Module
 
-## Exigences et autorisations du profil utilisateur
-- L'utilisateur doit avoir trois des exigences suivantes pour utiliser le module :
-  - Une licence Mobee.
-  - L’ensemble d’autorisations “Mobee User” ou “Mobee Administrator”.
-  - L’option “Utilisateur de flux” active.
+## User Profile Requirements and Permissions
+- The user must meet three of the following requirements to use the module:
+  - A Mobee license.
+  - "Mobee User" or "Mobee Administrator" permission set.
+  - Active "Flow User" option.
 
-## Ajouter le bouton d'action de génération de document à une page
-1. Accédez à l'objet où vous souhaitez que le bouton de génération soit disponible, puis allez dans la section "Boutons, liens et actions" pour ajouter une nouvelle action.
-2. Choisissez l’option “Composant Web Lightning” pour le “Type d’action”, puis l’option “Mobee:documentGeneratorAction” pour le “Composant Web Lightning”.
-![Sample Image](./img/ajouter_button_action.png)
+## Adding the Document Generation Action Button to a Page
+1. Go to the object where you want the generation button to be available, then navigate to the "Buttons, Links, and Actions" section to add a new action.
+2. Choose the "Lightning Web Component" option for the "Action Type," then select the "Mobee:documentGeneratorAction" option for the "Lightning Web Component."
+   ![Sample Image](./img/ajouter_button_action.png)
 <br />
-1. Une fois le bouton d'action créé, vous devrez l'ajouter à une “présentation de page” de votre choix.
-![Sample Image](./img/ajouter_button_action2.jpg)
+3. Once the action button is created, you'll need to add it to a desired "Page Layout."
+   ![Sample Image](./img/ajouter_button_action2.jpg)
 <br />
-
-
-## Préparation du modèle word
-1. Création d’un modèle de document sur Salesforce :
-   - Allez sur la page "Mobee Documents Templates" pour créer un nouveau modèle.
-   - Appuyez sur le bouton “Nouveau” et remplissez le nom du modèle.
-![Sample Image](./img/prep_word.png)
+## Preparing the Word or PowerPoint Template
+1. Creating a document template in Salesforce:
+   - Go to the "Mobee Documents Templates" page to create a new template.
+   - Click the "New" button and provide a name for the template.
+     ![Sample Image](./img/prep_word.png)
 <br />
-
-   - Une fois le modèle créé, vous devrez le lier à un objet Salesforce en cliquant sur le bouton “Choisissez l’objet principal”.
-   - L'objet peut être sélectionné à l'aide du champ de recherche.
-![Sample Image](./img/prep_word2.png)
+   - Once the template is created, you'll need to associate it with a Salesforce object by clicking the "Choose Main Object" button.
+   - The object can be selected using the search field.
+     ![Sample Image](./img/prep_word2.png)
 <br />
-   - La première étape devrait maintenant être terminée, et vous pouvez désormais télécharger votre modèle de document Word à la deuxième étape.
-![Sample Image](./img/prep_word3.png)
+   - The first step should now be completed, and you can proceed to download your Word document template in the second step.
 <br />
-
-
-## Générer des documents à partir du modèle créé
-1. Allez à un enregistrement du même type d'objet que le modèle de document créé.
-2. Appuyez sur le bouton d'action Générer un document.
-3. Sélectionnez le modèle souhaité dans la liste de sélection.
-4. Le document doit être généré et téléchargé automatiquement.
-![Sample Image](./img/generer_apartir_modele_creer.png)
-
+     ![Sample Image](./img/prep_word3.png)
 <br />
+## Generating Documents from the Created Template
+1. Navigate to a record of the same object type as the created document template.
+2. Click the Generate Document action button.
+3. Select the desired template from the selection list.
+4. The document should be generated and automatically downloaded.
+   ![Sample Image](./img/generer_apartir_modele_creer.png)
+<br />
+## Usage Rules
+### Tag Types
+- The document generation module accepts any Word document.
+- Tag syntax is inspired by Mustache annotation. Normal tags start with an alphabetic character, while other tag types start with special prefixes. For example:
+  - {#loop} and {/} to start and end a loop for iterating through data lists.
+- Logical expressions also start with the "#" character and support the following operators:
 
-## Règles d’utilisations
-### Type de balises
-- Le module de génération de document accepte n'importe quel document Word.
-- La syntaxe des balises est inspirée de l’annotation Moustache. Les balises normales commencent par un caractère alphabétique, et les autres types de balises commencent par des préfixes spéciaux, par exemple:
-  - {#boucle} et {/} pour démarrer et fermer une boucle afin de parcourir des listes de données.
-- Les expressions logiques commencent aussi par le caractère “#” et acceptent les opérateurs suivants:
 ````md
-  - ET a && b
-  - OU a || b
+  - AND a && b
+  - OR a || b
   - ADDITION a + b
-  - SOUSTRACTION a - b
+  - SUBTRACTION a - b
   - MULTIPLICATION a * b
   - MODULO a % b
   - DIVISION a / b
-  - TERNAIRES a ? b : c
-  - AFFECTATION a = 1
-  - ÉGALITÉ/INEQUALITY a == 1, a != 1
-  - RELATIONNEL a > 1, a < 1, a >= 1, a <= 1
-  - PRECEDENCE OPÉRATEUR avec parenthèse (a && b) || c
-  - CHIFFRES EXPONENTIELS : 12e3 => returns 12000
-- Exemple:
-  - {#produits.length > 1}
-    - Il existe plusieurs produits
+  - TERNARY a ? b : c
+  - ASSIGNMENT a = 1
+  - EQUALITY/INEQUALITY a == 1, a != 1
+  - RELATIONAL a > 1, a < 1, a >= 1, a <= 1
+  - OPERATOR PRECEDENCE with parentheses (a && b) || c
+  - EXPONENTIAL NOTATION: 12e3 => returns 12000
+- Example:
+  - {#products.length > 1}
+    - There are multiple products
   - {/}
   - {#firstName == "John"}
-    - Bonjour John
+    - Hello John
   - {/}
-  - La première condition affichera la section uniquement s'il y a 2 produits ou plus.
-  - La deuxième condition affichera la section uniquement si le nom d'utilisateur est la chaîne "John".
+  - The first condition will display the section only if there are 2 or more products.
+  - The second condition will display the section only if the username is the string "John".
 ````
-### Filtres et utilitaires
-Mobee offre plusieurs fonctionnalités qui aident les utilisateurs à personnaliser leurs documents.
-- Afin d’avoir la date du jour, vous pouvez vous servir de la valeur “docUtils.today”.
-````md
 
+### Filters and Utilities
+Mobee provides several features to help users customize their documents.
+ - To get the current date, you can use the value "docUtils.today".
+````md
     - Today is {docUtils.today}
-- Voici les filtres supportées:
-  - lower: Une fonction qui convertit le texte en minuscules.
-  - upper: Une fonction qui convertit le texte en majuscules.
-  - shortDate: Une fonction qui renvoie la date sous un format court.
-  - followingMonth: Une fonction qui renvoie le mois suivant à partir d'une date donnée.
-  - followingYear: Une fonction qui renvoie l'année suivante à partir d'une date donnée.
-  - lastWorkingDayOfMonth: Une fonction qui renvoie le dernier jour ouvrable du mois à partir d'une date donnée.
-  - formatDate: Une fonction générale qui calcule les valeurs de date.
-- Exemple d’utilisation:
+- Here are the supported filters:
+  - lower: A function that converts text to lowercase.
+  - upper: A function that converts text to uppercase.
+  - shortDate: A function that returns the date in a short format.
+  - followingMonth: A function that returns the next month from a given date.
+  - followingYear: A function that returns the next year from a given date.
+  - lastWorkingDayOfMonth: A function that returns the last working day of the month from a given date.
+  - formatDate: A general function for calculating date values.
+- Usage example:
   - The created date is {CreatedDate | shortDate}
   - The following month is {CreatedDate | followingMonth: '[[ "year": "numeric", "month": "long" ]]'}
   - The next year is {CreatedDate | followingYear: '[[ "year": "numeric"]]'}
   - The last working day of the month is {CreatedDate | lastWorkingDayOfMonth}
-- Les fonctions followingMonth, followingYear, lastWorkingDayOfMonth et formatDate acceptent les options de formatage suivantes:
+- The followingMonth, followingYear, lastWorkingDayOfMonth, and formatDate functions accept the following formatting options:
   - [[
   weekday: 'narrow' | 'short' | 'long',
   era: 'narrow' | 'short' | 'long',
@@ -111,5 +106,4 @@ Mobee offre plusieurs fonctionnalités qui aident les utilisateurs à personnali
   hourCycle: 'h11' | 'h12' | 'h23' | 'h24',
   formatMatcher: 'basic' | 'best fit'
 ]]
-
 ````

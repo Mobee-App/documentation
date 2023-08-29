@@ -1,115 +1,91 @@
-# Module de génération de documents Mobee
+# Módulo de Generación de Documentos de Mobee
 
-## Exigences et autorisations du profil utilisateur
-- L'utilisateur doit avoir trois des exigences suivantes pour utiliser le module :
-  - Une licence Mobee.
-  - L’ensemble d’autorisations “Mobee User” ou “Mobee Administrator”.
-  - L’option “Utilisateur de flux” active.
+## Requisitos y Permisos del Perfil de Usuario
+- El usuario debe cumplir con tres de los siguientes requisitos para utilizar el módulo:
+  - Una licencia de Mobee.
+  - Conjunto de permisos "Usuario de Mobee" o "Administrador de Mobee".
+  - Opción "Usuario de Flujo" activa.
 
-## Ajouter le bouton d'action de génération de document à une page
-1. Accédez à l'objet où vous souhaitez que le bouton de génération soit disponible, puis allez dans la section "Boutons, liens et actions" pour ajouter une nouvelle action.
-2. Choisissez l’option “Composant Web Lightning” pour le “Type d’action”, puis l’option “Mobee:documentGeneratorAction” pour le “Composant Web Lightning”.
-![Sample Image](./img/ajouter_button_action.png)
+## Agregar el Botón de Acción de Generación de Documentos a una Página
+1. Ve al objeto donde deseas que el botón de generación esté disponible, luego navega a la sección "Botones, Enlaces y Acciones" para agregar una nueva acción.
+2. Elige la opción "Componente Web Lightning" para el "Tipo de Acción", luego selecciona la opción "Mobee:documentGeneratorAction" para el "Componente Web Lightning."
+   ![Imagen de ejemplo](./img/ajouter_button_action.png)
+   <br />
+3. Una vez que se crea el botón de acción, deberás agregarlo a un "Diseño de Página" deseado.
+   ![Imagen de ejemplo](./img/ajouter_button_action2.jpg)
+   <br />
+## Preparación de la Plantilla de Word o PowerPoint
+1. Creación de una plantilla de documento en Salesforce:
+   - Ve a la página "Plantillas de Documentos Mobee" para crear una nueva plantilla.
+   - Haz clic en el botón "Nuevo" y proporciona un nombre para la plantilla.
+     ![Imagen de ejemplo](./img/prep_word.png)
+     <br />
+   - Una vez que se crea la plantilla, deberás asociarla con un objeto de Salesforce haciendo clic en el botón "Elegir Objeto Principal".
+   - El objeto se puede seleccionar usando el campo de búsqueda.
+     ![Imagen de ejemplo](./img/prep_word2.png)
+     <br />
+   - El primer paso debería estar completado ahora, y puedes proceder a descargar tu plantilla de documento de Word en el segundo paso.
 <br />
-1. Une fois le bouton d'action créé, vous devrez l'ajouter à une “présentation de page” de votre choix.
-![Sample Image](./img/ajouter_button_action2.jpg)
-<br />
+     ![Imagen de ejemplo](./img/prep_word3.png)
+     <br />
+     ## Generar Documentos a partir de la Plantilla Creada
+2. Navega a un registro del mismo tipo de objeto que la plantilla de documento creada.
+3. Haz clic en el botón de acción Generar Documento.
+4. Selecciona la plantilla deseada de la lista de selección.
+5. El documento debería generarse y descargarse automáticamente.
+   ![Imagen de ejemplo](./img/generer_apartir_modele_creer.png)
+   <br />
+## Reglas de Uso
+### Tipos de Etiquetas
+- El módulo de generación de documentos acepta cualquier documento de Word.
+- La sintaxis de las etiquetas está inspirada en la anotación Mustache. Las etiquetas normales comienzan con un carácter alfabético, mientras que otros tipos de etiquetas comienzan con prefijos especiales. Por ejemplo:
+  - {#bucle} y {/} para comenzar y finalizar un bucle para recorrer listas de datos.
 
-
-## Préparation du modèle word
-1. Création d’un modèle de document sur Salesforce :
-   - Allez sur la page "Mobee Documents Templates" pour créer un nouveau modèle.
-   - Appuyez sur le bouton “Nouveau” et remplissez le nom du modèle.
-![Sample Image](./img/prep_word.png)
-<br />
-
-   - Une fois le modèle créé, vous devrez le lier à un objet Salesforce en cliquant sur le bouton “Choisissez l’objet principal”.
-   - L'objet peut être sélectionné à l'aide du champ de recherche.
-![Sample Image](./img/prep_word2.png)
-<br />
-   - La première étape devrait maintenant être terminée, et vous pouvez désormais télécharger votre modèle de document Word à la deuxième étape.
-![Sample Image](./img/prep_word3.png)
-<br />
-
-
-## Générer des documents à partir du modèle créé
-1. Allez à un enregistrement du même type d'objet que le modèle de document créé.
-2. Appuyez sur le bouton d'action Générer un document.
-3. Sélectionnez le modèle souhaité dans la liste de sélection.
-4. Le document doit être généré et téléchargé automatiquement.
-![Sample Image](./img/generer_apartir_modele_creer.png)
-
-<br />
-
-## Règles d’utilisations
-### Type de balises
-- Le module de génération de document accepte n'importe quel document Word.
-- La syntaxe des balises est inspirée de l’annotation Moustache. Les balises normales commencent par un caractère alphabétique, et les autres types de balises commencent par des préfixes spéciaux, par exemple:
-  - {#boucle} et {/} pour démarrer et fermer une boucle afin de parcourir des listes de données.
-- Les expressions logiques commencent aussi par le caractère “#” et acceptent les opérateurs suivants:
+- Las expresiones lógicas también comienzan con el carácter "#" y admiten los siguientes operadores:
 ````md
-  - ET a && b
-  - OU a || b
-  - ADDITION a + b
-  - SOUSTRACTION a - b
-  - MULTIPLICATION a * b
-  - MODULO a % b
-  - DIVISION a / b
-  - TERNAIRES a ? b : c
-  - AFFECTATION a = 1
-  - ÉGALITÉ/INEQUALITY a == 1, a != 1
-  - RELATIONNEL a > 1, a < 1, a >= 1, a <= 1
-  - PRECEDENCE OPÉRATEUR avec parenthèse (a && b) || c
-  - CHIFFRES EXPONENTIELS : 12e3 => returns 12000
-- Exemple:
-  - {#produits.length > 1}
-    - Il existe plusieurs produits
+- Y a && b
+- O a || b
+- SUMA a + b
+- RESTA a - b
+- MULTIPLICACIÓN a * b
+- MÓDULO a % b
+- DIVISIÓN a / b
+- TERNARIO a ? b : c
+- ASIGNACIÓN a = 1
+- IGUALDAD/DESIGUALDAD a == 1, a != 1
+- RELACIONAL a > 1, a < 1, a >= 1, a <= 1
+- PRECEDENCIA DE OPERADOR con paréntesis (a && b) || c
+- NOTACIÓN EXPONENCIAL: 12e3 => devuelve 12000
+- Ejemplo:
+  - {#productos.length > 1}
+    - Hay varios productos
   - {/}
-  - {#firstName == "John"}
-    - Bonjour John
+  - {#nombre == "John"}
+    - Hola John
   - {/}
-  - La première condition affichera la section uniquement s'il y a 2 produits ou plus.
-  - La deuxième condition affichera la section uniquement si le nom d'utilisateur est la chaîne "John".
+  - La primera condición mostrará la sección solo si hay 2 o más productos.
+  - La segunda condición mostrará la sección solo si el nombre de usuario es la cadena "John".
 ````
-### Filtres et utilitaires
-Mobee offre plusieurs fonctionnalités qui aident les utilisateurs à personnaliser leurs documents.
-- Afin d’avoir la date du jour, vous pouvez vous servir de la valeur “docUtils.today”.
+### Filtros y Utilidades
+Mobee ofrece varias funciones para ayudar a los usuarios a personalizar sus documentos.
+- Para obtener la fecha actual, puedes usar el valor "docUtils.today".
 ````md
+  - Hoy es {docUtils.today}
+- Aquí están los filtros admitidos:
+  - lower: Una función que convierte el texto a minúsculas.
+  - upper: Una función que convierte el texto a mayúsculas.
+  - shortDate: Una función que devuelve la fecha en un formato corto.
+  - followingMonth: Una función que devuelve el próximo mes a partir de una fecha dada.
+  - followingYear: Una función que devuelve el próximo año a partir de una fecha dada.
+  - lastWorkingDayOfMonth: Una función que devuelve el último día hábil del mes a partir de una fecha dada.
+  - formatDate: Una función general para calcular valores de fecha.
+  
+- Ejemplo de uso:
+  - La fecha de creación es {CreatedDate | shortDate}
+  - El siguiente mes es {CreatedDate | followingMonth: '[[ "year": "numeric", "month": "long" ]]'}
+  - El próximo año es {CreatedDate | followingYear: '[[ "year": "numeric"]]'}
+  - El último día hábil del mes es {CreatedDate | lastWorkingDayOfMonth}
 
-    - Today is {docUtils.today}
-- Voici les filtres supportées:
-  - lower: Une fonction qui convertit le texte en minuscules.
-  - upper: Une fonction qui convertit le texte en majuscules.
-  - shortDate: Une fonction qui renvoie la date sous un format court.
-  - followingMonth: Une fonction qui renvoie le mois suivant à partir d'une date donnée.
-  - followingYear: Une fonction qui renvoie l'année suivante à partir d'une date donnée.
-  - lastWorkingDayOfMonth: Une fonction qui renvoie le dernier jour ouvrable du mois à partir d'une date donnée.
-  - formatDate: Une fonction générale qui calcule les valeurs de date.
-- Exemple d’utilisation:
-  - The created date is {CreatedDate | shortDate}
-  - The following month is {CreatedDate | followingMonth: '[[ "year": "numeric", "month": "long" ]]'}
-  - The next year is {CreatedDate | followingYear: '[[ "year": "numeric"]]'}
-  - The last working day of the month is {CreatedDate | lastWorkingDayOfMonth}
-- Les fonctions followingMonth, followingYear, lastWorkingDayOfMonth et formatDate acceptent les options de formatage suivantes:
-  - [[
-  weekday: 'narrow' | 'short' | 'long',
-  era: 'narrow' | 'short' | 'long',
-  year: 'numeric' | '2-digit',
-  month: 'numeric' | '2-digit' | 'narrow' | 'short' | 'long',
-  day: 'numeric' | '2-digit',
-  hour: 'numeric' | '2-digit',
-  minute: 'numeric' | '2-digit',
-  second: 'numeric' | '2-digit',
-  timeZoneName: 'short' | 'long',
-
-  // Time zone to express it in
-  timeZone: 'Asia/Shanghai',
-  // Force 12-hour or 24-hour
-  hour12: true | false,
-
-  // Rarely-used options
-  hourCycle: 'h11' | 'h12' | 'h23' | 'h24',
-  formatMatcher: 'basic' | 'best fit'
-]]
-
+- Las funciones followingMonth, followingYear, lastWorkingDayOfMonth y formatDate aceptan las siguientes opciones de formato:
+  - [[  weekday: 'narrow' | 'short' | 'long',  era: 'narrow' | 'short' | 'long',  year: 'numeric' | '2-digit',  month: 'numeric' | '2-digit' | 'narrow' | 'short' | 'long',  day: 'numeric' | '2-digit',  hour: 'numeric' | '2-digit',  minute: 'numeric' | '2-digit',  second: 'numeric' | '2-digit',  timeZoneName: 'short' | 'long',  // Zona horaria para expresarla  timeZone: 'Asia/Shanghai',  // Forzar formato de 12 horas o 24 horas  hour12: true | false,  // Opciones raramente utilizadas  hourCycle: 'h11' | 'h12' | 'h23' | 'h24',  formatMatcher: 'basic' | 'best fit']]
 ````

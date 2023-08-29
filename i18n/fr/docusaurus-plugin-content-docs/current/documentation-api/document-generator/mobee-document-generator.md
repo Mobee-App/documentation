@@ -28,6 +28,7 @@
 ![Sample Image](./img/prep_word2.png)
 <br />
    - La première étape devrait maintenant être terminée, et vous pouvez désormais télécharger votre modèle de document Word à la deuxième étape.
+<br />
 ![Sample Image](./img/prep_word3.png)
 <br />
 
@@ -75,7 +76,6 @@
 Mobee offre plusieurs fonctionnalités qui aident les utilisateurs à personnaliser leurs documents.
 - Afin d’avoir la date du jour, vous pouvez vous servir de la valeur “docUtils.today”.
 ````md
-
     - Today is {docUtils.today}
 - Voici les filtres supportées:
   - lower: Une fonction qui convertit le texte en minuscules.
@@ -111,5 +111,4 @@ Mobee offre plusieurs fonctionnalités qui aident les utilisateurs à personnali
   hourCycle: 'h11' | 'h12' | 'h23' | 'h24',
   formatMatcher: 'basic' | 'best fit'
 ]]
-
 ````
