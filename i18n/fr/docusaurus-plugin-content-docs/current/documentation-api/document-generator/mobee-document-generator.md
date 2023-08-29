@@ -39,8 +39,41 @@
 3. Sélectionnez le modèle souhaité dans la liste de sélection.
 4. Le document doit être généré et téléchargé automatiquement.
 ![Sample Image](./img/generer_apartir_modele_creer.png)
-
 <br />
+## Ajouter une Image au Document
+- Vous pouvez inclure des images dans vos documents générés en utilisant des espaces réservés dynamiques. Par exemple, si vous avez un champ d'image nommé "photo_de_profil" dans votre objet Salesforce, vous pouvez l'ajouter à votre document en utilisant la balise suivante : `{% photo_de_profil}`. Les utilisateurs ont la flexibilité de choisir entre deux méthodes pour fournir l'image : utiliser des données en base64 ou fournir une URL.
+
+### Image en Base64
+- Pour inclure une image en utilisant des données en base64, encodez simplement l'image au format base64 et insérez-la directement dans votre objet Salesforce.
+
+### Image via URL
+- Pour inclure une image en utilisant une URL, suivez ces étapes :
+  + Si l'URL de l'image est "https://i.imgur.com/JpA66EI.png", vous devez configurer les paramètres de site distant pour garantir la récupération sécurisée de l'image :
+     1. Accédez à "Configuration" dans Salesforce.
+     2. Dans la boîte de recherche rapide, recherchez "Paramètres de site distant" et sélectionnez-le.
+     3. Cliquez sur le bouton "Nouveau Site Distant".
+     4. Indiquez un nom pour le site (par exemple, "Site Imgur").
+     5. Dans le champ "URL du Site Distant", saisissez l'URL de base de l'emplacement de l'image, dans ce cas, "https://i.imgur.com".
+     6. Cochez la case "Désactiver la Sécurité du Protocole" pour permettre la récupération via HTTP.
+     7. Cliquez sur "Enregistrer".
+   <br />
+     ![Sample Image](./img/remote_site.png)
+     <br />
+  + Maintenant, vous devez ajouter l'URL aux URLs de confiance avec toutes les directives CSP (Politique de Sécurité du Contenu) activées :
+     1. Recherchez "URLs de Confiance" dans la boîte de recherche rapide.
+     2. Cliquez sur le bouton "Nouveau Site de Confiance".
+     3. Indiquez un nom pour le site de confiance (par exemple, "Imgur de Confiance").
+     4. Dans le champ "URL du Site", entrez la même URL de base qu'auparavant, "https://i.imgur.com".
+     5. Cochez toutes les directives CSP : "Connecter," "Police," "Img," "Média," "Objet," "Script," "Style."
+     6. Cliquez sur "Enregistrer".
+     <br />
+     ![Sample Image](./img/trusted_url.png)
+     <br />
+        <br />
+     ![Sample Image](./img/trusted_url2.png)
+     <br />
+  + Vous avez maintenant configuré les paramètres de site distant et les URLs de confiance pour récupérer en toute sécurité l'image via HTTP. Vous pouvez ensuite utiliser la balise `{% photo_de_profil}` pour inclure dynamiquement l'image dans vos documents générés.
+
 
 ## Règles d’utilisations
 ### Type de balises
