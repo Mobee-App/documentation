@@ -57,7 +57,7 @@
      6. Cochez la case "Désactiver la Sécurité du Protocole" pour permettre la récupération via HTTP.
      7. Cliquez sur "Enregistrer".
    <br />
-     ![Sample Image](./img/remote_site.PNG)
+     ![Sample Image](./img/remote_site.png)
      <br />
   + Maintenant, vous devez ajouter l'URL aux URLs de confiance avec toutes les directives CSP (Politique de Sécurité du Contenu) activées :
      1. Recherchez "URLs de Confiance" dans la boîte de recherche rapide.
@@ -67,10 +67,10 @@
      5. Cochez toutes les directives CSP : "Connecter," "Police," "Img," "Média," "Objet," "Script," "Style."
      6. Cliquez sur "Enregistrer".
      <br />
-     ![Sample Image](./img/trusted_url.PNG)
+     ![Sample Image](./img/trusted_url.png)
      <br />
         <br />
-     ![Sample Image](./img/trusted_url2.PNG)
+     ![Sample Image](./img/trusted_url2.png)
      <br />
   + Vous avez maintenant configuré les paramètres de site distant et les URLs de confiance pour récupérer en toute sécurité l'image via HTTP. Vous pouvez ensuite utiliser la balise `{% photo_de_profil}` pour inclure dynamiquement l'image dans vos documents générés.
 
