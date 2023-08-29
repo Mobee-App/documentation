@@ -44,30 +44,27 @@
 ### URL Image
 - To include an image using a URL, follow these steps:
   + If the image URL is "https://i.imgur.com/JpA66EI.png," you need to set up remote site settings to ensure secure retrieval of the image:
-     1. Go to "Setup" in Salesforce.
-     2. In the quick find box, search for "Remote Site Settings" and select it.
-     3. Click the "New Remote Site" button.
-     4. Provide a name for the site (e.g., "Imgur Site").
-     5. In the "Remote Site URL" field, enter the base URL of the image's location, in this case, "https://i.imgur.com."
-     6. Check the "Disable Protocol Security" checkbox to allow retrieval over HTTP.
-     7. Click "Save."
- <br />
-   ![Sample Image](./img/remote_site.png)
-<br />
+1. Go to "Setup" in Salesforce.
+2. In the quick find box, search for "Remote Site Settings" and select it.
+3. Click the "New Remote Site" button.
+4. Provide a name for the site (e.g., "Imgur Site").
+5. In the "Remote Site URL" field, enter the base URL of the image's location, in this case, "https://i.imgur.com."
+6. Check the "Disable Protocol Security" checkbox to allow retrieval over HTTP.
+7. Click "Save."
+  
+![Sample Image](./img/remote_site.png)
 
   + Now, you need to add the URL to the trusted URLs with all CSP (Content Security Policy) directives enabled:
-     1. find the "Trusted URLs" in the quick find box.
-     2. Click the "New Trusted Site" button.
-     3. Provide a name for the trusted site (e.g., "Imgur Trusted").
-     4. In the "Site URL" field, enter the same base URL as before, "https://i.imgur.com."
-     5. Check all CSP directives: "Connect," "Font," "Img," "Media," "Object," "Script," "Style."
-     6. Click "Save." 
-   <br />
-     ![Sample Image](./img/trusted_url.png)
-     <br />
-        <br />
-     ![Sample Image](./img/trusted_url2.png)
-     <br />
+1. find the "Trusted URLs" in the quick find box.
+2. Click the "New Trusted Site" button.
+3. Provide a name for the trusted site (e.g., "Imgur Trusted").
+4. In the "Site URL" field, enter the same base URL as before, "https://i.imgur.com."
+5. Check all CSP directives: "Connect," "Font," "Img," "Media," "Object," "Script," "Style."
+6. Click "Save."
+
+![Sample Image](./img/trusted_url.png)
+![Sample Image](./img/trusted_url2.png)
+
   + You have now set up remote site settings and trusted URLs to securely retrieve the image over HTTP. You can then use the `{% Profile_Picture}` tag to dynamically include the image in your generated documents.
 
 ## Usage Rules

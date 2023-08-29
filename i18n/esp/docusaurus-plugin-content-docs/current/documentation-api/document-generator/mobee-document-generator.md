@@ -44,29 +44,25 @@
 ### Imagen a través de URL
 - Para incluir una imagen utilizando una URL, siga estos pasos:
   + Si la URL de la imagen es "https://i.imgur.com/JpA66EI.png", debe configurar la configuración de sitio remoto para garantizar la recuperación segura de la imagen:
-     1. Vaya a "Configuración" en Salesforce.
-     2. En el cuadro de búsqueda rápida, busque "Configuración de Sitio Remoto" y selecciónelo.
-     3. Haga clic en el botón "Nuevo Sitio Remoto".
-     4. Proporcione un nombre para el sitio (por ejemplo, "Sitio Imgur").
-     5. En el campo "URL del Sitio Remoto", ingrese la URL base de la ubicación de la imagen, en este caso, "https://i.imgur.com".
-     6. Marque la casilla "Desactivar Seguridad del Protocolo" para permitir la recuperación a través de HTTP.
-     7. Haga clic en "Guardar".
-     <br />
-     ![Sample Image](./img/remote_site.png)
-     <br />
+1. Vaya a "Configuración" en Salesforce.
+2. En el cuadro de búsqueda rápida, busque "Configuración de Sitio Remoto" y selecciónelo.
+3. Haga clic en el botón "Nuevo Sitio Remoto".
+4. Proporcione un nombre para el sitio (por ejemplo, "Sitio Imgur").
+5. En el campo "URL del Sitio Remoto", ingrese la URL base de la ubicación de la imagen, en este caso, "https://i.imgur.com".
+6. Marque la casilla "Desactivar Seguridad del Protocolo" para permitir la recuperación a través de HTTP.
+7. Haga clic en "Guardar".
+
+![Sample Image](./img/remote_site.png)
+
   + Ahora, debe agregar la URL a las URLs de confianza con todas las directivas CSP (Política de Seguridad del Contenido) habilitadas:
-     1. En la caja de búsqueda rápida, busque "Sitios de Confianza".
-     2. Haga clic en el botón "Nuevo Sitio de Confianza".
-     3. Proporcione un nombre para el sitio de confianza (por ejemplo, "Imgur de Confianza").
-     4. En el campo "URL del Sitio", ingrese la misma URL base que antes, "https://i.imgur.com".
-     5. Marque todas las directivas CSP: "Conectar," "Fuente," "Img," "Medios," "Objeto," "Script," "Estilo."
-     6. Haga clic en "Guardar".
-    <br />
-     ![Sample Image](./img/trusted_url.png)
-     <br />
-        <br />
-     ![Sample Image](./img/trusted_url2.png)
-     <br />
+1. En la caja de búsqueda rápida, busque "Sitios de Confianza".
+2. Haga clic en el botón "Nuevo Sitio de Confianza".
+3. Proporcione un nombre para el sitio de confianza (por ejemplo, "Imgur de Confianza").
+4. En el campo "URL del Sitio", ingrese la misma URL base que antes, "https://i.imgur.com".
+5. Marque todas las directivas CSP: "Conectar," "Fuente," "Img," "Medios," "Objeto," "Script," "Estilo."
+6. Haga clic en "Guardar".
+![Sample Image](./img/trusted_url.png)
+![Sample Image](./img/trusted_url2.png)
   + Ahora ha configurado la configuración de sitio remoto y las URLs de confianza para recuperar la imagen de manera segura a través de HTTP. Luego puede usar la etiqueta `{% Foto_Perfil}` para incluir dinámicamente la imagen en sus documentos generados.
 
 ## Reglas de Uso
