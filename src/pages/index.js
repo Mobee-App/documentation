@@ -28,11 +28,11 @@ function Feature({ imageUrl, title, description }) {
         <p>{description}</p>
         {title === 'Watch What we do' && (
           <Link
-            className={clsx('button button--secondary button--lg', styles.demoButton)}
+            className={clsx('button button--secondary button--lg margin-bottom--lg', styles.demoButton)}
             to={useBaseUrl('/')}
             onClick={handleAskForDemo}
           >
-            <Translate id="homepage.askForDemoButton" > Ask for a Demo </Translate>
+            <Translate id="homepage.askForDemoButton">Ask for a Demo</Translate>
           </Link>
         )}
       </div>
@@ -48,7 +48,7 @@ function HomepageHeader() {
         <h1 className="hero__title">{siteConfig.title}</h1>
         <p className="hero__subtitle"><Translate>
           By Uprizon
-          </Translate>
+        </Translate>
         </p>
         <div className={styles.buttons}>
           <Link
