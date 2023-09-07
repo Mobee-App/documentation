@@ -16,7 +16,6 @@ Before leveraging the QR Code Generator component, ensure it's properly installe
    - In the Lightning App Builder, look for the 'Custom' section on the left pane.
    - Drag the 'generateQrCode' component and place it at your preferred location on the page layout.
 4. **Configure Component Attributes**:
-   - Click on the newly added QR Code Generator component to view its attributes.
    - The component is designed to automatically fetch the record ID of the object where it's placed, and use it for the QR code generation. No manual input is required.
 5. **Save & Activate**: Once configured, save your changes and activate the page to reflect the modifications in the Salesforce interface.
 
