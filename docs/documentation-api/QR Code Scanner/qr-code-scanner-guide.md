@@ -36,7 +36,7 @@ Before utilizing the QR Code Scanner component, ensure you've installed it into 
 
 4. **Configure the Component**: 
    - Click on the component to see its attributes.
-   - In the 'Flow API Name' field, enter the name "Campaign Scan" (or the relevant flow name associated with the scanning function for campaigns).
+   - In the 'Flow API Name' field, enter the name "Campaign_SCR_Scan" (or the relevant flow name associated with the scanning function for campaigns).
 
    ![Sample Image](./img/flow_api_name.png)
 
