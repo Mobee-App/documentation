@@ -25,13 +25,13 @@ Before leveraging the QR Code Generator component, ensure it's properly installe
 1. **Navigate to an Account**: Start by accessing a specific Contact in Salesforce where you'd like a QR code.
 2. **Enter Edit Mode**: Click on 'Edit Page'.
 
-    ![Sample Image](./img/contact_page.png)
+    ![Sample Image](./img/contact_page.jpg)
 
 3. **Insert QR Code Generator Component**: 
    - Locate the 'generateQrCode' component under the 'Custom' section.
    - Drag and drop it to your desired position on the account page layout.
 
-   ![Sample Image](./img/edit_page.png)
+   ![Sample Image](./img/edit_page.jpg)
 
 4. **QR Code Generation**:
    - Once placed and the page is saved, the component will automatically generate a QR code containing the Contact record ID. 
