@@ -1,4 +1,4 @@
-# Salesforce QR Code Scanner Component Documentation
+# QR Code Scanner Component Documentation
 
 **Description**: The QR Code Scanner component for Salesforce enables users to scan QR codes directly from their Salesforce interface. By integrating this component, you can instantly fetch and input data, simplifying various manual tasks.
 
