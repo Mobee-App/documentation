@@ -41,16 +41,38 @@ To seamlessly install the Mobee App Package from the AppExchange, follow the ste
 7) **Finalizing the Setup:**
    - Upon finalizing your synchronization objects, users granted the correct permissions can now download and utilize the mobile application on both iOS and Android platforms.
 
-## Mobee Mobile App
 
-To use the Mobee Mobile App, follow these steps:
 
-1. Install the mobile app on iOS or Android.
-2. After installing the mobile application on your device, open the app and you will be prompted to log in.
-3. Log in using your Salesforce credentials and modify the connection server (Production/Sandbox/Custom Domain) if necessary.
-4. After logging in and filling the received confirmation code, the user should allow the required access to the connected App.
-5. The splash screen will list the synchronization steps. This step can take some time depending on the data that needs to be synchronized.
-6. To reduce the synchronization time, try to minimize the number of objects to synchronize and use the “List View Filter” and the “File Sync Down” options in Mobee Object Setup. Note that disabling the “File Sync Down” will only disable downloading the files on your device but will keep uploading every attachment made by the users.
-7. After finishing the data syncing process, the user will have access to the Home Pages, App Pages, Listviews & Record Pages totally offline.
 
-That's it! You have successfully installed and used the Mobee App tool on your Salesforce org and mobile device.
+# Mobee Mobile App User Guide
+
+To make the most of the Mobee Mobile App experience, follow these streamlined steps:
+
+## 1. **Installation:**
+   - Download and install the Mobee Mobile App from the [App Store](https://apps.apple.com/fr/app/mobee-app/id1617645272) (for iOS devices) or [Google Play Store](https://play.google.com/store/apps/details?id=com.mobee_app) (for Android devices).
+
+## 2. **Initial Setup:**
+   - Launch the app. Upon opening, a login prompt will appear.
+   - Use your Salesforce credentials for logging in.
+   - Modify the connection server based on your requirements: choose from Production, Sandbox, or Custom Domain.
+
+## 3. **Confirmation and Access Permissions:**
+   - After logging in, you'll receive a confirmation code. Enter this code as prompted.
+   - For seamless operation, grant the necessary permissions when requested by the app.
+
+## 4. **Synchronization:**
+   - Upon successful login, you'll be greeted with a splash screen detailing the synchronization process.
+   - This step's duration varies based on the volume of data to synchronize. 
+
+## 5. **Optimizing Synchronization:**
+   - For a faster sync, consider limiting the number of objects you wish to synchronize.
+   - Utilize the “List View Filter” and the “File Sync Down” options available in Mobee Object Setup.
+     > **Note:** Disabling the “File Sync Down” option will stop files from being downloaded to your device. However, any attachment created by users will still be uploaded.
+
+## 6. **Offline Access:**
+   - Once data synchronization is complete, you can access the Home Pages, App Pages, Listviews, and Record Pages entirely offline.
+
+---
+
+Congratulations! You've successfully set up and are using the Mobee App tool seamlessly with your Salesforce org and mobile device.
+
