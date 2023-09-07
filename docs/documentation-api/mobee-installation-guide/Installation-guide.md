@@ -2,7 +2,7 @@
 
 ## Salesforce AppExchange Package
 
-To seamlessly install the Mobee App Package from the AppExchange, follow the steps below:
+To install the Mobee App Package from the AppExchange, follow the steps below:
 
 ## 1. **Navigate to Mobee App Page:**
    - Launch your web browser.
@@ -74,5 +74,5 @@ To make the most of the Mobee Mobile App experience, follow these streamlined st
 
 ---
 
-Congratulations! You've successfully set up and are using the Mobee App tool seamlessly with your Salesforce org and mobile device.
+Congratulations! You've successfully set up and are now using the Mobee App tool with your Salesforce org and mobile device.
 
