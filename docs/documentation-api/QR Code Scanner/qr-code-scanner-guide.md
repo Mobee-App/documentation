@@ -44,9 +44,7 @@ Before utilizing the QR Code Scanner component, ensure you've installed it into 
    - Exit the Lightning App Builder and navigate to the campaign page.
    - Using a phone or a device with a camera, utilize the QR Code Scanner component to scan the QR codes of contacts or leads.
 
-   ![Sample Image](./img/phone1.jpg)
-   ![Sample Image](./img/phone2.jpg)
-   ![Sample Image](./img/phone3.jpg)
+   ![Sample Image](./img/phone4.jpg)
 
 6. **Verification**:
    - After scanning, verify by checking the campaign membership list.
