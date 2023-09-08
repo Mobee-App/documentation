@@ -1,18 +1,17 @@
-# Thème pris en charge dans la communauté
-## Supported Theme and Branding in Community
-| Colors Settings Name  | Supported In Mobee |
-| --------------------- | ------------------ |
-| Text Color            |         ✅         |
-| Detail Text Color     |         ✅         |
-| Action Color          |         ✅         |
-| Link Color            |         ✅         |
-| Overlay Text Color    |                    |
-| Border Color          |                    |
-| Page Background Color |         ✅         |
+# Thème et Personnalisation Pris en Charge dans la Communauté
+| Nom des Paramètres de Couleurs  | Pris en Charge Dans Mobee |
+| ------------------------------- | ------------------------- |
+| Couleur du Texte                |            ✅               |
+| Couleur du Texte de Détail      |            ✅               |
+| Couleur de l'Action             |            ✅               |
+| Couleur du Lien                 |            ✅               |
+| Couleur du Texte de Superposition|                            |
+| Couleur de la Bordure           |                            |
+| Couleur de l'Arrière-plan de la Page |            ✅               |
 
-## Supported Chatter Type in Community
-| Chatter Type | Create | Comment | Like |
-| ------------ | ------ | ------- | ---- |
-| Post         |   ✅   |   ✅   |  ✅  |
-| Question     |        |         |      |
-| Poll         |        |         |      |
+## Types de Publications Pris en Charge dans la Communauté
+| Type de Publication | Créer | Commenter | Aimer |
+| ------------------- | ----- | --------- | ----- |
+| Publication          |   ✅   |    ✅     |   ✅  |
+| Question              |         |            |       |
+| Sondage              |         |            |       |

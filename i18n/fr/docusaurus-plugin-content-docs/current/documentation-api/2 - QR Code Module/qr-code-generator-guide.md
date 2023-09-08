@@ -1,42 +1,42 @@
-# QR Code Generator Setup
+# Configuration du Générateur de Codes QR
 
-**Description**: The QR Code Generator component for Salesforce offers the ability to create QR codes from within the Salesforce interface. The generated QR code will contain the record ID of the object where the component is placed, streamlining data access and sharing.
+**Description**: Le composant Générateur de Codes QR pour Salesforce offre la possibilité de créer des codes QR depuis l'interface Salesforce. Le code QR généré contiendra l'ID de l'enregistrement de l'objet où le composant est placé, facilitant l'accès et le partage des données.
 
-## Installation:
+## Installation :
 
-Before leveraging the QR Code Generator component, ensure that the Mobee package is installed in your Salesforce environment.
+Avant d'utiliser le composant Générateur de Codes QR, assurez-vous que le package Mobee est installé dans votre environnement Salesforce.
 
-## How to Add the QR Code Generator to an Object Page:
+## Comment Ajouter le Générateur de Codes QR à une Page d'Objet :
 
-### Step-by-Step Instructions:
+### Instructions Étape par Étape :
 
-1. **Access the Object Page**: Navigate to the desired object page where you want the QR code generator.
-2. **Enter Edit Mode**: Click on the 'Edit Page' option, usually found at the top right, to switch to the Lightning App Builder.
-3. **Add the QR Code Generator Component**: 
-   - In the Lightning App Builder, look for the lightning components section on the left pane.
-   - Drag the 'generateQrCode' component and place it at your preferred location on the page layout.
-4. **Configure Component Attributes**:
-   - The component is designed to automatically fetch the record ID of the object where it's placed, and use it for the QR code generation. No manual input is required.
-5. **Save & Activate**: Once configured, save your changes and activate the page to reflect the modifications in the Salesforce interface.
+1. **Accédez à la Page de l'Objet** : Rendez-vous sur la page d'objet souhaitée où vous souhaitez placer le générateur de codes QR.
+2. **Passez en Mode Édition** : Cliquez sur l'option 'Modifier la page', généralement située en haut à droite, pour passer au Lightning App Builder.
+3. **Ajoutez le Composant Générateur de Codes QR** :
+   - Dans le Lightning App Builder, recherchez la section des composants Lightning dans le volet de gauche.
+   - Faites glisser le composant 'generateQrCode' et placez-le à l'emplacement de votre choix sur la mise en page de la page.
+4. **Configurez les Attributs du Composant** :
+   - Le composant est conçu pour récupérer automatiquement l'ID de l'enregistrement de l'objet où il est placé et l'utiliser pour la génération du code QR. Aucune saisie manuelle n'est nécessaire.
+5. **Enregistrez et Activez** : Une fois configuré, enregistrez vos modifications et activez la page pour refléter les modifications dans l'interface Salesforce.
 
-## Example Use Case: Generating QR Code for a Contact Record
+## Exemple d'Utilisation : Génération d'un Code QR pour un Enregistrement de Contact
 
-1. **Navigate to a Contact**: Start by accessing a specific Contact in Salesforce where you'd like a QR code.
-2. **Enter Edit Mode**: Click on 'Edit Page'.
+1. **Accédez à un Contact** : Commencez par accéder à un contact spécifique dans Salesforce pour lequel vous souhaitez un code QR.
+2. **Passez en Mode Édition** : Cliquez sur 'Modifier la page'.
 
-    ![Sample Image](./img/contact_page.jpg)
+    ![Image d'Exemple](./img/contact_page.jpg)
 
-3. **Insert QR Code Generator Component**: 
-   - Locate the 'generateQrCode' component in the left menu section.
-   - Drag and drop it to your desired position on the account page layout.
+3. **Insérez le Composant Générateur de Codes QR** :
+   - Localisez le composant 'generateQrCode' dans la section du menu de gauche.
+   - Faites glisser et déposez-le à l'emplacement souhaité sur la mise en page de la page de compte.
 
-   ![Sample Image](./img/edit_page.jpg)
+   ![Image d'Exemple](./img/edit_page.jpg)
 
-4. **QR Code Generation**:
-   - Once placed and the page is saved, the component will automatically generate a QR code containing the Contact record ID. 
+4. **Génération du Code QR** :
+   - Une fois placé et la page enregistrée, le composant générera automatiquement un code QR contenant l'ID de l'enregistrement de contact.
 
-   ![Sample Image](./img/qr_code.png)
+   ![Image d'Exemple](./img/qr_code.png)
 
-**Note**: Make sure you have the necessary permissions to add components to page layouts in Salesforce. 
+**Remarque** : Assurez-vous d'avoir les autorisations nécessaires pour ajouter des composants aux mises en page de page dans Salesforce.
 
-Happy QR Code Generating!
+Bonne génération de codes QR !
