@@ -20,7 +20,7 @@ jobs:
             node-version: 16.x
             cache: npm
         - name: Install dependencies
-          run: npm run install --frozen-lockfile --non-interactive
+          run: npm install --frozen-lockfile --non-interactive
         - name: Build
           run: npm run build
         # 👆 Build steps
