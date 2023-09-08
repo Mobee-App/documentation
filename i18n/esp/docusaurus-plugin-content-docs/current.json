@@ -1,26 +1,30 @@
 {
   "version.label": {
-    "message": "Next",
-    "description": "The label for version current"
+    "message": "Próximo",
+    "description": "Próximo"
+  },
+  "sidebar.tutorialSidebar.category.Mobee Installation Guide": {
+    "message": "Guía de instalación de Mobee",
+    "description": "Guía de instalación de Mobee"
+  },
+  "sidebar.tutorialSidebar.category.QR Code Module": {
+    "message": "Módulo de código QR",
+    "description": "Módulo de código QR"
+  },
+  "sidebar.tutorialSidebar.category.Document Generation Module": {
+    "message": "Módulo de Generación de Documentos",
+    "description": "Módulo de Generación de Documentos"
+  },
+  "sidebar.tutorialSidebar.category.Community": {
+    "message": "Community",
+    "description": "Community"
+  },
+  "sidebar.tutorialSidebar.category.Timesheet Module": {
+    "message": "Módulo de parte de horas (Timesheet)",
+    "description": "Módulo de parte de horas (Timesheet)"
   },
   "sidebar.tutorialSidebar.category.MobeeDocumentation": {
-    "message": "MobeeDocumentation",
-    "description": "The label for category MobeeDocumentation in sidebar tutorialSidebar"
-  },
-  "sidebar.tutorialSidebar.category.document-generator": {
-    "message": "document-generator",
-    "description": "The label for category document-generator in sidebar tutorialSidebar"
-  },
-  "sidebar.tutorialSidebar.category.mobee-installation-guide": {
-    "message": "mobee-installation-guide",
-    "description": "The label for category mobee-installation-guide in sidebar tutorialSidebar"
-  },
-  "sidebar.tutorialSidebar.category.timesheet": {
-    "message": "timesheet",
-    "description": "The label for category timesheet in sidebar tutorialSidebar"
-  },
-  "sidebar.tutorialSidebar.category.Classic Email Templater": {
-    "message": "Classic Email Templater",
-    "description": "The label for category Classic Email Templater in sidebar tutorialSidebar"
+    "message": "Documentación de Mobee",
+    "description": "Documentación de Mobee"
   }
 }

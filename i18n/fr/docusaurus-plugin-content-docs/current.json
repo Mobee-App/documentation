@@ -1,26 +1,26 @@
 {
   "version.label": {
-    "message": "Next",
-    "description": "The label for version current"
+    "message": "Suivant",
+    "description": "Suivant"
   },
-  "sidebar.tutorialSidebar.category.MobeeDocumentation": {
-    "message": "MobeeDocumentation",
-    "description": "The label for category MobeeDocumentation in sidebar tutorialSidebar"
+  "sidebar.tutorialSidebar.category.Mobee Installation Guide": {
+    "message": "Guide d'installation de Mobee",
+    "description": "Guide d'installation de Mobee"
   },
-  "sidebar.tutorialSidebar.category.document-generator": {
-    "message": "document-generator",
-    "description": "The label for category document-generator in sidebar tutorialSidebar"
+  "sidebar.tutorialSidebar.category.QR Code Module": {
+    "message": "Module de codes QR",
+    "description": "Module de codes QR"
   },
-  "sidebar.tutorialSidebar.category.mobee-installation-guide": {
-    "message": "mobee-installation-guide",
-    "description": "The label for category mobee-installation-guide in sidebar tutorialSidebar"
+  "sidebar.tutorialSidebar.category.Document Generation Module": {
+    "message": "Module de génération de documents",
+    "description": "Module de génération de documents"
   },
-  "sidebar.tutorialSidebar.category.timesheet": {
-    "message": "timesheet",
-    "description": "The label for category timesheet in sidebar tutorialSidebar"
+  "sidebar.tutorialSidebar.category.Community": {
+    "message": "Communauté",
+    "description": "Communauté"
   },
-  "sidebar.tutorialSidebar.category.Classic Email Templater": {
-    "message": "Classic Email Templater",
-    "description": "The label for category Classic Email Templater in sidebar tutorialSidebar"
+  "sidebar.tutorialSidebar.category.Timesheet Module": {
+    "message": "Module de feuille de temps (Timesheet)",
+    "description": "Module de feuille de temps (Timesheet)"
   }
 }
