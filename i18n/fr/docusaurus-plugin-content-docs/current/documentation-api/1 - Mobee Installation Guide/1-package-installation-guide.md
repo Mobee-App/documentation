@@ -1,42 +1,42 @@
-# Mobee AppExchange Installation Guide
+# Guide d'installation de Mobee AppExchange
 
-## Salesforce AppExchange Package
+## Package Salesforce AppExchange
 
-To install the Mobee App Package from the AppExchange, follow the steps below:
+Pour installer le package Mobee App depuis AppExchange, suivez les étapes ci-dessous :
 
-## 1. **Navigate to Mobee App Page:**
-   - Launch your web browser.
-   - Access the Mobee App page on AppExchange using the following link: [Mobee App on AppExchange](https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3u00000ONmC7EAL&tab=e).
+## 1. **Accédez à la page de l'application Mobee :**
+   - Lancez votre navigateur web.
+   - Accédez à la page de l'application Mobee sur AppExchange en utilisant le lien suivant : [Mobee App sur AppExchange](https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3u00000ONmC7EAL&tab=e).
    
-   ![Sample Image](./img/app_exchange.png)
+   ![Image d'exemple](./img/app_exchange.png)
 
-## 2. **Install the Package:**
-   - Click on the "Get It Now" button.
-   - Choose the Salesforce org where you'd like to install the package.
+## 2. **Installez le package :**
+   - Cliquez sur le bouton "Obtenir maintenant" (Get It Now).
+   - Choisissez l'organisation Salesforce où vous souhaitez installer le package.
 
-## 3. **User Management & Permission Assignment:**
-   - Navigate to the user management page in Salesforce.
-   - Select a user.
-   - Assign the required permissions based on your operational requirements (options include: Mobee Administrator, Mobee User, Mobee Community Administrator, Mobee Community User, Mobee Time And Expenses Administrator, Mobee Time And Expenses User).
+## 3. **Gestion des utilisateurs et attribution des autorisations :**
+   - Accédez à la page de gestion des utilisateurs dans Salesforce.
+   - Sélectionnez un utilisateur.
+   - Attribuez les autorisations requises en fonction de vos besoins opérationnels, les options incluent : Administrateur Mobee (Mobee Administrator), Utilisateur Mobee (Mobee User), Administrateur de la communauté Mobee (Mobee Community Administrator), Utilisateur de la communauté Mobee (Mobee Community User), Administrateur des temps et dépenses Mobee (Mobee Time And Expenses Administrator), Utilisateur des temps et dépenses Mobee (Mobee Time And Expenses User).
 
-   ![Sample Image](./img/permission.png)
+   ![Image d'exemple](./img/permission.png)
 
-## 4. **License Management:**
-   - Go to the Setup Page.
-   - Access the “Installed Packages” section.
-   - Click on the “Manage Licenses” link adjacent to the Mobee Package. This is where you can allocate licenses to specific users.
+## 4. **Gestion des licences :**
+   - Accédez à la page de configuration (Setup).
+   - Accédez à la section "Packages installés" (Installed Packages).
+   - Cliquez sur le lien "Gérer les licences" (Manage Licenses) à côté du package Mobee. C'est là que vous pouvez attribuer des licences à des utilisateurs spécifiques.
 
-   ![Sample Image](./img/installed_packages.png)
+   ![Image d'exemple](./img/installed_packages.png)
 
-## 5. **Mobee Object Setup:**
-   - If you're a Mobee Administrator user, head over to the “Mobee Object Setup” tab.
-   - This tab is crucial for determining the objects that will synchronize with the mobile app.
+## 5. **Configuration des objets Mobee :**
+   - Si vous êtes un utilisateur administrateur Mobee, accédez à l'onglet "Configuration des objets Mobee" (Mobee Objects Setup).
+   - Cet onglet est essentiel pour déterminer les objets qui se synchroniseront avec l'application mobile.
 
-## 6. **Define Synchronization Settings:**
-   - Input the Object API Name.
-   - Adjust the settings as per your requirements.
+## 6. **Définir les paramètres de synchronisation :**
+   - Saisissez le nom de l'API de l'objet.
+   - Ajustez les paramètres selon vos besoins.
 
-   ![Sample Image](./img/mobee_object_setup.png)
+   ![Image d'exemple](./img/mobee_object_setup.png)
 
-## 7. **Finalizing the Setup:**
-   - Upon finalizing your synchronization objects, users granted the correct permissions can now download and utilize the mobile application on both iOS and Android platforms.
+## 7. **Finalisation de la configuration :**
+   - Une fois que vous avez finalisé la configuration de vos objets de synchronisation, les utilisateurs disposant des autorisations appropriées peuvent désormais télécharger et utiliser l'application mobile sur les plates-formes iOS et Android.

@@ -1,17 +1,17 @@
-# Configuration de la communauté Mobee
-## Setup Mobee Community
+# Configuration de la Communauté Mobee
+## Configuration de la Communauté Mobee
 
-Salesforce does not allow community users to access some metadata using the API. To work around these limitations and optimize governor limits, Mobee provides a set of automated tools that extract the required metadata, including pages from Experience Cloud and other resources. The Mobee automated tools generate JSON files and zip files for the metadata records resources that will be included in the static resource.
+Salesforce n'autorise pas les utilisateurs de la communauté à accéder à certaines métadonnées à l'aide de l'API. Pour contourner ces limitations et optimiser les limites du gouverneur, Mobee fournit un ensemble d'outils automatisés qui extraient les métadonnées requises, y compris les pages de l'Experience Cloud et d'autres ressources. Les outils automatisés de Mobee génèrent des fichiers JSON et des fichiers zip pour les ressources de métadonnées qui seront incluses dans la ressource statique.
 
-To set up Mobee Community, follow the steps below:
+Pour configurer la Communauté Mobee, suivez les étapes ci-dessous :
 
-1. Execute the Mobee procedure provided with the AppExchange. Provide the name of the Experience Cloud Site and any additional languages required.
+1. Exécutez la procédure Mobee fournie avec l'AppExchange. Fournissez le nom du site de l'Experience Cloud et toute langue supplémentaire requise.
 
     ```javascript
     Mobee.SetupUtils.prepareMobeeResources('Customer_Site1', 'fr');
     ```
 
-2. You can also run the individual tools using the following sub-procedures:
+2. Vous pouvez également exécuter les outils individuels en utilisant les sous-procédures suivantes :
 
     ```javascript
     Mobee.SetupUtils.refreshCoreMetadata();
@@ -20,25 +20,25 @@ To set up Mobee Community, follow the steps below:
     Mobee.SetupUtils.siteExperienceBundleQueueable('Customer_Site1');
     ```
 
-It is important to run these automated tools for the first time and each time you publish your Experience Cloud Site. The estimated time for running the tools is about 2 minutes.
+Il est important d'exécuter ces outils automatisés la première fois et à chaque fois que vous publiez votre site Experience Cloud. Le temps estimé pour l'exécution des outils est d'environ 2 minutes.
 
-The output of the procedure will generate the following files in the Static Resources directory:
+La sortie de la procédure générera les fichiers suivants dans le répertoire des Ressources Statiques :
 
-| Resource                             | Description                                                                                |
-| ------------------------------------ | ------------------------------------------------------------------------------------------ |
-| Mobee_CoreMetadata                   | Contains the main metadata of the Salesforce Core System, such as Validation Rules, Web Links, Lookup Filters, and Flow definitions. |
-| Mobee_CoreCustomLabel                | Contains the custom labels.                                                                |
-| Mobee_CoreExternalStringLocalization | Contains the translated custom labels for the specified language.                          |
-| Mobee_Community_Customer_Site1       | Contains the Experience Cloud Site pages, themes, and other resources.                     |
+| Ressource                             | Description                                                                               |
+| ------------------------------------ | ----------------------------------------------------------------------------------------- |
+| Mobee_CoreMetadata                   | Contient les principales métadonnées du système principal de Salesforce, telles que les règles de validation, les liens web, les filtres de recherche et les définitions de flux. |
+| Mobee_CoreCustomLabel                | Contient les libellés personnalisés.                                                                |
+| Mobee_CoreExternalStringLocalization | Contient les libellés personnalisés traduits pour la langue spécifiée.                          |
+| Mobee_Community_Customer_Site1       | Contient les pages, les thèmes et les autres ressources du site Experience Cloud.                     |
 
-**How to verify if your resources are up to date?**  
-Check the last modified date of the output files to ensure that the files are up to date.
+**Comment vérifier si vos ressources sont à jour ?**  
+Vérifiez la date de dernière modification des fichiers de sortie pour vous assurer qu'ils sont à jour.
 
-## Output files in the Static Resources
+## Fichiers de sortie dans les Ressources Statiques
 
-| File                                 | Type        | Description                                                                               |
+| Fichier                                 | Type        | Description                                                                               |
 | ------------------------------------ | ----------- | ----------------------------------------------------------------------------------------- |
-| Mobee_CoreMetadata                   | `Json File` | Mobee Core Metadata listes                                                                |
-| Mobee_CoreCustomLabel                | `Json File` | Mobee Core CustomLabels                                                                   |
-| Mobee_CoreExternalStringLocalization | `Json File` | Mobee Core ExternalStringLocalization                                                     |
-| Mobee_Community_Customer_Site1       | `Zip File`  | Site pages, components, and properties                                                     |
+| Mobee_CoreMetadata                   | `Fichier JSON` | Liste des métadonnées de base de Mobee                                                                |
+| Mobee_CoreCustomLabel                | `Fichier JSON` | CustomLabels de base de Mobee                                                                   |
+| Mobee_CoreExternalStringLocalization | `Fichier JSON` | ExternalStringLocalization de base de Mobee                                                     |
+| Mobee_Community_Customer_Site1       | `Fichier Zip`  | Pages du site, composants et propriétés de l'Experience Cloud                                             |

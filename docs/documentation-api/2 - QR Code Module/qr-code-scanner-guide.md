@@ -36,7 +36,7 @@ Before utilizing the QR Code Scanner component, ensure that the Mobee package is
 
 4. **Configure the Component**: 
    - Click on the component to see its attributes.
-   - In the 'Flow API Name' field, enter the name "Campaign_SCR_Scan" (or the relevant flow name associated with the scanning function for campaigns).
+   - In the 'Flow API Name' field, enter the name "Mobee__Campaign_SCR_Scan" (or the relevant flow name associated with the scanning function for campaigns).
 
    ![Sample Image](./img/flow_api_name.png)
 
@@ -51,6 +51,6 @@ Before utilizing the QR Code Scanner component, ensure that the Mobee package is
    - Ensure that the scanned contact or lead has been successfully added to the campaign.
    ![Sample Image](./img/campaign_member.png)
 
-**Note**: Ensure that the flow ("Campaign Scan" in this example) is correctly set up to handle the QR code data and perform the desired actions in Salesforce.
+**Note**: Ensure that the flow ("Mobee__Campaign_SCR_Scan" in this example) is correctly set up to handle the QR code data and perform the desired actions in Salesforce.
 
 Happy Scanning!
