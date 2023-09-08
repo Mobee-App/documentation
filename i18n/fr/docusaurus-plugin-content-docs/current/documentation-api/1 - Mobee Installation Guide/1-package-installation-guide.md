@@ -17,7 +17,7 @@ Pour installer le package Mobee App depuis AppExchange, suivez les étapes ci-de
 ## 3. **Gestion des utilisateurs et attribution des autorisations :**
    - Accédez à la page de gestion des utilisateurs dans Salesforce.
    - Sélectionnez un utilisateur.
-   - Attribuez les autorisations requises en fonction de vos besoins opérationnels (les options incluent : Administrateur Mobee, Utilisateur Mobee, Administrateur de la communauté Mobee, Utilisateur de la communauté Mobee, Administrateur des temps et dépenses Mobee, Utilisateur des temps et dépenses Mobee).
+   - Attribuez les autorisations requises en fonction de vos besoins opérationnels, les options incluent : Administrateur Mobee (Mobee Administrator), Utilisateur Mobee (Mobee User), Administrateur de la communauté Mobee (Mobee Community Administrator), Utilisateur de la communauté Mobee (Mobee Community User), Administrateur des temps et dépenses Mobee (Mobee Time And Expenses Administrator), Utilisateur des temps et dépenses Mobee (Mobee Time And Expenses User).
 
    ![Image d'exemple](./img/permission.png)
 
@@ -29,7 +29,7 @@ Pour installer le package Mobee App depuis AppExchange, suivez les étapes ci-de
    ![Image d'exemple](./img/installed_packages.png)
 
 ## 5. **Configuration des objets Mobee :**
-   - Si vous êtes un utilisateur administrateur Mobee, accédez à l'onglet "Configuration des objets Mobee" (Mobee Object Setup).
+   - Si vous êtes un utilisateur administrateur Mobee, accédez à l'onglet "Configuration des objets Mobee" (Mobee Objects Setup).
    - Cet onglet est essentiel pour déterminer les objets qui se synchroniseront avec l'application mobile.
 
 ## 6. **Définir les paramètres de synchronisation :**

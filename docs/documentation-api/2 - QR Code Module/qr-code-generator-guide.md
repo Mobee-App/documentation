@@ -28,7 +28,7 @@ Before leveraging the QR Code Generator component, ensure that the Mobee package
 
 3. **Insert QR Code Generator Component**: 
    - Locate the 'generateQrCode' component in the left menu section.
-   - Drag and drop it to your desired position on the account page layout.
+   - Drag and drop it to your desired position on the Contact page layout.
 
    ![Sample Image](./img/edit_page.jpg)
 

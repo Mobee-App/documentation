@@ -20,8 +20,8 @@ Pour tirer le meilleur parti de l'expérience de l'application mobile Mobee, sui
 
 ## 5. **Optimisation de la synchronisation :**
    - Pour une synchronisation plus rapide, envisagez de limiter le nombre d'objets que vous souhaitez synchroniser.
-   - Utilisez les options "Filtre de la liste" et "Téléchargement des fichiers" disponibles dans la Configuration des objets Mobee.
-     > **Remarque :** La désactivation de l'option "Téléchargement des fichiers" empêchera les fichiers d'être téléchargés sur votre appareil. Cependant, toutes les pièces jointes créées par les utilisateurs seront toujours téléchargées.
+   - Utilisez les options "Filtre de vue de liste" et "Synchronisation des fichiers" disponibles dans "Mobee Objects.
+     > **Remarque :** La désactivation de l'option "Synchronisation des fichiers" empêchera les fichiers d'être téléchargés sur votre appareil. Cependant, toutes les pièces jointes créées par les utilisateurs seront toujours téléchargées.
 
 ## 6. **Accès hors ligne :**
    - Une fois la synchronisation des données terminée, vous pouvez accéder entièrement hors ligne aux pages d'accueil, aux pages de l'application, aux vues de liste et aux pages d'enregistrement.

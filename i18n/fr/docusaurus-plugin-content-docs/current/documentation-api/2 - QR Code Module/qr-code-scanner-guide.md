@@ -14,14 +14,14 @@ Avant d'utiliser le composant Scanner de Codes QR, assurez-vous que le package M
 2. **Passez en Mode Édition** : Cliquez sur l'option 'Modifier la page', généralement disponible en haut à droite de l'écran, pour accéder au Lightning App Builder.
 3. **Ajoutez le Composant Scanner de Codes QR** :
    - Dans le Lightning App Builder, recherchez la section des composants Lightning dans le volet de gauche.
-   - Faites glisser le composant 'scanQrCode' et déposez-le à l'emplacement de votre choix sur la mise en page de la page.
+   - Faites glisser le composant 'scanQrCode' et déposez-le à l'emplacement de votre choix sur la page.
 4. **Configurez les Attributs du Composant** :
    - Cliquez sur le composant Scanner de Codes QR ajouté pour afficher ses propriétés.
-   - Dans le champ 'Nom de l'API de l'État', saisissez le nom de l'API du flux souhaité (précédé du préfixe de l'espace de noms si vous utilisez le flux intégré Mobee Campaign Scan). Ce flux sera exécuté lorsque le composant scanne un code QR.
-   - L'attribut "ID d'enregistrement" peut être laissé vide. S'il est laissé vide, il sera automatiquement renseigné avec l'ID de l'enregistrement où le composant est placé.
+   - Dans le champ 'Flow API Name', saisissez le nom de l'API du flux souhaité (précédé du préfixe de l'espace de noms si vous utilisez le flux intégré Mobee Campaign Scan). Ce flux sera exécuté lorsque le composant scanne un code QR.
+   - L'attribut "Record Id" peut être laissé vide. S'il est laissé vide, il sera automatiquement renseigné avec l'ID de l'enregistrement où le composant est placé.
 5. **Enregistrez et Activez** : Une fois terminé, enregistrez les modifications et activez la page pour les refléter dans l'interface Salesforce.
 
-## Exemple d'Utilisation : Ajouter des Contacts ou des Leads à une Campagne via la Numérisation de Codes QR
+## Exemple d'Utilisation : Ajouter des Contacts ou des Pistes à une Campagne via le Scan de Codes QR
 
 1. **Accédez à la Campagne** : Commencez par accéder à la campagne souhaitée dans Salesforce.
 2. **Passez en Mode Édition** : Cliquez sur 'Modifier la page' pour passer au Lightning App Builder.
@@ -36,22 +36,22 @@ Avant d'utiliser le composant Scanner de Codes QR, assurez-vous que le package M
 
 4. **Configurez le Composant** : 
    - Cliquez sur le composant pour voir ses attributs.
-   - Dans le champ 'Nom de l'API de l'État', saisissez le nom "Campaign_SCR_Scan" (ou le nom du flux associé à la fonction de numérisation pour les campagnes).
+   - Dans le champ 'Flow API Name', saisissez le nom "Mobee__Campaign_SCR_Scan" (ou le nom du flux associé à la fonction de numérisation pour les campagnes).
 
    ![Image d'Exemple](./img/flow_api_name.png)
 
 5. **Effectuez la Numérisation** :
    - Quittez le Lightning App Builder et accédez à la page de la campagne.
-   - À l'aide d'un téléphone ou d'un appareil doté d'une caméra, utilisez le composant Scanner de Codes QR pour scanner les codes QR des contacts ou des leads.
+   - À l'aide d'un téléphone ou d'un appareil doté d'une caméra, utilisez le composant Scanner de Codes QR pour scanner les codes QR des contacts ou des pistes.
 
    ![Image d'Exemple](./img/phone4.jpg)
 
 6. **Vérification** :
    - Après la numérisation, vérifiez en consultant la liste des membres de la campagne.
-   - Assurez-vous que le contact ou le lead numérisé a bien été ajouté à la campagne.
+   - Assurez-vous que le contact ou la piste numérisé a bien été ajouté à la campagne.
 
    ![Image d'Exemple](./img/campaign_member.png)
 
-**Remarque** : Assurez-vous que le flux ("Campaign Scan" dans cet exemple) est correctement configuré pour gérer les données des codes QR et effectuer les actions souhaitées dans Salesforce.
+**Remarque** : Assurez-vous que le flux ("Mobee__Campaign_SCR_Scan" dans cet exemple) est correctement configuré pour gérer les données des codes QR et effectuer les actions souhaitées dans Salesforce.
 
 Bonne numérisation !
