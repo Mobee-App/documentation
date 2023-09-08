@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Mobee-app',
+  title: 'Mobee App',
   tagline: 'By Salesforce',
   favicon: 'img/circle-32.png',
 
@@ -72,7 +72,7 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'Mobee-app',
+        title: 'Mobee App',
         logo: {
           alt: 'My Site Logo',
           src: 'img/appstore.png',

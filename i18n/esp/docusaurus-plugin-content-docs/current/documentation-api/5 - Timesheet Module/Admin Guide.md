@@ -1,3 +1,4 @@
+# Guía del administrador
 ## Guía de administración
 
 Esta guía del usuario le ayudará a comprender y utilizar las funcionalidades de gestión de Time Entries en nuestro sistema.

@@ -22,5 +22,9 @@
   "sidebar.tutorialSidebar.category.Timesheet Module": {
     "message": "Module de feuille de temps (Timesheet)",
     "description": "Module de feuille de temps (Timesheet)"
+  },
+  "sidebar.tutorialSidebar.category.README": {
+    "message": "README",
+    "description": "The label for category README in sidebar tutorialSidebar"
   }
 }

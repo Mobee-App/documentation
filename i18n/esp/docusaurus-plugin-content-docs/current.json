@@ -26,5 +26,9 @@
   "sidebar.tutorialSidebar.category.MobeeDocumentation": {
     "message": "Documentación de Mobee",
     "description": "Documentación de Mobee"
+  },
+  "sidebar.tutorialSidebar.category.Documentación de Mobee": {
+    "message": "Documentación de Mobee",
+    "description": "The label for category Documentación de Mobee in sidebar tutorialSidebar"
   }
 }

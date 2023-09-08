@@ -1,3 +1,4 @@
+# Funciones admitidas por la comunidad
 ## Supported Theme and Branding in Community
 | Colors Settings Name  | Supported In Mobee |
 | --------------------- | ------------------ |
