@@ -1,3 +1,4 @@
+# Configuration de la communauté Mobee
 ## Setup Mobee Community
 
 Salesforce does not allow community users to access some metadata using the API. To work around these limitations and optimize governor limits, Mobee provides a set of automated tools that extract the required metadata, including pages from Experience Cloud and other resources. The Mobee automated tools generate JSON files and zip files for the metadata records resources that will be included in the static resource.
