@@ -21,6 +21,10 @@ Before utilizing the QR Code Scanner component, ensure that the Mobee package is
    - The attribute "Record ID" can be left empty. If left blank, it will automatically be populated with the ID of the record where the component is placed.
 5. **Save & Activate**: Once done, save the changes and activate the page to reflect them in the Salesforce interface.
 
+### **Essential Notes**:
+
+- It's crucial to create the `scannedId` variable when establishing a flow that uses the QR code scanner, as this variable will store the ID of the scanned object.
+
 ## Example Use Case: Add Contacts or Leads to a Campaign via QR Code Scanning
 
 1. **Navigate to Campaign**: Start by accessing the desired campaign in Salesforce.
@@ -52,5 +56,31 @@ Before utilizing the QR Code Scanner component, ensure that the Mobee package is
    ![Sample Image](./img/campaign_member.png)
 
 **Note**: Ensure that the flow ("Mobee__Campaign_SCR_Scan" in this example) is correctly set up to handle the QR code data and perform the desired actions in Salesforce.
+
+## QR Code Scanner Integration for Campaign Membership Management
+
+### **Overview**
+
+"Mobee__Campaign_SCR_Scan" , provided as a template in the Mobee package, seamlessly integrates with the QR code scanner module. It facilitates the addition of a contact or a lead to a campaign's membership list. Given its design as a template, this flow is highly adaptable to meet varying requirements.
+
+### **Flow Functionality**:
+
+1. **Scanning and Identifying the ID**:
+   - Upon scanning, the ID is retrieved and stored in the variable `scannedId`.
+   - The flow checks if this `scannedId` corresponds to a Lead or a Contact.
+
+2. **Unknown ID Handling**:
+   - If the `scannedId` does not match a Lead or Contact, the flow redirects to a Screen displaying a message stating that the ID is unknown.
+
+3. **Checking Campaign Membership**:
+   - If the `scannedId` is identified as a Lead or Contact, the flow then verifies if the respective record is already part of the campaign members of the campaign associated with the `recordId` (i.e., the campaign where the scanner module is placed).
+   
+4. **Adding to Campaign Membership**:
+   - If the Lead or Contact is not a member of the campaign, they are added to the campaign's membership list.
+   - Their status is set to 'Responded', though this can be customized within the flow as per requirements.
+
+5. **Updating Existing Campaign Member**:
+   - If the Lead or Contact is already a member of the campaign, their status will be updated to 'Responded'.
+
 
 Happy Scanning!
