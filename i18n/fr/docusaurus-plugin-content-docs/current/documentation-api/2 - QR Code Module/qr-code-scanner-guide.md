@@ -68,8 +68,9 @@ Avant d'utiliser le composant Scanner de Codes QR, assurez-vous que le package M
    - Le flow vérifie si ce `scannedId` correspond à une Piste ou un Contact.
 
 2. **Gestion des ID Inconnus**:
-   - Si le `scannedId` ne correspond pas à une Piste ou Contact, le flow redirige vers un écran affichant un message indiquant que l'ID est inconnu.
    ![Image Exemple](./img/flow_error.png)
+   - Si le `scannedId` ne correspond pas à une Piste ou Contact, le flow redirige vers un écran affichant un message indiquant que l'ID est inconnu.
+   
 
 3. **Vérification de l'Appartenance à la Campagne**:
    ![Image Exemple](./img/flow_end.png)
