@@ -63,14 +63,16 @@ Avant d'utiliser le composant Scanner de Codes QR, assurez-vous que le package M
 ### **Fonctionnalité du Flow**:
 
 1. **Scan et Identification de l'ID**:
+   ![Image Exemple](./img/flow_start.png)
    - Après le scan, l'ID est récupéré et stocké dans la variable `scannedId`.
    - Le flow vérifie si ce `scannedId` correspond à une Piste ou un Contact.
 
 2. **Gestion des ID Inconnus**:
    - Si le `scannedId` ne correspond pas à une Piste ou Contact, le flow redirige vers un écran affichant un message indiquant que l'ID est inconnu.
-   ![Image Exemple](./img/flow_start.png)
+   ![Image Exemple](./img/flow_error.png)
 
 3. **Vérification de l'Appartenance à la Campagne**:
+   ![Image Exemple](./img/flow_end.png)
    - Si le `scannedId` est identifié comme une Piste ou un Contact, le flow vérifie ensuite si l'enregistrement en question est déjà membre de la campagne associée au `recordId` (c'est-à-dire la campagne où le module de scan est placé).
 
 4. **Gestion des Informations du Compte du Contact**:
@@ -82,6 +84,5 @@ Avant d'utiliser le composant Scanner de Codes QR, assurez-vous que le package M
 
 6. **Mise à jour du Membre Existante de la Campagne**:
    - Si la Piste ou le Contact est déjà membre de la campagne, leur statut sera mis à jour à 'Répondu'.
-   ![Image Exemple](./img/flow_end.png)
 
 Bonne numérisation !

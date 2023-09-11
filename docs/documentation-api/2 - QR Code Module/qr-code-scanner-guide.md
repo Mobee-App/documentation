@@ -66,13 +66,15 @@ Before utilizing the QR Code Scanner component, ensure that the Mobee package is
 ### **Flow Functionality**:
 
 1. **Scanning and Identifying the ID**:
+   ![Sample Image](./img/flow_start.png)
    - Upon scanning, the ID is retrieved and stored in the variable `scannedId`.
    - The flow checks if this `scannedId` corresponds to a Lead or a Contact.
 
 2. **Unknown ID Handling**:
    - If the `scannedId` does not match a Lead or Contact, the flow redirects to a Screen displaying a message stating that the ID is unknown.
-   ![Sample Image](./img/flow_start.png)
+   ![Sample Image](./img/flow_error.png)
 3. **Checking Campaign Membership**:
+   ![Sample Image](./img/flow_end.png)
    - If the `scannedId` is identified as a Lead or Contact, the flow then verifies if the respective record is already part of the campaign members of the campaign associated with the `recordId` (i.e., the campaign where the scanner module is placed).
 
 4. **Handling Contact's Account Information**:
@@ -84,7 +86,6 @@ Before utilizing the QR Code Scanner component, ensure that the Mobee package is
 
 6. **Updating Existing Campaign Member**:
    - If the Lead or Contact is already a member of the campaign, their status will be updated to 'Responded'.
-   ![Sample Image](./img/flow_end.png)
 
 
 Happy Scanning!
