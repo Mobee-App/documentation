@@ -61,7 +61,7 @@ Before utilizing the QR Code Scanner component, ensure that the Mobee package is
 
 ### **Overview**
 
-"Mobee__Campaign_SCR_Scan" , provided as a template in the Mobee package, seamlessly integrates with the QR code scanner module. It facilitates the addition of a contact or a lead to a campaign's membership list. Given its design as a template, this flow is highly adaptable to meet varying requirements.
+"Mobee__Campaign_SCR_Scan", provided as a template flow in the Mobee package, seamlessly integrates with the QR code scanner module. It facilitates the addition of a contact or a lead to a campaign's membership list. Given its design as a template, this flow is highly adaptable to meet varying requirements.
 
 ### **Flow Functionality**:
 
@@ -71,16 +71,20 @@ Before utilizing the QR Code Scanner component, ensure that the Mobee package is
 
 2. **Unknown ID Handling**:
    - If the `scannedId` does not match a Lead or Contact, the flow redirects to a Screen displaying a message stating that the ID is unknown.
-
+   ![Sample Image](./img/flow_start.png)
 3. **Checking Campaign Membership**:
    - If the `scannedId` is identified as a Lead or Contact, the flow then verifies if the respective record is already part of the campaign members of the campaign associated with the `recordId` (i.e., the campaign where the scanner module is placed).
+
+4. **Handling Contact's Account Information**:
+   - For contacts, due to the offline nature of the scan on Mobee, the flow manually fetches the related account information using `GetCompanyById`. As of now, in the offline mode of Mobee, there is a limitation wherein related fields embedded within Salesforce flows can't be accessed directly. This issue is set to be addressed in upcoming updates.
    
-4. **Adding to Campaign Membership**:
+5. **Adding to Campaign Membership**:
    - If the Lead or Contact is not a member of the campaign, they are added to the campaign's membership list.
    - Their status is set to 'Responded', though this can be customized within the flow as per requirements.
 
-5. **Updating Existing Campaign Member**:
+6. **Updating Existing Campaign Member**:
    - If the Lead or Contact is already a member of the campaign, their status will be updated to 'Responded'.
+   ![Sample Image](./img/flow_end.png)
 
 
 Happy Scanning!
