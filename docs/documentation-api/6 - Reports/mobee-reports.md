@@ -10,10 +10,11 @@ Managing Salesforce reports on Mobee Offline brings with it certain nuances. Due
    - Click on "New Report".  
 
    ![Sample Image](./img/report_creation.png)
-   ![Sample Image](./img/start_report.png)
 2. **Selecting the Object**:
    - Choose the desired object for which you wish to generate the report.
-   - Click on "Create".
+   - Click on "Create".  
+
+    ![Sample Image](./img/start_report.png)
 3. **Configuring Report Details**:
    - Add the fields required for the report.
    - While setting up the report layout and criteria, please keep in mind the limitations for Mobee offline as mentioned below.
