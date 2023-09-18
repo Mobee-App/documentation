@@ -7,11 +7,11 @@ Managing Salesforce reports on Mobee Offline brings with it certain nuances. Due
 
 1. **Access Salesforce Reports**:
    - From your Salesforce homepage, navigate to the "Reports" tab.
-   - Click on "New Report".
+   - Click on "New Report". <br />
    ![Sample Image](./img/report_creation.png)
 2. **Selecting the Object**:
    - Choose the desired object for which you wish to generate the report.
-   - Click on "Create".
+   - Click on "Create". <br />
     ![Sample Image](./img/start_report.png)
 3. **Configuring Report Details**:
    - Add the fields required for the report.
@@ -21,7 +21,7 @@ Managing Salesforce reports on Mobee Offline brings with it certain nuances. Due
 
 1. **Row Groupings**:
    - Only 'Group rows' functionality is supported on Mobee.
-   - Only one field can be used for row grouping.
+   - Only one field can be used for row grouping. <br />
     ![Sample Image](./img/report_fields.png)
 2. **Handling Numeric Fields**:
    - The 'Summarize' tool for numeric fields is not compatible with Mobee offline.
@@ -30,12 +30,12 @@ Managing Salesforce reports on Mobee Offline brings with it certain nuances. Due
      - `MAX`
      - `MIN`
      - `AVG`
-     - `SUM`
+     - `SUM` <br />
     ![Sample Image](./img/summary_formula1.png)
     ![Sample Image](./img/summary_formula1bis.png)
     ![Sample Image](./img/summary_formula2.png)
 3. **Visibility of Row Counts**:
-   - "Row Counts" are not displayed in offline reports on Mobee. It's essential to keep this in mind when reviewing or analyzing report data offline.
+   - "Row Counts" are not displayed in offline reports on Mobee. It's essential to keep this in mind when reviewing or analyzing report data offline. <br />
    ![Sample Image](./img/last_report.png)
 
 ### Conclusion
