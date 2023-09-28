@@ -25,7 +25,7 @@ Invitación de {!Account.Name}
 <body>
     <p>Estimado cliente valioso,</p>
     <p>Estamos emocionados de invitarlo a nuestro evento. Encuentre su código QR personalizado a continuación:</p>
-    <img src="https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl={!CASESAFEID(Contact.Id)}" alt="Código QR">
+    <img src="https://api.mobee-app.com/qr-code?width=200&data={!CASESAFEID(Contact.Id)}" alt="Código QR">
     <p>Este código QR está vinculado a su cuenta con el ID {!CASESAFEID(Account.Id)}. Agradecemos mucho su participación.</p>
     <p>¡Gracias!</p>
     <p>Atentamente,<br>Su Organización</p>
@@ -54,9 +54,5 @@ Después de que Salesforce procese la plantilla, se enviará el correo electrón
 + El correo electrónico concluye con un mensaje de agradecimiento y la información de la organización remitente.
 
 ## Personalización
-
-Esta plantilla brinda una experiencia de invitación personalizada para cada destinatario al incorporar el nombre de su cuenta y un código QR vinculado a su cuenta específica.
-
-Tenga en cuenta que la URL del código QR (https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl={!CASESAFEID(Contact.Id)}) debe estar funcional y ser capaz de generar códigos QR basados en el ID de cuenta proporcionado.
 
 Este enfoque mejora la participación de los clientes y ofrece una experiencia de invitación única a través de las plantillas de correo electrónico de Salesforce.

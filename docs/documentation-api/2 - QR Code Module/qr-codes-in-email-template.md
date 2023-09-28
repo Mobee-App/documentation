@@ -26,7 +26,7 @@ Invitation to {!Contact.Name}
 <body>
     <p>Dear valued customer,</p>
     <p>We are excited to invite you to our event. Please find your personalized QR code below:</p>
-    <img src="https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl={!CASESAFEID(Contact.Id)}" alt="QR Code">
+    <img src="https://api.mobee-app.com/qr-code?width=200&data={!CASESAFEID(Contact.Id)}" alt="QR Code">
     <p>This QR code is linked to your account. Your participation is highly appreciated.</p>
     <p>Thank you!</p>
     <p>Sincerely,<br>Your Organization</p>
@@ -58,7 +58,5 @@ After the template is processed by Salesforce, the email will be sent to clients
 ## Personalization
 
 This template provides a personalized invitation experience for each recipient by incorporating their contact name and a QR code linked to their specific contact.
-
-Keep in mind that the we used the Google Charts API to generate the QR codes (See more: [Google Charts API documentation](https://developers.google.com/chart/infographics/docs/qr_codes)). Please make sure to add the API as a remote site in your org (See more: [Configure Remote Site Settings](https://help.salesforce.com/s/articleView?id=sf.configuring_remoteproxy.htm&type=5)).
 
 This approach enhances client engagement and delivers a unique invitation experience through Salesforce email templates.

@@ -25,7 +25,7 @@ Invitation pour {!Contact.Name}
 <body>
     <p>Cher client précieux,</p>
     <p>Nous sommes ravis de vous inviter à notre événement. Veuillez trouver ci-dessous votre code QR personnalisé :</p>
-    <img src="https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl={!CASESAFEID(Contact.Id)}" alt="Code QR">
+    <img src="https://api.mobee-app.com/qr-code?width=200&data={!CASESAFEID(Contact.Id)}" alt="Code QR">
     <p>Ce code QR est lié à votre compte avec l'ID {!CASESAFEID(Contact.Id)}. Votre participation est grandement appréciée.</p>
     <p>Merci !</p>
     <p>Cordialement,<br>Votre Organisation</p>
@@ -56,7 +56,5 @@ Après que le modèle a été traité par Salesforce, l'email sera envoyé aux c
 ## Personnalisation
 
 Ce modèle offre une expérience d'invitation personnalisée pour chaque destinataire en incorporant le nom de leur compte et un code QR lié à leur compte spécifique.
-
-N'oubliez pas que nous avons utilisé l'API Google Charts pour générer les codes QR (Voir plus : [Documentation de l'API Google Charts](https://developers.google.com/chart/infographics/docs/qr_codes)). Assurez-vous d'ajouter l'API en tant que "Remote Site" dans votre organisation (voir plus : [Configurer les paramètres remote sites](https://help.salesforce.com/s/articleView?id=sf.configuring_remoteproxy.htm&type=5)) .
 
 Cette approche améliore l'engagement des clients et offre une expérience d'invitation unique grâce aux modèles d'email Salesforce.
