@@ -1,14 +1,14 @@
 # Configuration des identifiants externes pour le générateur de documents Mobee
 
-Ce document fournit un guide étape par étape sur la configuration des identifiants externes pour le générateur de documents Mobee, y compris la création d'un protocole d'authentification personnalisé, l'ajout de paramètres, d'en-têtes personnalisés et l'intégration avec Uprizon pour l'authentification.
+Ce document fournit un guide étape par étape sur la configuration des identifiants externes pour le générateur de documents Mobee, notamment la création d'un protocole d'authentification personnalisé, l'ajout de paramètres, d'en-têtes personnalisés, et l'intégration avec Uprizon pour l'authentification.
 
 ## Configuration des identifiants externes
 
-1. Ouvrez l'interface de gestion des identifiants externes en accédant à **Configuration** > **Sécurité** > **Identifiants nommés**.
+1. Ouvrez l'interface de gestion des identifiants externes en naviguant vers **Configuration** > **Sécurité** > **Identifiants nommés**.
 
    ![Image d'exemple](./img/Setup-Named-Credentials.png)
 
-2. Cliquez sur l'onglet "Identifiants externes".
+2. Cliquez sur l'onglet "Identifiants Externes".
 
    ![Image d'exemple](./img/Named-Credentials.png)
 
@@ -16,47 +16,46 @@ Ce document fournit un guide étape par étape sur la configuration des identifi
 
    ![Image d'exemple](./img/External-Credentials.png)
 
-4. À l'intérieur de "Document Generation External Credentials", trouvez le principe avec le nom de paramètre "user". Cliquez sur la flèche à droite et sélectionnez "Modifier".
-
    ![Image d'exemple](./img/External-Credentials-Page.png)
+
+4. À l'intérieur de "Document Generation External Credentials", trouvez le principal avec le nom de paramètre "User", cliquez sur la flèche à droite et sélectionnez "Modifier".
 
    ![Image d'exemple](./img/Principals.png)
 
    ![Image d'exemple](./img/Principals-Edit-Button.png)
 
-5. À l'intérieur de la fenêtre des principaux, ajoutez des paramètres d'authentification :
-    - Cliquez sur le bouton "Ajouter" à côté des Paramètres d'authentification.
-    - Dans la section Paramètre 1, ajoutez :
-        - **Nom :** Autorisation
-        - **Valeur :** [Jeton fourni par Mobee]
+5. À l'intérieur de la fenêtre Principaux, ajoutez le jeton aux paramètres d'authentification :
+    - Dans la section Paramètre 1, remplacez la **Valeur** par le jeton fourni par Mobee :
+        - **Nom :** Authorization
+        - **Valeur :** Bearer [Jeton fourni par Mobee]
 
-          **Note :** Avant de sauvegarder, assurez-vous que le jeton a le préfixe "Bearer ". Sinon, ajoutez le préfixe avec un espace. 
-          
-            Par exemple : Si le jeton est `3259eae457d982a08f72d91e72d64903aa87fc164dcfcf244b4fb2840403c2af`, faites-le : `Bearer 3259eae457d982a08f72d91e72d64903aa87fc164dcfcf244b4fb2840403c2af`
+          **Remarque :** Avant de sauvegarder, assurez-vous que le jeton a le préfixe "Bearer ". Si ce n'est pas le cas, ajoutez le préfixe suivi d'un espace.
+
+            Par exemple : Si le jeton est `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c`, faites-le : `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c`
+
     - Cliquez sur "Enregistrer" pour sauvegarder les modifications.
 
-   ![Image d'exemple](./img/Principals-Add-Parameter.png)
+   ![Image d'exemple](./img/Principals-Window.png)
 
-6. Dans "Document Generation External Credentials", accédez à la section En-têtes personnalisés et cliquez sur "Nouveau" pour ajouter un nouvel en-tête personnalisé.
+6. Dans "Document Generation External Credentials", trouvez l'en-tête personnalisé avec le nom "Authorization", cliquez sur la flèche à droite et sélectionnez "Modifier".
 
    ![Image d'exemple](./img/Custom-Headers.png)
 
-7. À l'intérieur de la fenêtre des En-têtes personnalisés, ajoutez un nouvel en-tête personnalisé.
-    - Ajoutez :
-        - **Nom :** Autorisation
-        - **Valeur :** [Jeton fourni par Mobee]
+   ![Image d'exemple](./img/Custom-Headers-Edit-Button.png)
 
-          **Note :** Avant de sauvegarder, assurez-vous que le jeton a le préfixe "Bearer ". Sinon, ajoutez le préfixe avec un espace. 
-          
-            Par exemple : Si le jeton est `3259eae457d982a08f72d91e72d64903aa87fc164dcfcf244b4fb2840403c2af`, faites-le : `Bearer 3259eae457d982a08f72d91e72d64903aa87fc164dcfcf244b4fb2840403c2af`
+7. À l'intérieur de la fenêtre En-tête personnalisé, ajoutez le jeton à l'en-tête personnalisé :
+    - Remplacez la **Valeur** par le jeton fourni par Mobee :
+        - **Nom :** Authorization
+        - **Valeur :** Bearer [Jeton fourni par Mobee]
+
+          **Remarque :** Avant de sauvegarder, assurez-vous que le jeton a le préfixe "Bearer ". Si ce n'est pas le cas, ajoutez le préfixe suivi d'un espace.
+
+            Par exemple : Si le jeton est `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c`, faites-le : `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c`
+
     - Cliquez sur "Enregistrer" pour sauvegarder l'en-tête personnalisé.
-
-   ![Image d'exemple](./img/Custom-Headers-Add-Parameter.png)
+    
+   ![Image d'exemple](./img/Custom-Headers-Windows.png)
 
 8. Vous avez maintenant terminé la configuration des identifiants externes pour le générateur de documents Mobee.
 
-   Assurez-vous que lorsque le jeton fourni par Mobee est mis à jour, vous devez mettre à jour le jeton dans les Paramètres d'authentification et les En-têtes personnalisés.
-
-## Conclusion
-
-En suivant ces étapes, vous avez configuré avec succès des identifiants externes pour le générateur de documents Mobee avec une authentification personnalisée, des en-têtes personnalisés et une intégration avec Uprizon pour une authentification sécurisée. Les utilisateurs avec l'ensemble d'autorisations approprié peuvent maintenant accéder sans problème à l'API du générateur de documents Mobee.
+   Assurez-vous que lorsque le jeton fourni par Mobee est mis à jour, vous devez mettre à jour le jeton dans les paramètres d'authentification et les en-têtes personnalisés.

@@ -16,44 +16,45 @@ This document provides a step-by-step guide on how to set up external credential
 
    ![Sample Image](./img/External-Credentials.png)
 
-4. Inside the "Document Generation External Credentials," find the principal with the Parameter Name "user." Click on the arrow on the right and select "Edit."
-
    ![Sample Image](./img/External-Credentials-Page.png)
+
+4. Inside the "Document Generation External Credentials", find the principal with the Parameter Name "user", click on the arrow on the right and select "Edit".
 
    ![Sample Image](./img/Principals.png)
 
    ![Sample Image](./img/Principals-Edit-Button.png)
 
-5. Inside the Principals Window, Add Authentication Parameters:
-    - Click on the "Add" button next to Authentication Parameters.
-    - In the Parameter 1 section, add:
+5. Inside the Principals Window, Add The Token To The Authentication Parameters:
+    - In the Parameter 1 section, replace the **Value** by the token provided by Mobee:
         - **Name:** Authorization
-        - **Value:** [Token provided by Mobee]
+        - **Value:** Bearer [Token provided by Mobee]
 
           **Note:** Before saving, ensure that the token has the "Bearer " prefix. If not, add the prefix with a space.
 
-            For example: If the token is `3259eae457d982a08f72d91e72d64903aa87fc164dcfcf244b4fb2840403c2af`, make it: `Bearer 3259eae457d982a08f72d91e72d64903aa87fc164dcfcf244b4fb2840403c2af`
+            For example: If the token is `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c`, make it: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c`
 
     - Click on "Save" to save the changes.
 
-   ![Sample Image](./img/Principals-Add-Parameter.png)
+   ![Sample Image](./img/Principals-Window.png)
 
-6. In the "Document Generation External Credentials," navigate to the Custom Headers section and click on "New" to add a new custom header.
+6. In the "Document Generation External Credentials," find the custom header with the Name "Authorization", click on the arrow on the right and select "Edit".
 
    ![Sample Image](./img/Custom-Headers.png)
 
-7. Inside the Custom Header Window, add a new custom header.
-    - Add:
+   ![Sample Image](./img/Custom-Headers-Edit-Button.png)
+
+7. Inside the Custom Header Window, Add The Token To The Custom Header:
+    - Replace the **Value** by the token provided by Mobee:
         - **Name:** Authorization
-        - **Value:** [Token provided by Mobee]
+        - **Value:** Bearer [Token provided by Mobee]
 
           **Note:** Before saving, ensure that the token has the "Bearer " prefix. If not, add the prefix with a space. 
           
-            For example:If the token is `3259eae457d982a08f72d91e72d64903aa87fc164dcfcf244b4fb2840403c2af`, make it: `Bearer 3259eae457d982a08f72d91e72d64903aa87fc164dcfcf244b4fb2840403c2af`
+            For example:If the token is `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c`, make it: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c`
 
     - Click on "Save" to save the custom header.
     
-   ![Sample Image](./img/Custom-Headers-Add-Parameter.png)
+   ![Sample Image](./img/Custom-Headers-Windows.png)
 
 8. You are now done with the setup for Mobee Document Generator External Credentials.
 
