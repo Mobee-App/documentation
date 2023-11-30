@@ -24,8 +24,9 @@ This document provides a step-by-step guide on how to set up external credential
 
    ![Sample Image](./img/Principals-Edit-Button.png)
 
-5. Inside the Principals Window, Add The Token To The Authentication Parameters:
-    - In the Parameter 1 section, replace the **Value** by the token provided by Mobee:
+5. Inside the Principals Window, Add Authentication Parameters:
+    - Click on the "Add" button next to Authentication Parameters.
+    - In the Parameter 1 section, add:
         - **Name:** Authorization
         - **Value:** Bearer [Token provided by Mobee]
 
@@ -35,7 +36,7 @@ This document provides a step-by-step guide on how to set up external credential
 
     - Click on "Save" to save the changes.
 
-   ![Sample Image](./img/Principals-Window.png)
+   ![Sample Image](./img/Principals-Add-Parameter.png)
 
 6. In the "Document Generation External Credentials," find the custom header with the Name "Authorization", click on the arrow on the right and select "Edit".
 
