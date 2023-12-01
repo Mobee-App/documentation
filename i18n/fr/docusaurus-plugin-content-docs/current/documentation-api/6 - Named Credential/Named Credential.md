@@ -39,4 +39,4 @@ Ce document fournit un guide étape par étape sur la configuration des identifi
 
 6. Vous avez maintenant terminé la configuration des identifiants externes pour le générateur de documents Mobee.
 
-   Assurez-vous que lorsque le jeton fourni par Mobee est mis à jour, vous devez mettre à jour le jeton dans les paramètres d'authentification et les en-têtes personnalisés.
+Assurez-vous que lorsque le jeton fourni par Mobee est mis à jour, vous devez mettre à jour le jeton dans les en-têtes personnalisés.
