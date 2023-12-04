@@ -6,7 +6,7 @@ Ce document fournit un guide étape par étape sur la configuration des identifi
 
 1. Ouvrez l'interface de gestion des identifiants externes en naviguant vers **Configuration** > **Sécurité** > **Identifiants nommés**.
 
-   ![Image d'exemple](./img/Setup-Named-Credentials.png)
+   ![Image d'exemple](./img/Setup-Named-Credential.png)
 
 2. Cliquez sur l'onglet "Identifiants Externes".
 

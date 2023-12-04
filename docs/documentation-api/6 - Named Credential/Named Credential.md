@@ -6,7 +6,7 @@ This document provides a step-by-step guide on how to set up external credential
 
 1. Open the external credentials management interface by navigating to **Setup** > **Security** > **Named Credentials**.
 
-   ![Sample Image](./img/Setup-Named-Credentials.png)
+   ![Sample Image](./img/Setup-Named-Credential.png)
 
 2. Click on the "External Credentials" tab.
 
