@@ -26,7 +26,6 @@ The 'Dynamic Information Banner' Lightning Web Component (LWC) provides a custom
     <br />
   - Click on the notification and acknowledge it.
   <br />
-    ![Sample Image](./img/acknowledgement-window.png)
 - Customization Options:
   - **Speed**: Configure the speed of notification sliding in seconds.
   - **Background Color**: Customize the background color of the notification banner using hexadecimal format (e.g., '#FFFFFF').
