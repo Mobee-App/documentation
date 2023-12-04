@@ -12,13 +12,20 @@ The 'Dynamic Information Banner' Lightning Web Component (LWC) provides a custom
 ## Functionality
 - Creation of Notifications:
   - Users can create notifications with a name, description, start date, end date, and an 'active' status checkbox.
+  <br />
   ![Sample Image](./img/new-notification.png)
+  <br />
   - Start date, end date, description, and active status are not mandatory fields.
 
 - Integration in Record Page:
   - Insert the 'Dynamic Information Banner' component onto a record page to display created notifications sliding within the component.
+  <br />
 ![Sample Image](./img/notification-banner1.gif)
+<br />
+  - Click on the notification and acknowledge it.
+  <br /> 
 ![Sample Image](./img/acknowledgement-window.png)
+<br />
 - Customization Options:
   - **Speed**: Configure the speed of notification sliding in seconds.
   - **Background Color**: Customize the background color of the notification banner using hexadecimal format (e.g., '#FFFFFF').
