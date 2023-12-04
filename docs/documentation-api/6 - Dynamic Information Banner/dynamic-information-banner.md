@@ -48,9 +48,9 @@ The 'Dynamic Information Banner' Lightning Web Component (LWC) provides a custom
 
 ## Example Acknowledgment Format
 
-An example of the acknowledgment format: '{Mobee**Notification**c}{SystemModstamp}' or '{Mobee**Notification**c}--{SystemModstamp}'.
+An example of the acknowledgment format: '{Mobee\_\_Notification\_\_c}{SystemModstamp}' or '{Mobee\_\_Notification\_\_c}--{SystemModstamp}'.
 
-- Replace 'Mobee**Notification**c' and 'SystemModstamp' with appropriate field names from 'Notification Acknowledgement\_\_c'.
+- Replace 'Mobee\_\_Notification\_\_c' and 'SystemModstamp' with appropriate field names from 'Notification Acknowledgement\_\_c'.
 - Delimiters can be modified or omitted according to the desired format.
 
 ## Notes
