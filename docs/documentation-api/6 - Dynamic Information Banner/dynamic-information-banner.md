@@ -21,13 +21,13 @@ The 'Dynamic Information Banner' Lightning Web Component (LWC) provides a custom
 
 - Integration in Record Page:
   - Insert the 'Dynamic Information Banner' component onto a record page to display created notifications sliding within the component.
-    <br />
+<br />
     ![Sample Image](./img/notification-banner1.gif)
-    <br />
+<br />
   - Click on the notification and acknowledge it.
-  <br />
+<br />
     ![Sample Image](./img/acknowledgement-window.png)
-    <br />
+<br />
 - Customization Options:
   - **Speed**: Configure the speed of notification sliding in seconds.
   - **Background Color**: Customize the background color of the notification banner using hexadecimal format (e.g., '#FFFFFF').
