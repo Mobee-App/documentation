@@ -18,13 +18,13 @@ This document provides a step-by-step guide on how to set up external credential
 
    ![Sample Image](./img/External-Credentials-Page.png)
 
-4. In the "Document Generation External Credentials," find the custom header with the Name "Authorization", click on the arrow on the right and select "Edit".
+4. In the "Document Generation External Credentials," find the **Custom Headers** with the Name "Authorization", click on the arrow on the right and select "Edit".
 
    ![Sample Image](./img/Custom-Headers.png)
 
    ![Sample Image](./img/Custom-Headers-Edit-Button.png)
 
-5. Inside the Custom Header Window, Add The Token To The Custom Header:
+5. Inside the Custom Headers Window, Add The Token To The Custom Header:
     - Replace the **Value** by the token provided by Mobee:
         - **Name:** Authorization
         - **Value:** Bearer [Token provided by Mobee]
