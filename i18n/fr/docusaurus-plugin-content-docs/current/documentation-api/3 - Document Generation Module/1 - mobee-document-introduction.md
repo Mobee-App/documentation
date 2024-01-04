@@ -6,9 +6,9 @@ Le Module de Génération de Documents Mobee est une solution robuste et polyval
 
 L'objectif principal du Module de Génération de Documents Mobee est de faciliter la création de documents personnalisés basés sur des modèles prédéfinis. Ces documents peuvent aller de rapports individualisés à une génération en masse pour plusieurs enregistrements, offrant une flexibilité pour s'adapter à divers cas d'utilisation au sein de Salesforce.
 
-## Répondre aux Besoins Métier
+## Répondre aux besoins métier
 
-- **Efficacité et Productivité :** Le module améliore l'efficacité opérationnelle en fournissant des outils de génération de documents rapides et conviviaux, réduisant les efforts manuels.
+- **Efficacité et productivité :** Le module améliore l'efficacité opérationnelle en fournissant des outils de génération de documents rapides et conviviaux, réduisant les efforts manuels.
 
 - **Personnalisation :** Avec le support de divers modèles, filtres et espaces réservés dynamiques, Mobee permet aux utilisateurs d'ajuster les sorties de documents aux exigences commerciales spécifiques.
 

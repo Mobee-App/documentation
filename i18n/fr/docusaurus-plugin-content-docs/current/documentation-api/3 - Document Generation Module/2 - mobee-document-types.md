@@ -1,14 +1,14 @@
-# Types de Modèles et Syntaxe
+# Types de modèles et syntaxe
 
-## Types de Modèles
+## Types de modèles
 
 Mobee prend en charge deux types de modèles :
 
-### Modèle de Document Simple
+### Modèle de document simple
 
 Lorsque la case à cocher **Document regroupé** n'est pas cochée, le modèle est conçu pour une génération unitaire. Cela signifie que le modèle inclut des informations pour un seul enregistrement. Par exemple, si vous créez un modèle simple pour l'objet "Contact", il incorporera les informations d'un contact et ses données associées.
 
-### Modèle de Document regroupé
+### Modèle de document regroupé
 
 Lorsque la case à cocher **Document regroupé** est cochée, cela indique que le modèle sera généré pour plusieurs enregistrements simultanément. Ce modèle utilise une syntaxe spéciale pour parcourir une liste d'enregistrements. Pour accéder aux champs de chaque enregistrement dans un document regroupé, votre modèle doit commencer par boucler à travers la liste d'éléments en utilisant la balise suivante `{#items}{/}`. Consultez la section [boucles](#Boucles) pour plus de détails.
 
@@ -109,7 +109,7 @@ Comme mentionné précédemment, nous commençons à boucler à travers une list
 
 **Remarque :** Chaque champ de fusion utilisé dans la section de boucle fait référence aux champs de l'objet associé actuel. Si le champ n'est pas trouvé sur l'objet associé, le moteur le référencera à partir de l'objet parent.
 
-## Images Dynamiques
+## Images dynamiques
 
 Les images dynamiques peuvent être intégrées de manière transparente dans vos documents générés grâce à l'utilisation de placeholders dynamiques. Par exemple, si vous possédez un champ nommé `ProfilePicture__c` contenant l'URL d'une image ou l'image encodée en tant que chaîne Base64, elle peut être incorporée dans votre document sans effort en utilisant la balise désignée : `{%ProfilePicture__c}` (commençant par le symbole `%`).
 
@@ -146,7 +146,7 @@ Procédez aux étapes suivantes pour incorporer l'URL dans les URL de confiance 
 
 Vous avez maintenant configuré les paramètres du site distant et les URL de confiance pour récupérer en toute sécurité l'image via HTTP. Vous pouvez ensuite utiliser la balise `{%ProfilePicture__c}` pour inclure dynamiquement l'image dans vos documents générés.
 
-## Fonctionnalités Supplémentaires
+## Fonctionnalités supplémentaires
 
 Mobee fournit plusieurs balises et filtres pour aider les utilisateurs à personnaliser leurs documents.
 
@@ -177,7 +177,7 @@ Les balises et filtres suivants sont actuellement pris en charge :
 - `lower` : Utilisé pour convertir le texte en minuscules.
 - `upper` : Utilisé pour convertir le texte en majuscules.
 
-**Filtres de Date :**
+**Filtres de date :**
 
 - `shortDate` : Utilisé pour convertir la date dans un format abrégé plus court.
 - `followingMonth` : Utilisé pour retourner le mois suivant en fonction d'une date donnée.
