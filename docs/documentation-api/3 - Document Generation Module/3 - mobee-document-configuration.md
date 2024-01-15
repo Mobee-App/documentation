@@ -43,7 +43,7 @@ This section outlines a step-by-step guide on how to set up external credentials
         - **Name:** Authorization
         - **Value:** Bearer [Token provided by Mobee]
 
-          **Note:** Before saving, ensure that the token has the "Bearer " prefix. If not, add the prefix with a space. 
+          **Note:** Before saving, ensure that the token has the "Bearer " prefix. If not, add the prefix with a trailing space at the end. 
           
             For example: If the token is `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c`, make it: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c`
 
