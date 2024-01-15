@@ -8,7 +8,12 @@ Pour utiliser le module, les utilisateurs doivent remplir les prérequis suivant
 - Attribution soit de l'ensembles d'autorisations "Utilisateur Mobee" ou "Administrateur Mobee".
 - Activer les Identifiants externes utilisateur via les profils utilisateur.
 
-## Configuration des identifiants externes pour le générateur de documents Mobee
+## Autorisation d'accès
+
+
+La génération de documents de Mobee repose sur un service externe, soulignant ainsi le rôle essentiel de l'autorisation en matière de sécurité. En utilisant l'authentification par jeton, seules les entités authentifiées peuvent accéder au service, éliminant ainsi le risque d'utilisation non autorisée et assurant une protection robuste contre les violations de données.
+
+### Configuration des identifiants externes pour le générateur de documents Mobee
 
 Cette section décrit un guide étape par étape sur la configuration des identifiants externes pour le générateur de documents Mobee, notamment la création d'un protocole d'authentification personnalisé, l'ajout de paramètres, d'en-têtes personnalisés, et l'intégration avec Uprizon pour l'authentification.
 

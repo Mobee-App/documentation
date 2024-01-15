@@ -8,7 +8,9 @@ To utilize the module, users must meet the following prerequisites:
 - Assignment of either the "Mobee User" or "Mobee Administrator" permission set.
 - Enable User External Credentials Through User Profiles
 
-## Access Authorization for Document Generation
+## Access Authorization
+
+Mobee's document generation relies on an external service, making authorization vital for security. By employing Token authentication, only authenticated entities can access the service, eliminating the risk of unauthorized use and ensuring robust protection against data breaches.
 
 ### Mobee Document Generator External Credential Setup
 
