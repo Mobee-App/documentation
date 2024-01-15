@@ -8,6 +8,26 @@ To utilize the module, users must meet the following prerequisites:
 - Assignment of either the "Mobee User" or "Mobee Administrator" permission set.
 - Enable User External Credentials Through User Profiles
 
+## Retrieve and Reset Document Generation Token
+
+1. Open the Mobee Settings by navigating to the **App Launcher** and searching for **Mobee Settings**.
+
+2. Click on "Mobee Settings" in the "Items" section.
+
+![Sample Image](./img/Mobee-Settings-Tab.png)
+
+3. In Mobee Settings, navigate to the "Document Generation" tab.
+
+4. Within the "Document Generation" tab, you will find Your Organization Token if your Organization is subscribed to the Mobee Document Generation service. Utilize this token to authorize your access to the document generation. You can click on the button to the left of the 'Reset Button' to copy the token to your clipboard or select and copy it.
+
+![Sample Image](./img/Mobee-Token.png)
+
+If your Organization needs to reset the token, locate the "Reset Token" button on the right. Clicking this button will allow you to generate a new token for your Organization.
+
+![Sample Image](./img/Token-Reset.png)
+
+**Attention:** [Make sure to update the token in the Custom Headers when you reset it in the Mobee Settings](#access-authorization).
+
 ## Access Authorization
 
 Mobee's document generation relies on an external service, making authorization vital for security. By employing Token authentication, only authenticated entities can access the service, eliminating the risk of unauthorized use and ensuring robust protection against data breaches.
@@ -39,7 +59,7 @@ This section outlines a step-by-step guide on how to set up external credentials
 ![Sample Image](./img/Custom-Headers-Edit-Button.png)
 
 5. Inside the Custom Headers Window, Add The Token To The Custom Header:
-    - Replace the **Value** by the token provided by Mobee:
+    - Replace the **Value** by the [token](#retrieve-and-reset-document-generation-token) provided by Mobee:
         - **Name:** Authorization
         - **Value:** Bearer [Token provided by Mobee]
 
