@@ -6,7 +6,76 @@ Pour utiliser le module, les utilisateurs doivent remplir les prérequis suivant
 
 - Possession d'une licence Mobee.
 - Attribution soit de l'ensembles d'autorisations "Utilisateur Mobee" ou "Administrateur Mobee".
-- Activation de l'option "Utilisateur de flux" si nécessaire.
+- Activer les Identifiants externes utilisateur via les profils utilisateur.
+
+# Récupération et Réinitialisation du Jeton de Génération de Documents
+
+1. Ouvrez les Paramètres Mobee en naviguant vers le **Lanceur d'applications** et en recherchant **Paramètres de Mobee**.
+
+2. Cliquez sur "Paramètres de Mobee" dans la section "Éléments".
+
+![Image d'exemple](./img/Mobee-Settings-Tab.png)
+
+3. Dans les paramètres de Mobee, accédez à l'onglet "Génération de Documents".
+
+4. À l'intérieur de l'onglet "Génération de Documents", vous trouverez le Jeton de votre Organisation si votre Organisation est abonnée au service de Génération de Documents de Mobee. Utilisez ce jeton pour autoriser votre accès à la génération de documents. Vous pouvez cliquer sur le bouton à gauche du 'Bouton de Réinitialisation' pour copier le jeton dans votre presse-papiers ou le sélectionner et le copier.
+
+![Image d'exemple](./img/Mobee-Token.png)
+
+Si votre Organisation a besoin de réinitialiser le jeton, localisez le bouton "Réinitialiser le Jeton" sur la droite. En cliquant sur ce bouton, vous pourrez générer un nouveau jeton pour votre Organisation.
+
+![Image d'exemple](./img/Token-Reset.png)
+
+**Attention:** [Assurez-vous de mettre à jour le jeton dans les en-têtes personnalisés lorsque vous le réinitialisez dans les Paramètres de Mobee](#autorisation-daccès).
+
+
+## Autorisation d'accès
+
+La génération de documents de Mobee repose sur un service externe, soulignant ainsi le rôle essentiel de l'autorisation en matière de sécurité. En utilisant l'authentification par jeton, seules les entités authentifiées peuvent accéder au service, éliminant ainsi le risque d'utilisation non autorisée et assurant une protection robuste contre les violations de données.
+
+### Configuration des identifiants externes pour le générateur de documents Mobee
+
+Cette section décrit un guide étape par étape sur la configuration des identifiants externes pour le générateur de documents Mobee, notamment la création d'un protocole d'authentification personnalisé, l'ajout de paramètres, d'en-têtes personnalisés, et l'intégration avec Uprizon pour l'authentification.
+
+### Configuration des identifiants externes
+
+1. Ouvrez l'interface de gestion des identifiants externes en naviguant vers **Configuration** > **Sécurité** > **Identifiants nommés**.
+
+   ![Image d'exemple](./img/Setup-Named-Credential.png)
+
+2. Cliquez sur l'onglet "Identifiants Externes".
+
+   ![Image d'exemple](./img/Named-Credentials.png)
+
+3. Localisez l'identifiant externe portant le libellé "Document Generation External Credentials" et cliquez dessus.
+
+   ![Image d'exemple](./img/External-Credentials.png)
+
+   ![Image d'exemple](./img/External-Credentials-Page.png)
+
+4. Dans "Document Generation External Credentials", trouvez l'en-tête personnalisé avec le nom "Authorization", cliquez sur la flèche à droite et sélectionnez "Modifier".
+
+   ![Image d'exemple](./img/Custom-Headers.png)
+
+   ![Image d'exemple](./img/Custom-Headers-Edit-Button.png)
+
+5. À l'intérieur de la fenêtre En-tête personnalisé, ajoutez le [jeton](#récupération-et-réinitialisation-du-jeton-de-génération-de-documents) à l'en-tête personnalisé :
+    - Remplacez la **Valeur** par le jeton fourni par Mobee :
+        - **Nom :** Authorization
+        - **Valeur :** Bearer [Jeton fourni par Mobee]
+
+          **Remarque :** Avant de sauvegarder, assurez-vous que le jeton a le préfixe "Bearer ". Si ce n'est pas le cas, ajoutez le préfixe avec un espace à la fin.
+
+            Par exemple : Si le jeton est `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c`, faites-le : `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c`
+
+    - Cliquez sur "Enregistrer" pour sauvegarder l'en-tête personnalisé.
+    
+   ![Image d'exemple](./img/Custom-Headers-Windows.png)
+
+Vous avez maintenant terminé la configuration des identifiants externes pour le générateur de documents Mobee.
+
+**Attention:** Assurez-vous de mettre à jour le jeton dans les en-têtes personnalisés lorsque ce dernier est mis à jour dans la configuration Mobee.
+
 
 ## Création d'un modèle de Document
 

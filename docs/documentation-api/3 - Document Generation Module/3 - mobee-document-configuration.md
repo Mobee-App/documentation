@@ -6,7 +6,73 @@ To utilize the module, users must meet the following prerequisites:
 
 - Possession of a Mobee license.
 - Assignment of either the "Mobee User" or "Mobee Administrator" permission set.
-- Activation of the "Flow User" option if needed.
+- Enable User External Credentials Through User Profiles if needed.
+
+## Retrieve and Reset Document Generation Token
+
+1. Open the Mobee Settings by navigating to the **App Launcher** and searching for **Mobee Settings**.
+
+2. Click on "Mobee Settings" in the "Items" section.
+
+![Sample Image](./img/Mobee-Settings-Tab.png)
+
+3. In Mobee Settings, navigate to the "Document Generation" tab.
+
+4. Within the "Document Generation" tab, you will find Your Organization Token if your Organization is subscribed to the Mobee Document Generation service. Utilize this token to authorize your access to the document generation. You can click on the button to the left of the 'Reset Button' to copy the token to your clipboard or select and copy it.
+
+![Sample Image](./img/Mobee-Token.png)
+
+If you need to reset the token, locate the "Reset Token" button on the right. Clicking this button will allow you to generate a new token for your Organization.
+
+![Sample Image](./img/Token-Reset.png)
+
+**Note:** Make sure to update the token in the [Custom Headers](#access-authorization) when you reset it in the Mobee Settings.
+
+## Access Authorization
+
+Mobee's document generation relies on an external service, making authorization vital for security. By employing Token authentication, only authenticated entities can access the service, eliminating the risk of unauthorized use and ensuring robust protection against data breaches.
+
+### Mobee Document Generator External Credential Setup
+
+This section outlines a step-by-step guide on how to set up external credentials for Mobee Document Generator, including creating a custom authentication protocol, adding parameters, custom headers, and integrating with Uprizon for authentication.
+
+### Setup External Credentials
+
+1. Open the external credentials management interface by navigating to **Setup** > **Security** > **Named Credentials**.
+
+![Sample Image](./img/Setup-Named-Credential.png)
+
+2. Click on the "External Credentials" tab.
+
+![Sample Image](./img/Named-Credentials.png)
+
+3. Locate the external credential with the label "Document Generation External Credentials" and click on it.
+
+![Sample Image](./img/External-Credentials.png)
+
+![Sample Image](./img/External-Credentials-Page.png)
+
+4. In the "Document Generation External Credentials," find the **Custom Headers** with the Name "Authorization", click on the arrow on the right and select "Edit".
+
+![Sample Image](./img/Custom-Headers.png)
+
+![Sample Image](./img/Custom-Headers-Edit-Button.png)
+
+5. Inside the Custom Headers Window, Add The Token To The Custom Header:
+
+    Replace the **Value** by the [token](#retrieve-and-reset-document-generation-token) provided by in the Mobee Settings Page:
+     - **Name:** Authorization
+      - **Value:** Bearer [Token provided by Mobee]
+
+    **Note:** Before saving, ensure that the token has the "Bearer " prefix. If not, add the prefix with a trailing space at the end. 
+    
+    For example: If the token is `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c`, make it: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c`
+
+    Click on "Save" to save the custom header.
+    
+![Sample Image](./img/Custom-Headers-Windows.png)
+
+**Note:** Make sure to update the token in the [Custom Headers](#access-authorization) when you reset it in the Mobee Settings.
 
 ## Creating a Document Template
 
