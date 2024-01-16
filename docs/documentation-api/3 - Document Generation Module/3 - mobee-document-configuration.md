@@ -6,7 +6,7 @@ To utilize the module, users must meet the following prerequisites:
 
 - Possession of a Mobee license.
 - Assignment of either the "Mobee User" or "Mobee Administrator" permission set.
-- Enable User External Credentials Through User Profiles
+- Enable User External Credentials Through User Profiles if needed.
 
 ## Retrieve and Reset Document Generation Token
 
@@ -22,11 +22,11 @@ To utilize the module, users must meet the following prerequisites:
 
 ![Sample Image](./img/Mobee-Token.png)
 
-If your Organization needs to reset the token, locate the "Reset Token" button on the right. Clicking this button will allow you to generate a new token for your Organization.
+If you need to reset the token, locate the "Reset Token" button on the right. Clicking this button will allow you to generate a new token for your Organization.
 
 ![Sample Image](./img/Token-Reset.png)
 
-**Attention:** [Make sure to update the token in the Custom Headers when you reset it in the Mobee Settings](#access-authorization).
+**Note:** Make sure to update the token in the [Custom Headers](#access-authorization) when you reset it in the Mobee Settings.
 
 ## Access Authorization
 
@@ -59,21 +59,20 @@ This section outlines a step-by-step guide on how to set up external credentials
 ![Sample Image](./img/Custom-Headers-Edit-Button.png)
 
 5. Inside the Custom Headers Window, Add The Token To The Custom Header:
-    - Replace the **Value** by the [token](#retrieve-and-reset-document-generation-token) provided by Mobee:
-        - **Name:** Authorization
-        - **Value:** Bearer [Token provided by Mobee]
 
-          **Note:** Before saving, ensure that the token has the "Bearer " prefix. If not, add the prefix with a trailing space at the end. 
-          
-            For example: If the token is `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c`, make it: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c`
+    Replace the **Value** by the [token](#retrieve-and-reset-document-generation-token) provided by in the Mobee Settings Page:
+     - **Name:** Authorization
+      - **Value:** Bearer [Token provided by Mobee]
 
-    - Click on "Save" to save the custom header.
+    **Note:** Before saving, ensure that the token has the "Bearer " prefix. If not, add the prefix with a trailing space at the end. 
     
-   ![Sample Image](./img/Custom-Headers-Windows.png)
+    For example: If the token is `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c`, make it: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c`
 
-You are now done with the setup for Mobee Document Generator External Credentials.
+    Click on "Save" to save the custom header.
+    
+![Sample Image](./img/Custom-Headers-Windows.png)
 
-**Attention:** Make sure to update the token in the Custom Headers when you reset it in the Mobee Settings.
+**Note:** Make sure to update the token in the [Custom Headers](#access-authorization) when you reset it in the Mobee Settings.
 
 ## Creating a Document Template
 
