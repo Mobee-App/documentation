@@ -1,0 +1,23 @@
+# Documentación de la función de compresión de PDF
+
+## Descripción general
+
+Este documento proporciona información sobre la nueva función de compresión de PDF, que permite a los usuarios comprimir archivos PDF para reducir su tamaño con calidad controlada. El proceso de compresión utiliza Ghostscript (gs) y ofrece a los usuarios la flexibilidad de ajustar los Parámetros de Control de Calidad según sus preferencias.
+
+## Uso
+
+### Parámetros de Control de Calidad
+
+Los Parámetros de Control de Calidad son variables que los usuarios pueden ajustar para controlar el tamaño y la calidad del archivo PDF comprimido. Estos parámetros incluyen:
+
+- `ColorImageResolution`: Especifica la resolución (en puntos por pulgada, o dpi) para las imágenes en color en el archivo PDF. Valores más altos resultan en una mayor calidad de imagen pero tamaños de archivo más grandes. Valores más bajos reducen la calidad de la imagen pero conducen a tamaños de archivo más pequeños.
+
+- `GrayImageResolution`: Similar a `ColorImageResolution`, este parámetro especifica la resolución para imágenes en escala de grises en el archivo PDF.
+
+- `MonoImageResolution`: Especifica la resolución para imágenes monocromáticas (blanco y negro) en el archivo PDF.
+
+Si estos parámetros no se proporcionan, se establecerán valores predeterminados a 120 para cada variable.
+
+### Entrada
+
+Los usuarios tienen la opción de proporcionar un archivo PDF o la URL de un archivo PDF. Si se proporciona una URL, el sistema descargará el archivo y procederá con el proceso de compresión.
