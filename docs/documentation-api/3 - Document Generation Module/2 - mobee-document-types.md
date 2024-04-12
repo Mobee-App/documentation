@@ -227,3 +227,51 @@ The `followingMonth`, `followingYear`, `lastWorkingDayOfMonth`, and `formatDate`
   formatMatcher: 'basic' | 'best fit'
 ]]
 ```
+
+**Number Filters:**
+
+- `formatNumber`: enables language-sensitive number formatting.
+
+Usage example:
+
+```markdown
+Original Amount: {Amount}
+Original Number: {number}
+Original Speed: {speed}
+Original Volume: {volume}
+
+This is Euro (EUR) currency: {Amount | formatNumber: '[[ "style": "currency", "currency": "EUR"]]'}
+This is US Dollar (USD) currency: {Amount | formatNumber: '[[ "style": "currency", "currency": "USD"]]'}
+This is formatting the number to Limit to three significant digits: {number | formatNumber: '[[ "maximumSignificantDigits": 3]]'}
+This is formatting the number to Km/H unit: {speed | formatNumber: '[[ "style": "unit", "unit": "kilometer-per-hour"]]'}
+This is formatting the number to Liters unit: {volume | formatNumber: '[[ "style": "unit", "unit": "liter", "unitDisplay": "long"]]'}
+```
+
+**Output:**
+
+```markdown
+Orginal Amount: 123456.789
+Original Number: 130000
+Original Speed: 50
+Original Volume: 16
+
+This is Euro (EUR) currency: €123,456.79
+This is US Dollar (USD) currency: $123,456.79
+This is formatting the number to Limit to three significant digits: 130,000
+This is formatting the number to Km/H unit: 50 km/h
+This is formatting the number to Liters unit: 16 liters
+```
+
+The `formatNumber` functions accept the following formatting options: `style`, `currency`, `maximumSignificantDigits` and `unitDisplay` ...
+
+```json
+[[
+  style:'decimal' | 'currency' | 'percent' | 'unit',
+  currency: <'any well known currency code'>,// you can use currency code like 'USD', 'EUR', 'JPY', etc.
+  maximumSignificantDigits: <' Possible values are from 1 to 21'>,
+  unit: 'kilometer-per-hour' | 'liter' | 'speed-mile-per-hour' | 'digital-gigabyte' | 'digital-megabyte'......,
+  unitDisplay: 'short' | 'narrow' | 'long', // short(default): 16 l , long: 16 litres 
+]]
+```
+
+For more details about Number formatting options, visit this link: [MDN NumberFormat options](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#options).
