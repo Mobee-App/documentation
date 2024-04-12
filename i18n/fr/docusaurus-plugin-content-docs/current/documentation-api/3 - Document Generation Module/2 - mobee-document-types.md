@@ -227,3 +227,51 @@ Les fonctions `followingMonth`, `followingYear`, `lastWorkingDayOfMonth` et `for
   formatMatcher: 'basic' | 'best fit'
 ]]
 ```
+
+**Number Filters:**
+
+- `formatNumber` : permet le formatage des nombres sensible à la langue.
+
+Exemple d'utilisation :
+
+```markdown
+Montant d'origine : {Montant}
+Nombre d'origine : {nombre}
+Vitesse d'origine : {vitesse}
+Volume d'origine : {volume}
+
+C'est la devise Euro (EUR) : {Montant | formatNumber: '[[ "style": "currency", "currency": "EUR"]]'}
+C'est la devise Dollar américain (USD) : {Montant | formatNumber: '[[ "style": "currency", "currency": "USD"]]'}
+Cela formate le nombre pour limiter à trois chiffres significatifs : {nombre | formatNumber: '[[ "maximumSignificantDigits": 3]]'}
+Cela formate le nombre pour l'unité km/h : {vitesse | formatNumber: '[[ "style": "unit", "unit": "kilometer-per-hour"]]'}
+Cela formate le nombre pour l'unité litres : {volume | formatNumber: '[[ "style": "unit", "unit": "liter", "unitDisplay": "long"]]'}
+```
+
+**Output:**
+
+```markdown
+Montant d'origine : 123456.789
+Nombre d'origine : 130000
+Vitesse d'origine : 50
+Volume d'origine : 16
+
+C'est la devise Euro (EUR) : €123,456.79
+C'est la devise Dollar américain (USD) : $123,456.79
+Cela formate le nombre pour limiter à trois chiffres significatifs : 130,000
+Cela formate le nombre pour l'unité km/h : 50 km/h
+Cela formate le nombre pour l'unité litres : 16 litres
+```
+
+La fonction `formatNumber` acceptent les options de formatage suivantes : `style`, `currency`, `maximumSignificantDigits` et `unitDisplay`...
+
+```json
+[[
+  style:'decimal' | 'currency' | 'percent' | 'unit',
+  currency: <' code de devise '>,// vous pouvez utiliser des codes de devise comme 'USD', 'EUR', 'JPY', etc.
+  maximumSignificantDigits: <' Possible values are from 1 to 21'>,
+  unit: 'kilometer-per-hour' | 'liter' | 'speed-mile-per-hour' | 'digital-gigabyte' | 'digital-megabyte'......,
+  unitDisplay: 'short' | 'narrow' | 'long', // short(default): 16 l , long: 16 litres 
+]]
+```
+
+Pour plus de détails sur les options de formatage des nombres, visitez ce lien : [MDN NumberFormat options](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#options).
