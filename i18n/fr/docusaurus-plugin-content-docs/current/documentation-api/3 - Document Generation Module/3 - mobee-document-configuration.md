@@ -252,3 +252,86 @@ public class DocumentGeneration {
     }
 }
 ```
+## Compresseur PDF
+
+Mobee offre une fonctionnalité pour compresser les fichiers PDF afin de réduire leur taille. Elle utilise Ghostscript pour la compression. Les utilisateurs peuvent fournir soit le chemin d'accès local d'un fichier, soit une URL vers un fichier PDF, qui sera alors téléchargé et compressé.
+
+### Utilisation
+
+**Paramètres d'entrée**
+
+- **Chemin du fichier ou URL :** Le chemin d'accès au fichier PDF ou l'URL du PDF à compresser.
+- **Color Image Resolution:(par défaut : 120 DPI)** Ce paramètre contrôle la résolution des images couleur dans le PDF. Une valeur plus élevée donnera une meilleure qualité d'image mais une taille de fichier plus grande. Les images couleur contiennent généralement une gamme plus large de couleurs et de détails.
+- **Gray Image Resolution: (par défaut : 120 DPI)** Ce paramètre contrôle la résolution des images en niveaux de gris dans le PDF. Les images en niveaux de gris contiennent des nuances de gris mais aucune couleur. Ajuster ce paramètre peut impacter la clarté des images en niveaux de gris dans le PDF compressé.
+- **Mono Image Resolution:(par défaut : 120 DPI)** Ce paramètre contrôle la résolution des images monochromes (noir et blanc) dans le PDF. Les images monochromes n'ont que deux couleurs, généralement noir et blanc. Ajuster ce paramètre peut affecter la clarté du texte et des illustrations linéaires dans le PDF compressé.
+
+**Remarques**
+
+- Les valeurs par défaut sont définies pour les paramètres de résolution d'image à 120 points par pouce (DPI).
+- Des valeurs de résolution plus élevées donnent généralement une meilleure qualité d'image mais des tailles de fichier plus grandes.
+- Ajustez les paramètres de résolution en fonction de vos préférences en termes de qualité d'image et de taille de fichier.
+
+## Apex
+
+La compression de documents n'est pas toujours une fonctionnalité déclenchée par l'utilisateur ; parfois, il est nécessaire de compresser des documents à partir de déclencheurs, de tâches et d'autres processus automatisés. Pour faciliter cela, Mobee fournit une fonction Apex qui permet une compression de documents transparente adaptée à des besoins spécifiques.
+
+La fonction est accessible dans le package Mobee en invoquant la fonction `Mobee.DocumentTemplaterController.compressDocument`.
+
+Similaire au composant web Lightning, cette fonction Apex prend quatre paramètres en entrée :
+
+1. Une liste d'IDs d'enregistrements Salesforce pour lesquels des documents doivent être générés. (Il peut s'agir d'une liste contenant un seul ID) ou une URL
+2. Résolution de l'image couleur
+3. Résolution de l'image en niveaux de gris
+4. Résolution de l'image monochrome
+
+Voici un exemple d'utilisation de cette fonction Apex :
+
+**Contexte :** Dans cet exemple, le document à compresser est identifié par son **record ID** ou son **url**.
+
+```java
+public class DocumentCompression {
+    @Future(callout=true)
+    public static void compressDocument(Id contentDocumentId, Map<String, String> options) {
+        Blob fileContent = DocumentsApiClient.getFileContent(contentDocumentId);
+        if (fileContent == null) {
+            throw new DocumentGenerationException('Template is required');
+        }
+        String contentType = 'application/pdf';
+        String docCompressUrl = DOCUMENTS_API_URL + 'documents/compress';
+        try{
+            Blob result = DocumentsHttpUtils.sendMultiPartFormRequest(docCompressUrl, 'compressed_file.pdf', template, options, contentType);
+            // Do whatever you want with the Blob...
+        }catch (Exception e) {
+            throw new DocumentGenerationException('Error while compressing document. ' + e.getMessage());
+        }
+    }
+
+
+    @Future(callout=true)
+    public static void compressDocumentFromUrl(String url, String options) {
+        if (url == null || url.trim() == '') {
+        throw new DocumentGenerationException('URL is required');
+    }
+
+    String queryParamsString = '';
+    if (options != null && options.trim() != '' && options.trim() != '{}') {
+        queryParamsString = '?options=' + EncodingUtil.urlEncode(options, 'UTF-8');
+    }
+         
+        String payload = '{"pdfUrl":"' + url + '"';
+        if (options != null && options.trim() != '') {
+            payload += ',' + options.trim().substring(1, options.length() - 1);
+        }
+        payload += '}';
+        
+    String contentType = 'application/pdf';
+    String docCompressUrl = DOCUMENTS_API_URL + 'documents/compressURL';
+    try{
+    Blob result = DocumentsHttpUtils.sendMultiPartFormRequest(docCompressUrl, 'compressed_file.pdf', template,          options,contentType);
+            // Do whatever you want with the Blob...
+        }catch (Exception e) {
+            throw new DocumentGenerationException('Error while compressing document. ' + e.getMessage());
+        }
+    }
+}
+```
