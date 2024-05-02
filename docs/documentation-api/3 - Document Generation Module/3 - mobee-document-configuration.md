@@ -250,3 +250,88 @@ public class DocumentGeneration {
     }
 }
 ```
+
+## PDF Compressor
+
+Mobee provides functionality to compress PDF files to reduce their size. It utilizes Ghostscript for compression. Users can input either a local file path or a URL to a PDF file, which will be downloaded and compressed.
+
+### Usage
+
+**Input Parameters**
+
+- **File Path or URL**: The path to the PDF file or the URL of the PDF to be compressed.
+- **Color Image Resolution:(default: 120 DPI)** This parameter controls the resolution of color images in the PDF. A higher value will result in higher image quality but larger file size. Color images typically contain a wider range of colors and details.
+- **Gray Image Resolution:(default: 120 DPI)** This parameter controls the resolution of grayscale images in the PDF. Grayscale images contain shades of gray but no color. Adjusting this parameter can impact the clarity of grayscale images in the compressed PDF.
+- **Mono Image Resolution:(default: 120 DPI)** This parameter controls the resolution of monochrome (black and white) images in the PDF. Monochrome images have only two colors, typically black and white. Adjusting this parameter can affect the clarity of text and line art in the compressed PDF.
+
+**Notes:**
+
+- default values are set for image resolution parameters to 120 Dots Per Inch.
+- Higher resolution values generally result in better image quality but larger file sizes.
+- Adjust the resolution parameters according to your preferences for image quality and file size.
+
+### Apex Client
+
+Document compression is not always a user-triggered functionality; at times, there's a need to compress documents from triggers, jobs, and other automated processes. To facilitate this, Mobee provides an Apex function that enables seamless document compression tailored to specific requirements.
+
+The function is accessible within the Mobee package by invoking the `Mobee.DocumentTemplaterController.compressDocument`function.
+
+Similar to the Lightning Web Component, this Apex function takes four parameters as input:
+
+1. A list of Salesforce record IDs for which documents need to be generated. (It can be a list containing a single ID) or an url 
+2. Color Image Resolution
+3. Gray Image Resolution
+4. Mono Image Resolution
+
+Here's an example of utilizing this Apex function:
+
+**Context:** In this examples, the document to be compressed is identified by its Salesforce **record ID** or **url**.
+
+```java
+public class DocumentCompression {
+    @Future(callout=true)
+    public static void compressDocument(Id contentDocumentId, Map<String, String> options) {
+        Blob fileContent = DocumentsApiClient.getFileContent(contentDocumentId);
+        if (fileContent == null) {
+            throw new DocumentGenerationException('Template is required');
+        }
+        String contentType = 'application/pdf';
+        String docCompressUrl = DOCUMENTS_API_URL + 'documents/compress';
+        try{
+            Blob result = DocumentsHttpUtils.sendMultiPartFormRequest(docCompressUrl, 'compressed_file.pdf', template, options, contentType);
+            // Do whatever you want with the Blob...
+        }catch (Exception e) {
+            throw new DocumentGenerationException('Error while compressing document. ' + e.getMessage());
+        }
+    }
+
+
+    @Future(callout=true)
+    public static void compressDocumentFromUrl(String url, String options) {
+        if (url == null || url.trim() == '') {
+        throw new DocumentGenerationException('URL is required');
+    }
+
+    String queryParamsString = '';
+    if (options != null && options.trim() != '' && options.trim() != '{}') {
+        queryParamsString = '?options=' + EncodingUtil.urlEncode(options, 'UTF-8');
+    }
+         
+        String payload = '{"pdfUrl":"' + url + '"';
+        if (options != null && options.trim() != '') {
+            payload += ',' + options.trim().substring(1, options.length() - 1);
+        }
+        payload += '}';
+        
+    String contentType = 'application/pdf';
+    String docCompressUrl = DOCUMENTS_API_URL + 'documents/compressURL';
+    try{
+    Blob result = DocumentsHttpUtils.sendMultiPartFormRequest(docCompressUrl, 'compressed_file.pdf', template,          options,contentType);
+            // Do whatever you want with the Blob...
+        }catch (Exception e) {
+            throw new DocumentGenerationException('Error while compressing document. ' + e.getMessage());
+        }
+    }
+}
+
+```
