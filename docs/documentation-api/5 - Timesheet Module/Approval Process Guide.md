@@ -92,7 +92,7 @@ After completing the creation of the approval process, you will be able to manag
 
 1. Add Existing
 2. Add: 
-    a. *Field Update: Update Status to Submitted*
+    a. *Field Update: Update Status to Rejected*
     b. *Email Alert: Send Email Notification To Assignee On Rejection* (This is an email alert sent to the timesheet submitter if their timesheet is rejected by the approver. If not needed, this email alert should not be added)
 
 ![Final Approval Add Action](images/approvalProcessImages/approvalProcessManagement/finalRejectionAddAction.png "Final Approval Add Action")
