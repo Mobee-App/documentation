@@ -16,11 +16,11 @@ Step 1: Access the "Opportunities" module
 
 Step 2: Click on the "New Project" toolbar button to create a project from the opportunity.
 
-![alt_text](images/newProject.png "image_tooltip")
+![alt_text](images/timesheetInitialSetup/newProject.png "image_tooltip")
 
 The system will launch a dialog box with variables initialized from the opportunity as follows: (complete the required fields according to your needs)
 
-![alt_text](images/newProject.png "image_tooltip")
+![alt_text](images/timesheetInitialSetup/newProject.png "image_tooltip")
 
 The "New Project" form is presented to the user with many fields pre-filled from the opportunity. This facilitates data entry and reduces errors.
 
@@ -33,7 +33,7 @@ Step 1: Access the project page
 1. Access the list of projects by clicking on the "Projects" tab in the top navigation bar.
 2. Select the project to which you want to add a new "Assignment."
 
-![alt_text](images/project.png "image_tooltip")
+![alt_text](images/timesheetInitialSetup/project.png "image_tooltip")
 
 Step 2: Add a New "Assignment"
 * On the relevant project page,
@@ -43,7 +43,7 @@ Step 2: Add a New "Assignment"
 
 The "New Assignment" form is presented to the user, with many fields pre-filled from the project. This facilitates data entry and reduces errors.
 
-![alt_text](images/newAssignment.png "image_tooltip")
+![alt_text](images/timesheetInitialSetup/newAssignment.png "image_tooltip")
 
 ## Viewing Time Entries of Salesforce Community Users
 
@@ -61,7 +61,7 @@ Step 1: Access "Contacts"
 Step 2: Access the "Time Entries."
 
 * The Time Entries are displayed in the tab:
-![alt_text](images/contactTimeEntries.png "image_tooltip")
+![alt_text](images/timesheetInitialSetup/contactTimeEntries.png "image_tooltip")
 
 ## Viewing Time Entries of Standard Salesforce Users
 
@@ -71,4 +71,4 @@ Step 2: Access the "Time Entries."
 * Choose "User," and the system will direct you to the relevant user.
 * The timesheet will be displayed at the top of the page as follows:
 
-![alt_text](images/userTimeEntries.png "image_tooltip")
+![alt_text](images/timesheetInitialSetup/userTimeEntries.png "image_tooltip")
