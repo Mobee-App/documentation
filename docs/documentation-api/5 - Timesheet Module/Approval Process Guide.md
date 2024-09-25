@@ -130,21 +130,23 @@ In Setup > Users, set the *Mobee Approve All TimeSheets* permission set on the a
 
 ---
 
-### 4. Approval Process Usage
+## Approval Process Usage
 
-#### 4.1. Submitter
+#### 1. Submitter
 User submits his time sheet for approval
 *This action is recallable (1)*
 *Submission comment (2)*
 *Time entries submitted indicator (3)*
 ![Submitted Time Sheet](images/approvalProcessImages/approvalProcessBehavior/submittedTimeSheet.png "Submitted Time Sheet")
 
-#### 4.2. Approver
+#### 2. Approver
 Assigned approver can approve/reject on Submitter's Contact
 *The assigned approver reviews the timesheet (submitted time entries) and has the option to either approve or reject the submission.*
 ![Submitted Time Sheet](images/approvalProcessImages/approvalProcessBehavior/submittedTimeSheet2.png "Submitted Time Sheet")
 
-### 5. Approval Process Behavior and Considerations
+---
+
+## Approval Process Behavior and Considerations
 
 - Partial Approval is possible
 

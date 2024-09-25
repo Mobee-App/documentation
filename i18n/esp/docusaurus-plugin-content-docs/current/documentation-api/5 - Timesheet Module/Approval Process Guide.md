@@ -130,21 +130,23 @@ En Configuración > Usuarios, establece el conjunto de permisos *Mobee Approve A
 
 ---
 
-### 4. Uso del Proceso de Aprobación
+## Uso del Proceso de Aprobación
 
-#### 4.1. Presentador
+#### 1. Presentador
 El usuario envía su hoja de tiempo para aprobación  
 *Esta acción es retirable (1)*  
 *Comentario de presentación (2)*  
 *Indicador de entradas de tiempo enviadas (3)*  
 ![Hoja de tiempo enviada](images/APImg/approvalProcessBehavior/submittedTimeSheet.png "Hoja de tiempo enviada")
 
-#### 4.2. Aprobador
+#### 2. Aprobador
 El aprobador asignado puede aprobar/rechazar en el contacto del presentador  
 *El aprobador asignado revisa la hoja de tiempo (entradas de tiempo enviadas) y tiene la opción de aprobar o rechazar la presentación.*  
 ![Hoja de tiempo enviada](images/APImg/approvalProcessBehavior/submittedTimeSheet2.png "Hoja de tiempo enviada")
 
-### 5. Comportamiento y Consideraciones del Proceso de Aprobación
+---
+
+## Comportamiento y Consideraciones del Proceso de Aprobación
 
 - La aprobación parcial es posible
 
