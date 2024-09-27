@@ -264,6 +264,9 @@ This is formatting the number to Liters unit: 16 liters
 
 The `formatNumber` functions accept the following formatting options: `style`, `currency`, `maximumSignificantDigits` and `unitDisplay` ...
 
+For more details about Number formatting options, visit this link: [MDN NumberFormat options](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#options).
+
+
 ```json
 [[
   style:'decimal' | 'currency' | 'percent' | 'unit',
@@ -273,5 +276,3 @@ The `formatNumber` functions accept the following formatting options: `style`, `
   unitDisplay: 'short' | 'narrow' | 'long', // short(default): 16 l , long: 16 litres 
 ]]
 ```
-
-For more details about Number formatting options, visit this link: [MDN NumberFormat options](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#options).
