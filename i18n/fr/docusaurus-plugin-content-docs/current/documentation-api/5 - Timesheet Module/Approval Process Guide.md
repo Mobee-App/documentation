@@ -1,22 +1,22 @@
-# Processus d'Approbation des Feuilles de Temps
+# Processus d'approbation des feuilles de temps
 
 ## Introduction
 
-Vous pouvez ajouter un processus d'approbation pour que votre manager, ou un approbateur désigné, examine et approuve ou rejette vos entrées de temps soumises.
+Vous pouvez ajouter un processus d'approbation pour que votre manager, ou un approbateur désigné, examine et approuve ou rejette vos saisies de temps soumises.
 
 ![Aperçu de la Soumission du Processus d'Approbation](images/APImg/approvalProcessCreation/approvalProcessPreview.png "Aperçu de la Soumission du Processus d'Approbation")
-<sup>*Aperçu de la Soumission du Processus d'Approbation*</sup>
+<sup>*Aperçu de la soumission du processus d'approbation*</sup>
 
 ---
 
-## Activation du Processus d'Approbation
+## Activation du processus d'approbation
 
-### 1. Créer le Processus d'Approbation
+### 1. Créer le processus d'approbation
 
 - Allez à la page de configuration
-- Accédez aux Processus d'Approbation
-- Gérer les Processus d'Approbation Pour : Période de Temps (Time Period)
-- Créer un Nouveau Processus d'Approbation : Utiliser l'Assistant de Configuration Standard
+- Accédez aux processus d'approbation
+- Gérer les processus d'approbation pour : Période de temps (Time Period)
+- Créer un nouveau processus d'approbation : Utiliser l'assistant de configuration standard
 
 ![Introduction à la Création du Processus d'Approbation](images/APImg/approvalProcessCreation/approvalProcessCreationIntro.png "Introduction à la Création du Processus d'Approbation")
 
