@@ -4,7 +4,7 @@
 
 Vous pouvez ajouter un processus d'approbation pour que votre manager, ou un approbateur désigné, examine et approuve ou rejette vos saisies de temps soumises.
 
-![Aperçu de la Soumission du Processus d'Approbation](images/APImg/approvalProcessCreation/approvalProcessPreview.png "Aperçu de la Soumission du Processus d'Approbation")
+![Aperçu de la soumission du processus d'approbation](images/APImg/approvalProcessCreation/approvalProcessPreview.png "Aperçu de la soumission du processus d'approbation")  
 <sup>*Aperçu de la soumission du processus d'approbation*</sup>
 
 ---
@@ -13,159 +13,165 @@ Vous pouvez ajouter un processus d'approbation pour que votre manager, ou un app
 
 ### 1. Créer le processus d'approbation
 
-- Allez à la page de configuration
+La section suivante est un guide étape par étape pour créer un processus d'approbation standard, où certaines actions sont obligatoires et d'autres facultatives. **(Les étapes obligatoires sont mises en gras)**
+
+- Allez sur la page de configuration
 - Accédez aux processus d'approbation
-- Gérer les processus d'approbation pour : Période de temps (Time Period)
-- Créer un nouveau processus d'approbation : Utiliser l'assistant de configuration standard
+- Gérez les processus d'approbation pour : Période de Temps
+- Créez un nouveau processus d'approbation : utilisez l'assistant de configuration standard
 
-![Introduction à la Création du Processus d'Approbation](images/APImg/approvalProcessCreation/approvalProcessCreationIntro.png "Introduction à la Création du Processus d'Approbation")
+![Introduction à la création du processus d'approbation](images/APImg/approvalProcessCreation/approvalProcessCreationIntro.png "Introduction à la création du processus d'approbation")
 
-#### Étape 1 : Entrer le Nom et la Description
+#### Étape 1 : Entrez le nom et la description
 
-![Étape 1 de la Création du Processus d'Approbation](images/APImg/approvalProcessCreation/approvalProcessCreationStep1.png "Étape 1 de la Création du Processus d'Approbation")
+![Étape 1 de la création du processus d'approbation](images/APImg/approvalProcessCreation/approvalProcessCreationStep1.png "Étape 1 de la création du processus d'approbation")
 
-#### Étape 2 : Spécifier les Critères d'Entrée
+#### Étape 2 : Spécifiez les critères d'entrée
 
-**Aucune Action à Faire**
-![Étape 2 de la Création du Processus d'Approbation](images/APImg/approvalProcessCreation/approvalProcessCreationStep2.png "Étape 2 de la Création du Processus d'Approbation")
+*Aucune action à faire*  
+![Étape 2 de la création du processus d'approbation](images/APImg/approvalProcessCreation/approvalProcessCreationStep2.png "Étape 2 de la création du processus d'approbation")
 
-#### Étape 3 : Spécifier le Champ d'Approbateur et les Propriétés d'Éditabilité des Enregistrements
+#### Étape 3 : Spécifiez le champ d'approbateur et les propriétés d'édition des enregistrements
 
-1. **Spécifier le Champ d'Approbateur (Pour le Routage d'Approbation Automatisé)**  
+1. Spécifiez le champ d'approbateur (pour le routage automatique des approbations)  
    Sélectionnez : *Manager*
 
-2. **Éditabilité des Enregistrements**  
-   Sélectionnez : *Les Administrateurs OU l'approbateur actuellement assigné peuvent éditer les enregistrements pendant le processus d'approbation (Administrators OR the currently assigned approver can edit records during the approval process)*  
+2. Édition des enregistrements  
+   Sélectionnez : *Les administrateurs ou l'approbateur actuellement assigné peuvent modifier les enregistrements pendant le processus d'approbation.*  
 
-![Étape 3 de la Création du Processus d'Approbation](images/APImg/approvalProcessCreation/approvalProcessCreationStep3.png "Étape 3 de la Création du Processus d'Approbation")
+![Étape 3 de la création du processus d'approbation](images/APImg/approvalProcessCreation/approvalProcessCreationStep3.png "Étape 3 de la création du processus d'approbation")
 
-#### Étape 4 : Sélectionner les Modèles de Notification
+#### Étape 4 : Sélectionnez les modèles de notification
 
-**Aucune Action à Faire**
-![Étape 4 de la Création du Processus d'Approbation](images/APImg/approvalProcessCreation/approvalProcessCreationStep4.png "Étape 4 de la Création du Processus d'Approbation")
+*Aucune action à faire*  
+![Étape 4 de la création du processus d'approbation](images/APImg/approvalProcessCreation/approvalProcessCreationStep4.png "Étape 4 de la création du processus d'approbation")
 
-#### Étape 5 : Sélectionner les Champs à Afficher sur la Mise en Page de la Page d'Approbation
+#### Étape 5 : Sélectionnez les champs à afficher sur la mise en page d'approbation
 
-**Aucune Action à Faire**
-![Étape 5 de la Création du Processus d'Approbation](images/APImg/approvalProcessCreation/approvalProcessCreationStep5.png "Étape 5 de la Création du Processus d'Approbation")
+*Aucune action à faire*  
+![Étape 5 de la création du processus d'approbation](images/APImg/approvalProcessCreation/approvalProcessCreationStep5.png "Étape 5 de la création du processus d'approbation")
 
-#### Étape 6 : Spécifier les Soumissionnaires Initiaux
+#### Étape 6 : Spécifiez les soumetteurs initiaux
 
-1. **Soumissionnaires Initiaux**  
-   Sélectionnez : *Propriétaire de la Période de Temps, Créateur de l'Enregistrement (Time Period Owner, Record Creator)*
+1. Soumetteurs initiaux  
+   *Sélectionnez : Propriétaire de la période de temps, créateur de l'enregistrement*
 
-2. **Paramètres de Soumission**  
-   Sélectionnez : *Autoriser les soumissionnaires à rappeler les demandes d'approbation (Allow submitters to recall approval requests)*  
+2. **Paramètres de soumission**  
+   ***Sélectionnez : Autoriser les soumetteurs à rappeler les demandes d'approbation***  
 
-![Étape 6 de la Création du Processus d'Approbation](images/APImg/approvalProcessCreation/approvalProcessCreationStep6.png "Étape 6 de la Création du Processus d'Approbation")
-
----
-
-### 2. Gérer le Processus d'Approbation
-
-Après avoir complété la création du processus d'approbation, vous pourrez gérer les actions (Soumission Initiale, Approbation Finale, Rejet Final, et Rappel).
-
-![Aperçu des Actions et des Étapes d'Approbation](images/APImg/approvalProcessManagement/actionsAndApprovalStepsPreview.png "Aperçu des Actions et des Étapes d'Approbation")
-<sup>*Aperçu des Actions et des Étapes d'Approbation*</sup>
-
-#### 2.1. Actions de Soumission Initiale (Initial Submission Actions)
-
-1. Ajouter Existant (Add Existing)
-2. Ajouter : *Mise à Jour de Champ : Update Status to Submitted*
-
-![Action d'Ajout de Soumission Initiale](images/APImg/approvalProcessManagement/initialSubmissionAddAction.png "Action d'Ajout de Soumission Initiale")
-
-![Action d'Ajout de Soumission Initiale 2](images/APImg/approvalProcessManagement/initialSubmissionAddAction2.png "Action d'Ajout de Soumission Initiale")
-
-#### 2.2. Actions d'Approbation Finale (Final Approval Actions)
-
-1. Éditer le Verrou d'Enregistrement et Sélectionner : *Déverrouiller l'enregistrement pour édition (Unlock record for editing)*
-2. Ajouter Existant (Add Existing) et Ajouter : *Mise à Jour de Champ : Update Status to Approved*
-
-![Action d'Édition et d'Ajout d'Approbation Finale](images/APImg/approvalProcessManagement/finalApprovalAddAction.png "Action d'Édition et d'Ajout d'Approbation Finale")
-
-![Édition du Verrou d'Enregistrement d'Approbation Finale](images/APImg/approvalProcessManagement/finalApprovalAddAction1.png "Édition du Verrou d'Enregistrement d'Approbation Finale")
-
-![Action d'Ajout d'Approbation Finale](images/APImg/approvalProcessManagement/finalApprovalAddAction2.png "Action d'Ajout d'Approbation Finale")
-
-#### 2.3. Actions de Rejet Final (Final Rejection Actions)
-
-1. Ajouter Existant (Add Existing)
-2. Ajouter : 
-    a. *Mise à Jour de Champ : Update Status to Rejected*
-    b. *Alerte par Email : Send Email Notification To Assignee On Rejection* (Ceci est une alerte par email envoyée au soumissionnaire de la feuille de temps si sa feuille de temps est rejetée par l'approbateur. Si ce n'est pas nécessaire, cette alerte par email ne doit pas être ajoutée)
-
-![Action d'Ajout d'Approbation Finale](images/APImg/approvalProcessManagement/finalRejectionAddAction.png "Action d'Ajout d'Approbation Finale")
-
-![Action d'Ajout d'Approbation Finale 2](images/APImg/approvalProcessManagement/finalRejectionAddAction2.png "Action d'Ajout d'Approbation Finale")
-
-#### 2.4. Actions de Rappel (Recall Actions)
-
-1. Ajouter Existant (Add Existing)
-2. Ajouter : *Mise à Jour de Champ : Update Status to Draft*
-
-![Action d'Ajout de Rappel](images/APImg/approvalProcessManagement/recallAddAction.png "Action d'Ajout de Rappel")
-
-![Action d'Ajout de Rappel 2](images/APImg/approvalProcessManagement/recallAddAction1.png "Action d'Ajout de Rappel")
+![Étape 6 de la création du processus d'approbation](images/APImg/approvalProcessCreation/approvalProcessCreationStep6.png "Étape 6 de la création du processus d'approbation")
 
 ---
 
-### 3. Choisir l'Approbateur
+### 2. Gérer le processus d'approbation
 
-#### 3.1. Assigner l'Approbateur sur le Processus d'Approbation
+Après avoir terminé la création du processus d'approbation, vous pourrez gérer les actions (soumission initiale, approbation finale, rejet final et rappel).
 
-L'approbateur peut être le manager du soumissionnaire ou un utilisateur spécifique responsable de tous les soumissionnaires, comme le Responsable des Ressources Humaines, garantissant que toutes les feuilles de temps sont dirigées vers une personne pour approbation. Cela est également contrôlé au niveau du Processus d'Approbation après sa création.
+Ces actions doivent être incluses pour que le processus d'approbation fonctionne comme prévu.
 
-![Étapes d'Approbation](images/APImg/approvalProcessManagement/approvalStepsEdit.png "Étapes d'Approbation")
+![Aperçu des actions et des étapes d'approbation](images/APImg/approvalProcessManagement/actionsAndApprovalStepsPreview.png "Aperçu des actions et des étapes d'approbation")  
+<sup>*Aperçu des actions et des étapes d'approbation*</sup>
 
-![Changer l'Approbateur d'Étape d'Approbation](images/APImg/approvalProcessManagement/approvalStepsEditStep3.png "Changer l'Approbateur d'Étape d'Approbation")
+#### 2.1. Actions de soumission initiale
 
-#### 3.2. Attribution de Jeu de Permissions (Permission Set)
+1. Ajouter existant  
+2. Ajouter : *Mise à jour de champ : mettre à jour le statut à soumis*
 
-Dans Configuration > Utilisateurs, attribuez le jeu de permissions *Mobee Approve All TimeSheets* à l'utilisateur approbateur.
+![Ajout d'action de soumission initiale](images/APImg/approvalProcessManagement/initialSubmissionAddAction.png "Ajout d'action de soumission initiale")
 
-![Modifier le Jeu de Permissions sur l'Utilisateur](images/APImg/approvalProcessManagement/editPermissionSetOnUser.png "Modifier le Jeu de Permissions sur l'Utilisateur")
+![Ajout d'action de soumission initiale 2](images/APImg/approvalProcessManagement/initialSubmissionAddAction2.png "Ajout d'action de soumission initiale 2")
 
-![Modifier le Jeu de Permissions sur l'Utilisateur](images/APImg/approvalProcessManagement/editPermissionSetOnUser2.png "Modifier le Jeu de Permissions sur l'Utilisateur")
+#### 2.2. Actions d'approbation finale
+
+1. Modifier le verrouillage de l'enregistrement et sélectionner : *Déverrouiller l'enregistrement pour modification*  
+2. Ajouter existant et ajouter : *Mise à jour de champ : mettre à jour le statut à approuvé*
+
+![Modification et ajout d'action d'approbation finale](images/APImg/approvalProcessManagement/finalApprovalAddAction.png "Modification et ajout d'action d'approbation finale")
+
+![Modification du verrouillage de l'enregistrement d'approbation finale](images/APImg/approvalProcessManagement/finalApprovalAddAction1.png "Modification du verrouillage de l'enregistrement d'approbation finale")
+
+![Ajout d'action d'approbation finale](images/APImg/approvalProcessManagement/finalApprovalAddAction2.png "Ajout d'action d'approbation finale")
+
+#### 2.3. Actions de rejet final
+
+1. Ajouter existant  
+2. Ajouter :  
+   a. *Mise à jour de champ : mettre à jour le statut à rejeté*  
+   b. *Alerte e-mail : envoyer une notification par e-mail à l'assigné lors du rejet* (c'est une alerte e-mail envoyée au soumetteur de la feuille de temps si sa feuille de temps est rejetée par l'approbateur. si elle n'est pas nécessaire, cette alerte e-mail ne doit pas être ajoutée)
+
+![Ajout d'action de rejet final](images/APImg/approvalProcessManagement/finalRejectionAddAction.png "Ajout d'action de rejet final")
+
+![Ajout d'action de rejet final 2](images/APImg/approvalProcessManagement/finalRejectionAddAction2.png "Ajout d'action de rejet final 2")
+
+#### 2.4. Actions de rappel
+
+1. Ajouter existant  
+2. Ajouter : *Mise à jour de champ : mettre à jour le statut à brouillon*
+
+![Ajout d'action de rappel](images/APImg/approvalProcessManagement/recallAddAction.png "Ajout d'action de rappel")
+
+![Ajout d'action de rappel 2](images/APImg/approvalProcessManagement/recallAddAction1.png "Ajout d'action de rappel 2")
 
 ---
 
-## Utilisation du Processus d'Approbation
+### 3. Choisir l'approbateur
 
-#### 1. Soumissionnaire
-L'utilisateur soumet sa feuille de temps pour approbation
-*Cette action est rappelable (1)*
-*Commentaire de soumission (2)*
-*Indicateur d'entrées de temps soumises (3)*
-![Feuille de Temps Soumise](images/APImg/approvalProcessBehavior/submittedTimeSheet.png "Feuille de Temps Soumise")
+#### 3.1. Assigner l'approbateur sur le processus d'approbation
+
+L'approbateur peut être le manager du soumetteur ou un utilisateur spécifique responsable de tous les soumetteurs, tel que le responsable des ressources humaines, garantissant que toutes les feuilles de temps sont dirigées vers un individu pour approbation. Cela est également contrôlé au niveau du processus d'approbation après sa création.
+
+![Étapes d'approbation](images/APImg/approvalProcessManagement/approvalStepsEdit.png "Étapes d'approbation")
+
+![Changement d'approbateur dans les étapes d'approbation](images/APImg/approvalProcessManagement/approvalStepsEditStep3.png "Changement d'approbateur dans les étapes d'approbation")
+
+#### 3.2. Affectation du jeu de permissions
+
+Dans configuration > utilisateurs, affectez le jeu de permissions *Mobee approuver toutes les feuilles de temps* à l'utilisateur approbateur.
+
+![Modification du jeu de permissions sur l'utilisateur](images/APImg/approvalProcessManagement/editPermissionSetOnUser.png "Modification du jeu de permissions sur l'utilisateur")
+
+![Modification du jeu de permissions sur l'utilisateur 2](images/APImg/approvalProcessManagement/editPermissionSetOnUser2.png "Modification du jeu de permissions sur l'utilisateur")
+
+---
+
+## Utilisation du processus d'approbation
+
+#### 1. Soumetteur
+
+L'utilisateur soumet sa feuille de temps pour approbation  
+*Cette action est rappelable (1)*  
+*Commentaire de soumission (2)*  
+*Indicateur de saisies de temps soumises (3)*
+
+![Feuille de temps soumise](images/APImg/approvalProcessBehavior/submittedTimeSheet.png "Feuille de temps soumise")
 
 #### 2. Approbateur
-L'approbateur assigné peut approuver/rejeter sur le Contact du Soumissionnaire
-*L'approbateur assigné examine la feuille de temps (entrées de temps soumises) et a la possibilité d'approuver ou de rejeter la soumission.*
-![Feuille de Temps Soumise](images/APImg/approvalProcessBehavior/submittedTimeSheet2.png "Feuille de Temps Soumise")
+
+L'approbateur assigné peut approuver/rejeter sur le contact du soumetteur  
+*l'approbateur assigné examine la feuille de temps (saisies de temps soumises) et a l'option d'approuver ou de rejeter la soumission.*
+
+![Feuille de temps soumise](images/APImg/approvalProcessBehavior/submittedTimeSheet2.png "Feuille de temps soumise")
 
 ---
 
-## Comportement et Considérations du Processus d'Approbation
+## Comportement et considérations du processus d'approbation
 
-- Une Approbation Partielle est possible
+- L'approbation partielle est possible
 
-Exemple A :
-*L'utilisateur soumet une demande de jours de congé, qui est approuvée. Plus tard, il soumet sa charge de travail assignée pour les jours restants.*
-![Exemple de Processus d'Approbation Partielle](images/APImg/approvalProcessBehavior/partialApprovalExample1.png "Exemple de Processus d'Approbation Partielle")
-![Exemple de Processus d'Approbation Partielle](images/APImg/approvalProcessBehavior/partialApprovalExample2.png "Exemple de Processus d'Approbation Partielle")
+Exemple A :  
+*l'utilisateur soumet une demande de congés, qui est approuvée. plus tard, il soumet sa charge de travail assignée pour les jours restants*
 
-Exemple B : 
-*L'utilisateur soumet les derniers jours du mois pour approbation. Le mois suivant, pour la même mission, il soumet les jours de semaine restants pour approbation.*
-![Exemple de Processus d'Approbation Partielle](images/APImg/approvalProcessBehavior/partialApprovalExample3.png "Exemple de Processus d'Approbation Partielle")
-![Exemple de Processus d'Approbation Partielle](images/APImg/approvalProcessBehavior/partialApprovalExample4.png "Exemple de Processus d'Approbation Partielle")
+![Exemple de processus d'approbation partielle](images/APImg/approvalProcessBehavior/partialApprovalExample1.png "Exemple de processus d'approbation partielle")  
+![Exemple de processus d'approbation partielle](images/APImg/approvalProcessBehavior/partialApprovalExample2.png "Exemple de processus d'approbation partielle")
 
-- Lorsqu'une feuille de temps est approuvée, une notification est envoyée au soumissionnaire
+Exemple B :  
+*l'utilisateur soumet les derniers jours du mois pour approbation. le mois suivant, pour la même mission, il soumet les jours de semaine restants pour approbation*
 
-- Lorsqu'une feuille de temps est rejetée, une notification et un email sont envoyés au soumissionnaire (l'email est envoyé s'il a été ajouté selon 2.3. Actions de Rejet Final)
+![Exemple de processus d'approbation partielle](images/APImg/approvalProcessBehavior/partialApprovalExample3.png "Exemple de processus d'approbation partielle")  
+![Exemple de processus d'approbation partielle](images/APImg/approvalProcessBehavior/partialApprovalExample4.png "Exemple de processus d'approbation partielle")
 
-- Lorsque des entrées de temps en attente sur une feuille de temps sont rejetées, l'ensemble de la feuille de temps devient éditable
-
-- En survolant les icônes suivantes ![Icône Soumise](images/APImg/approvalProcessBehavior/submittedIcon.png "Icône Soumise"), ![Icône Approuvée](images/APImg/approvalProcessBehavior/approvedIcon.png "Icône Approuvée") et ![Icône Rejetée](images/APImg/approvalProcessBehavior/rejectedIcon.png "Icône Rejetée") s'affichent des commentaires du soumissionnaire ou de l'approbateur liés à la soumission, à l'approbation ou au rejet, respectivement
-
-- Les icônes suivantes ![Icône Soumise Cellule](images/APImg/approvalProcessBehavior/submittedIconCell.png "Icône Soumise Cellule") et ![Icône Approuvée Cellule](images/APImg/approvalProcessBehavior/approvedIconCell.png "Icône Approuvée Cellule") servent d'indicateurs montrant le statut de l'entrée de temps
+- Lorsqu'une feuille de temps est approuvée, une notification est envoyée au soumetteur  
+- Lorsqu'une feuille de temps est rejetée, une notification et un e-mail sont envoyés au soumetteur (l'e-mail est envoyé si ajouté selon les actions de rejet final en 2.3.)  
+- Lorsque des saisies de temps en attente sur une feuille de temps sont rejetées, la feuille de temps entière devient modifiable  
+- En survolant les icônes suivantes ![Icône soumise](images/APImg/approvalProcessBehavior/submittedIcon.png "Icône soumise"), ![Icône approuvée](images/APImg/approvalProcessBehavior/approvedIcon.png "Icône approuvée") et ![Icône rejetée](images/APImg/approvalProcessBehavior/rejectedIcon.png "Icône rejetée"), des commentaires du soumetteur ou de l'approbateur liés à la soumission, à l'approbation ou au rejet sont affichés  
+- Les icônes suivantes ![Icône cellule soumise](images/APImg/approvalProcessBehavior/submittedIconCell.png "Icône cellule soumise") et ![Icône cellule approuvée](images/APImg/approvalProcessBehavior/approvedIconCell.png "Icône cellule approuvée") servent d'indicateurs montrant le statut de l'saisie de temps
