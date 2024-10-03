@@ -1,171 +1,181 @@
-# Proceso de Aprobación de Hojas de Tiempo
+# Proceso de aprobación de la hoja de tiempo
 
 ## Introducción
 
-Puedes agregar un proceso de aprobación para que tu gerente, o un aprobador designado, revise y apruebe o rechace las entradas de tiempo que hayas enviado.
+Puedes agregar un proceso de aprobación para que tu gerente o un aprobador designado revise y apruebe o rechace el registro de tiempo enviado.
 
-![Vista previa de envío del proceso de aprobación](images/APImg/approvalProcessCreation/approvalProcessPreview.png "Vista previa de envío del proceso de aprobación")  
-<sup>*Vista previa de envío del proceso de aprobación*</sup>
+![Vista previa del envío del proceso de aprobación](images/APImg/approvalProcessCreation/approvalProcessPreview.png "Vista previa del envío del proceso de aprobación")  
+<sup>*Vista previa del envío del proceso de aprobación*</sup>
 
 ---
 
-## Activación del Proceso de Aprobación
+## Activación del proceso de aprobación
 
-### 1. Crear el Proceso de Aprobación
+### 1. Crear el proceso de aprobación
 
-- Ir a la página de configuración
-- Acceder a los Procesos de Aprobación
-- Gestionar Procesos de Aprobación Para: Período de Tiempo
-- Crear un Nuevo Proceso de Aprobación: Usar el Asistente de Configuración Estándar
+La siguiente sección es una guía paso a paso para crear un proceso de aprobación estándar, donde algunas acciones son obligatorias y otras son opcionales. **(Los pasos obligatorios están resaltados en negrita)**
+
+- Ve a la página de configuración
+- Accede a los procesos de aprobación
+- Gestiona los procesos de aprobación para: período de tiempo
+- Crea un nuevo proceso de aprobación: utiliza el asistente de configuración estándar
 
 ![Introducción a la creación del proceso de aprobación](images/APImg/approvalProcessCreation/approvalProcessCreationIntro.png "Introducción a la creación del proceso de aprobación")
 
-#### Paso 1: Introducir Nombre y Descripción
+#### Paso 1: Introducir nombre y descripción
 
-![Paso 1 de creación del proceso de aprobación](images/APImg/approvalProcessCreation/approvalProcessCreationStep1.png "Paso 1 de creación del proceso de aprobación")
+![Paso 1 de la creación del proceso de aprobación](images/APImg/approvalProcessCreation/approvalProcessCreationStep1.png "Paso 1 de la creación del proceso de aprobación")
 
-#### Paso 2: Especificar Criterios de Entrada
+#### Paso 2: Especificar criterios de entrada
 
-**No hay acción que realizar**  
-![Paso 2 de creación del proceso de aprobación](images/APImg/approvalProcessCreation/approvalProcessCreationStep2.png "Paso 2 de creación del proceso de aprobación")
+*No hay acción a realizar*  
+![Paso 2 de la creación del proceso de aprobación](images/APImg/approvalProcessCreation/approvalProcessCreationStep2.png "Paso 2 de la creación del proceso de aprobación")
 
-#### Paso 3: Especificar Campo del Aprobador y Propiedades de Editabilidad del Registro
+#### Paso 3: Especificar campo de aprobador y propiedades de editabilidad del registro
 
-1. **Especificar Campo del Aprobador (Para Enrutamiento de Aprobación Automatizado)**  
-   Seleccionar: *Gerente (Manager)*
+1. Especificar campo de aprobador (para la asignación automática de aprobaciones)  
+   Selecciona: *Gerente (Manager)*
 
-2. **Editabilidad del Registro**  
-   Seleccionar: *Los administradores O el aprobador actualmente asignado pueden editar registros durante el proceso de aprobación (Administrators OR the currently assigned approver can edit records during the approval process)*  
+2. Editabilidad del registro  
+   Selecciona: *Los administradores o el aprobador asignado pueden editar los registros durante el proceso de aprobación.*
 
-![Paso 3 de creación del proceso de aprobación](images/APImg/approvalProcessCreation/approvalProcessCreationStep3.png "Paso 3 de creación del proceso de aprobación")
+![Paso 3 de la creación del proceso de aprobación](images/APImg/approvalProcessCreation/approvalProcessCreationStep3.png "Paso 3 de la creación del proceso de aprobación")
 
-#### Paso 4: Seleccionar Plantillas de Notificación
+#### Paso 4: Seleccionar plantillas de notificación
 
-**No hay acción que realizar**  
-![Paso 4 de creación del proceso de aprobación](images/APImg/approvalProcessCreation/approvalProcessCreationStep4.png "Paso 4 de creación del proceso de aprobación")
+*No hay acción a realizar*  
+![Paso 4 de la creación del proceso de aprobación](images/APImg/approvalProcessCreation/approvalProcessCreationStep4.png "Paso 4 de la creación del proceso de aprobación")
 
-#### Paso 5: Seleccionar Campos a Mostrar en el Diseño de la Página de Aprobación
+#### Paso 5: Seleccionar campos para mostrar en el diseño de la página de aprobación
 
-**No hay acción que realizar**  
-![Paso 5 de creación del proceso de aprobación](images/APImg/approvalProcessCreation/approvalProcessCreationStep5.png "Paso 5 de creación del proceso de aprobación")
+*No hay acción a realizar*  
+![Paso 5 de la creación del proceso de aprobación](images/APImg/approvalProcessCreation/approvalProcessCreationStep5.png "Paso 5 de la creación del proceso de aprobación")
 
-#### Paso 6: Especificar Presentadores Iniciales
+#### Paso 6: Especificar remitentes iniciales
 
-1. **Presentadores Iniciales**  
-   Seleccionar: *Propietario del Período de Tiempo, Creador del Registro (Time Period Owner, Record Creator)*
+1. Remitentes iniciales  
+   *Selecciona: propietario del período de tiempo, creador del registro*
 
-2. **Configuraciones de Presentación**  
-   Seleccionar: *Permitir que los presentadores retiren solicitudes de aprobación (Allow submitters to recall approval requests)*  
+2. **Configuraciones de envío**  
+   **Selecciona: Permitir que los remitentes retiren solicitudes de aprobación**
 
-![Paso 6 de creación del proceso de aprobación](images/APImg/approvalProcessCreation/approvalProcessCreationStep6.png "Paso 6 de creación del proceso de aprobación")
+![Paso 6 de la creación del proceso de aprobación](images/APImg/approvalProcessCreation/approvalProcessCreationStep6.png "Paso 6 de la creación del proceso de aprobación")
 
 ---
 
-### 2. Gestionar el Proceso de Aprobación
+### 2. Gestionar el proceso de aprobación
 
-Después de completar la creación del proceso de aprobación, podrás gestionar acciones (Presentación Inicial, Aprobación Final, Rechazo Final y Retiro).
+Después de completar la creación del proceso de aprobación, podrás gestionar las acciones (envío inicial, aprobación final, rechazo final y retiro).
+
+Estas acciones deben incluirse para que el proceso de aprobación funcione como se espera.
 
 ![Vista previa de acciones y pasos de aprobación](images/APImg/approvalProcessManagement/actionsAndApprovalStepsPreview.png "Vista previa de acciones y pasos de aprobación")  
 <sup>*Vista previa de acciones y pasos de aprobación*</sup>
 
-#### 2.1. Acciones de Presentación Inicial (Initial Submission Actions)
+#### 2.1. Acciones de envío inicial
 
-1. Agregar Existente (Add Existing)
-2. Agregar: *Actualización de Campo: Update Status to Submitted*
+1. Agregar existentes  
+2. Agregar: *Actualización de campo: actualizar estado a enviado*
 
-![Agregar acción de presentación inicial](images/APImg/approvalProcessManagement/initialSubmissionAddAction.png "Agregar acción de presentación inicial")
+![Agregar acción de envío inicial](images/APImg/approvalProcessManagement/initialSubmissionAddAction.png "Agregar acción de envío inicial")
 
-![Agregar acción de presentación inicial 2](images/APImg/approvalProcessManagement/initialSubmissionAddAction2.png "Agregar acción de presentación inicial")
+![Agregar acción de envío inicial 2](images/APImg/approvalProcessManagement/initialSubmissionAddAction2.png "Agregar acción de envío inicial 2")
 
-#### 2.2. Acciones de Aprobación Final (Final Approval Actions)
+#### 2.2. Acciones de aprobación final
 
-1. Editar Bloqueo de Registro y Seleccionar: *Desbloquear registro para edición (Unlock record for editing)*
-2. Agregar Existente (Add Existing) y Agregar: *Actualización de Campo: Update Status to Approved*
+1. Editar bloqueo de registro y seleccionar: *Desbloquear registro para edición*  
+2. Agregar existentes y agregar: *Actualización de campo: actualizar estado a aprobado*
 
 ![Editar y agregar acción de aprobación final](images/APImg/approvalProcessManagement/finalApprovalAddAction.png "Editar y agregar acción de aprobación final")
 
-![Bloqueo de registro de edición de aprobación final](images/APImg/approvalProcessManagement/finalApprovalAddAction1.png "Bloqueo de registro de edición de aprobación final")
+![Editar bloqueo de registro de aprobación final](images/APImg/approvalProcessManagement/finalApprovalAddAction1.png "Editar bloqueo de registro de aprobación final")
 
 ![Agregar acción de aprobación final](images/APImg/approvalProcessManagement/finalApprovalAddAction2.png "Agregar acción de aprobación final")
 
-#### 2.3. Acciones de Rechazo Final (Final Rejection Actions)
+#### 2.3. Acciones de rechazo final
 
-1. Agregar Existente (Add Existing)
-2. Agregar: 
-    a. *Actualización de Campo: Update Status to Rejected*
-    b. *Alerta de Correo Electrónico: Send Email Notification To Assignee On Rejection* (Esta es una alerta de correo electrónico enviada al presentador de la hoja de tiempo si su hoja de tiempo es rechazada por el aprobador. Si no se necesita, esta alerta de correo electrónico no debe agregarse)
+1. Agregar existentes  
+2. Agregar:  
+   a. *Actualización de campo: actualizar estado a rechazado*  
+   b. *Alerta de correo electrónico: enviar notificación por correo al asignado en caso de rechazo* (esta es una alerta por correo enviada al remitente de la hoja de tiempo si su hoja es rechazada por el aprobador. si no es necesario, esta alerta no debe añadirse)
 
 ![Agregar acción de rechazo final](images/APImg/approvalProcessManagement/finalRejectionAddAction.png "Agregar acción de rechazo final")
 
-![Agregar acción de rechazo final 2](images/APImg/approvalProcessManagement/finalRejectionAddAction2.png "Agregar acción de rechazo final")
+![Agregar acción de rechazo final 2](images/APImg/approvalProcessManagement/finalRejectionAddAction2.png "Agregar acción de rechazo final 2")
 
-#### 2.4. Acciones de Retiro (Recall Actions)
+#### 2.4. Acciones de retiro
 
-1. Agregar Existente (Add Existing)
-2. Agregar: *Actualización de Campo: Update Status to Draft*
+1. Agregar existentes  
+2. Agregar: *Actualización de campo: actualizar estado a borrador*
 
 ![Agregar acción de retiro](images/APImg/approvalProcessManagement/recallAddAction.png "Agregar acción de retiro")
 
-![Agregar acción de retiro 2](images/APImg/approvalProcessManagement/recallAddAction1.png "Agregar acción de retiro")
+![Agregar acción de retiro 2](images/APImg/approvalProcessManagement/recallAddAction1.png "Agregar acción de retiro 2")
 
 ---
 
-### 3. Elegir al Aprobador
+### 3. Elegir el aprobador
 
-#### 3.1. Asignar al Aprobador en el Proceso de Aprobación
+#### 3.1. Asignar el aprobador en el proceso de aprobación
 
-El aprobador puede ser el gerente del presentador o un usuario específico responsable de todos los presentadores, como el Gerente de Recursos Humanos, asegurando que todas las hojas de tiempo sean dirigidas a una persona para su aprobación. Esto también se controla a nivel del Proceso de Aprobación después de su creación.
+El aprobador puede ser el gerente del remitente o un usuario específico responsable de todos los remitentes, como el gerente de recursos humanos, asegurando que todas las hojas de tiempo se dirijan a una sola persona para su aprobación. Esto también se controla a nivel del proceso de aprobación tras su creación.
 
 ![Pasos de aprobación](images/APImg/approvalProcessManagement/approvalStepsEdit.png "Pasos de aprobación")
 
-![Cambio de aprobador de pasos de aprobación](images/APImg/approvalProcessManagement/approvalStepsEditStep3.png "Cambio de aprobador de pasos de aprobación")
+![Cambiar aprobador en paso de aprobación](images/APImg/approvalProcessManagement/approvalStepsEditStep3.png "Cambiar aprobador en paso de aprobación")
 
-#### 3.2. Asignación del Conjunto de Permisos (Permission Set)
+#### 3.2. Asignación de conjuntos de permisos
 
-En Configuración > Usuarios, establece el conjunto de permisos *Mobee Approve All TimeSheets* en el usuario aprobador.
+En configuración > usuarios, asigna el conjunto de permisos *Mobee approve all timesheets* en el usuario aprobador.
 
-![Editar conjunto de permisos en el usuario](images/APImg/approvalProcessManagement/editPermissionSetOnUser.png "Editar conjunto de permisos en el usuario")
+![Editar conjunto de permisos en usuario](images/APImg/approvalProcessManagement/editPermissionSetOnUser.png "Editar conjunto de permisos en usuario")
 
-![Editar conjunto de permisos en el usuario 2](images/APImg/approvalProcessManagement/editPermissionSetOnUser2.png "Editar conjunto de permisos en el usuario")
+![Editar conjunto de permisos en usuario](images/APImg/approvalProcessManagement/editPermissionSetOnUser2.png "Editar conjunto de permisos en usuario")
 
 ---
 
-## Uso del Proceso de Aprobación
+## Uso del proceso de aprobación
 
-#### 1. Presentador
+#### 1. Remitente
+
 El usuario envía su hoja de tiempo para aprobación  
-*Esta acción es retirable (1)*  
-*Comentario de presentación (2)*  
-*Indicador de entradas de tiempo enviadas (3)*  
+*Esta acción es recuperable (1)*  
+*Comentario de envío (2)*  
+*Indicador de registro de tiempo enviado (3)*
+
 ![Hoja de tiempo enviada](images/APImg/approvalProcessBehavior/submittedTimeSheet.png "Hoja de tiempo enviada")
 
 #### 2. Aprobador
-El aprobador asignado puede aprobar/rechazar en el contacto del presentador  
-*El aprobador asignado revisa la hoja de tiempo (entradas de tiempo enviadas) y tiene la opción de aprobar o rechazar la presentación.*  
+
+El aprobador asignado puede aprobar/rechazar en el contacto del remitente  
+*el aprobador asignado revisa la hoja de tiempo (registro de tiempo enviado) y tiene la opción de aprobar o rechazar la solicitud.*
+
 ![Hoja de tiempo enviada](images/APImg/approvalProcessBehavior/submittedTimeSheet2.png "Hoja de tiempo enviada")
 
 ---
 
-## Comportamiento y Consideraciones del Proceso de Aprobación
+## Comportamiento y consideraciones del proceso de aprobación
 
-- La aprobación parcial es posible
+- Aprobación parcial es posible
 
 Ejemplo A:  
-*El usuario envía una solicitud de días libres, que es aprobada. Luego, envía su carga de trabajo asignada para los días restantes*  
+*el usuario envía una solicitud de días libres, que es aprobada. luego, envían su carga de trabajo asignada para los días restantes*
+
 ![Ejemplo de proceso de aprobación parcial](images/APImg/approvalProcessBehavior/partialApprovalExample1.png "Ejemplo de proceso de aprobación parcial")  
 ![Ejemplo de proceso de aprobación parcial](images/APImg/approvalProcessBehavior/partialApprovalExample2.png "Ejemplo de proceso de aprobación parcial")
 
 Ejemplo B:  
-*El usuario envía los últimos días del mes para aprobación. En el mes siguiente, para la misma asignación, envía los días de semana restantes para aprobación*  
+*el usuario envía los últimos días del mes para su aprobación. en el mes siguiente, para la misma tarea, envían los días laborables restantes para aprobación*
+
 ![Ejemplo de proceso de aprobación parcial](images/APImg/approvalProcessBehavior/partialApprovalExample3.png "Ejemplo de proceso de aprobación parcial")  
 ![Ejemplo de proceso de aprobación parcial](images/APImg/approvalProcessBehavior/partialApprovalExample4.png "Ejemplo de proceso de aprobación parcial")
 
-- Cuando se aprueba una hoja de tiempo, se envía una notificación al remitente
+- Cuando se aprueba una hoja de tiempo, se envía una notificación al remitente.
 
-- Cuando se rechaza una hoja de tiempo, se envían tanto una notificación como un correo electrónico al remitente (el correo electrónico se envía si se agrega según la sección 2.3. Acciones de Rechazo Final)
+- Cuando se rechaza una hoja de tiempo, se envían tanto una notificación como un correo electrónico al remitente (el correo se envía si se agregó según 2.3. acciones de rechazo final).
 
-- Cuando se rechazan las entradas de tiempo pendientes en una hoja de tiempo, toda la hoja de tiempo se vuelve editable
+- Cuando se rechazan registros de tiempo pendientes en una hoja de tiempo, toda la hoja de tiempo se vuelve editable.
 
-- Al pasar el cursor sobre los siguientes íconos ![Ícono de Enviado](images/APImg/approvalProcessBehavior/submittedIcon.png "Ícono de Enviado"), ![Ícono de Aprobado](images/APImg/approvalProcessBehavior/approvedIcon.png "Ícono de Aprobado") y ![Ícono de Rechazado](images/APImg/approvalProcessBehavior/rejectedIcon.png "Ícono de Rechazado") se muestran comentarios del remitente o del aprobador relacionados con la presentación, aprobación o rechazo, respectivamente
+- Al pasar el cursor sobre los siguientes íconos ![Ícono Enviado](images/APImg/approvalProcessBehavior/submittedIcon.png "Ícono Enviado"), ![Ícono Aprobado](images/APImg/approvalProcessBehavior/approvedIcon.png "Ícono Aprobado") y ![Ícono Rechazado](images/APImg/approvalProcessBehavior/rejectedIcon.png "Ícono Rechazado") se muestran comentarios del remitente o del aprobador relacionados con la presentación, aprobación o rechazo, respectivamente.
 
-- Los siguientes íconos ![Ícono de Enviado Celda](images/APImg/approvalProcessBehavior/submittedIconCell.png "Ícono de Enviado Celda") y ![Ícono de Aprobado Celda](images/APImg/approvalProcessBehavior/approvedIconCell.png "Ícono de Aprobado Celda") sirven como indicadores que muestran el estado de la entrada de tiempo
+Los siguientes íconos ![Ícono Enviado Celda](images/APImg/approvalProcessBehavior/submittedIconCell.png "Ícono Enviado Celda") y ![Ícono Aprobado Celda](images/APImg/approvalProcessBehavior/approvedIconCell.png "Ícono Aprobado Celda") sirven como indicadores que muestran el estado del registro de tiempo.
