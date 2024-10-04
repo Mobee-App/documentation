@@ -35,6 +35,7 @@ La section suivante est un guide étape par étape pour créer un processus d'ap
 
 1. Spécifiez le champ d'approbateur (pour le routage automatique des approbations)  
    Sélectionnez : *Manager*
+   Cette étape est importante uniquement si vous souhaitez désigner le responsable comme approbateur (après avoir terminé la création du processus d'approbation)
 
 2. Édition des enregistrements  
    Sélectionnez : *Les administrateurs ou l'approbateur actuellement assigné peuvent modifier les enregistrements pendant le processus d'approbation.*  
@@ -75,7 +76,7 @@ Ces actions doivent être incluses pour que le processus d'approbation fonctionn
 #### 2.1. Actions de soumission initiale
 
 1. Ajouter existant  
-2. Ajouter : *Mise à jour de champ : mettre à jour le statut à soumis*
+2. Ajouter : *Mise à jour de champ : mettre à jour le statut à soumis (Update Status to Submitted)*
 
 ![Ajout d'action de soumission initiale](images/APImg/approvalProcessManagement/initialSubmissionAddAction.png "Ajout d'action de soumission initiale")
 
@@ -84,7 +85,7 @@ Ces actions doivent être incluses pour que le processus d'approbation fonctionn
 #### 2.2. Actions d'approbation finale
 
 1. Modifier le verrouillage de l'enregistrement et sélectionner : *Déverrouiller l'enregistrement pour modification*  
-2. Ajouter existant et ajouter : *Mise à jour de champ : mettre à jour le statut à approuvé*
+2. Ajouter existant et ajouter : *Mise à jour de champ : mettre à jour le statut à approuvé (Update Status to Approved)*
 
 ![Modification et ajout d'action d'approbation finale](images/APImg/approvalProcessManagement/finalApprovalAddAction.png "Modification et ajout d'action d'approbation finale")
 
@@ -96,8 +97,8 @@ Ces actions doivent être incluses pour que le processus d'approbation fonctionn
 
 1. Ajouter existant  
 2. Ajouter :  
-   a. *Mise à jour de champ : mettre à jour le statut à rejeté*  
-   b. *Alerte e-mail : envoyer une notification par e-mail à l'assigné lors du rejet* (c'est une alerte e-mail envoyée au soumetteur de la feuille de temps si sa feuille de temps est rejetée par l'approbateur. si elle n'est pas nécessaire, cette alerte e-mail ne doit pas être ajoutée)
+   a. *Mise à jour de champ : mettre à jour le statut à rejeté (Update Status to Rejected)*  
+   b. *Alerte e-mail : envoyer une notification par e-mail à l'assigné lors du rejet (Send Email Notification to Assignee on Rejection)* (c'est une alerte e-mail envoyée au soumetteur de la feuille de temps si sa feuille de temps est rejetée par l'approbateur. si elle n'est pas nécessaire, cette alerte e-mail ne doit pas être ajoutée)
 
 ![Ajout d'action de rejet final](images/APImg/approvalProcessManagement/finalRejectionAddAction.png "Ajout d'action de rejet final")
 
@@ -106,7 +107,7 @@ Ces actions doivent être incluses pour que le processus d'approbation fonctionn
 #### 2.4. Actions de rappel
 
 1. Ajouter existant  
-2. Ajouter : *Mise à jour de champ : mettre à jour le statut à brouillon*
+2. Ajouter : *Mise à jour de champ : mettre à jour le statut à brouillon (Field Update: Update Status to Draft)*
 
 ![Ajout d'action de rappel](images/APImg/approvalProcessManagement/recallAddAction.png "Ajout d'action de rappel")
 
@@ -124,13 +125,13 @@ L'approbateur peut être le manager du soumetteur ou un utilisateur spécifique 
 
 ![Changement d'approbateur dans les étapes d'approbation](images/APImg/approvalProcessManagement/approvalStepsEditStep3.png "Changement d'approbateur dans les étapes d'approbation")
 
-#### 3.2. Affectation du jeu de permissions
+#### 3.2. Affectation des ensembles d'autorisations
 
-Dans configuration > utilisateurs, affectez le jeu de permissions *Mobee approuver toutes les feuilles de temps* à l'utilisateur approbateur.
+Dans configuration > utilisateurs, affectez l'ensemble d'autorisations *Mobee Approve All Timesheets* à l'utilisateur approbateur.
 
-![Modification du jeu de permissions sur l'utilisateur](images/APImg/approvalProcessManagement/editPermissionSetOnUser.png "Modification du jeu de permissions sur l'utilisateur")
+![Modification des ensembles d'autorisations sur l'utilisateur](images/APImg/approvalProcessManagement/editPermissionSetOnUser.png "Modification des ensembles d'autorisations sur l'utilisateur")
 
-![Modification du jeu de permissions sur l'utilisateur 2](images/APImg/approvalProcessManagement/editPermissionSetOnUser2.png "Modification du jeu de permissions sur l'utilisateur")
+![Modification des ensembles d'autorisations sur l'utilisateur 2](images/APImg/approvalProcessManagement/editPermissionSetOnUser2.png "Modification des ensembles d'autorisations sur l'utilisateur")
 
 ---
 

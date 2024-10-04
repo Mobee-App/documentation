@@ -35,6 +35,7 @@ La siguiente sección es una guía paso a paso para crear un proceso de aprobaci
 
 1. Especificar campo de aprobador (para la asignación automática de aprobaciones)  
    Selecciona: *Gerente (Manager)*
+   Este paso es importante solo si deseas designar al gerente como el aprobador (después de completar la creación del proceso de aprobación)
 
 2. Editabilidad del registro  
    Selecciona: *Los administradores o el aprobador asignado pueden editar los registros durante el proceso de aprobación.*
@@ -75,7 +76,7 @@ Estas acciones deben incluirse para que el proceso de aprobación funcione como 
 #### 2.1. Acciones de envío inicial
 
 1. Agregar existentes  
-2. Agregar: *Actualización de campo: actualizar estado a enviado*
+2. Agregar: *Actualización de campo: actualizar estado a enviado (Update Status to Submitted)*
 
 ![Agregar acción de envío inicial](images/APImg/approvalProcessManagement/initialSubmissionAddAction.png "Agregar acción de envío inicial")
 
@@ -84,7 +85,7 @@ Estas acciones deben incluirse para que el proceso de aprobación funcione como 
 #### 2.2. Acciones de aprobación final
 
 1. Editar bloqueo de registro y seleccionar: *Desbloquear registro para edición*  
-2. Agregar existentes y agregar: *Actualización de campo: actualizar estado a aprobado*
+2. Agregar existentes y agregar: *Actualización de campo: actualizar estado a aprobado (Update Status to Approved)*
 
 ![Editar y agregar acción de aprobación final](images/APImg/approvalProcessManagement/finalApprovalAddAction.png "Editar y agregar acción de aprobación final")
 
@@ -96,8 +97,8 @@ Estas acciones deben incluirse para que el proceso de aprobación funcione como 
 
 1. Agregar existentes  
 2. Agregar:  
-   a. *Actualización de campo: actualizar estado a rechazado*  
-   b. *Alerta de correo electrónico: enviar notificación por correo al asignado en caso de rechazo* (esta es una alerta por correo enviada al remitente de la hoja de tiempo si su hoja es rechazada por el aprobador. si no es necesario, esta alerta no debe añadirse)
+   a. *Actualización de campo: actualizar estado a rechazado (Update Status to Rejected)*  
+   b. *Alerta de correo electrónico: enviar notificación por correo al asignado en caso de rechazo (Send Email Notification to Assignee on Rejection)* (esta es una alerta por correo enviada al remitente de la hoja de tiempo si su hoja es rechazada por el aprobador. si no es necesario, esta alerta no debe añadirse)
 
 ![Agregar acción de rechazo final](images/APImg/approvalProcessManagement/finalRejectionAddAction.png "Agregar acción de rechazo final")
 
@@ -106,7 +107,7 @@ Estas acciones deben incluirse para que el proceso de aprobación funcione como 
 #### 2.4. Acciones de retiro
 
 1. Agregar existentes  
-2. Agregar: *Actualización de campo: actualizar estado a borrador*
+2. Agregar: *Actualización de campo: actualizar estado a borrador (Field Update: Update Status to Draft)*
 
 ![Agregar acción de retiro](images/APImg/approvalProcessManagement/recallAddAction.png "Agregar acción de retiro")
 
@@ -126,7 +127,7 @@ El aprobador puede ser el gerente del remitente o un usuario específico respons
 
 #### 3.2. Asignación de conjuntos de permisos
 
-En configuración > usuarios, asigna el conjunto de permisos *Mobee approve all timesheets* en el usuario aprobador.
+En configuración > usuarios, asigna el conjunto de permisos *Mobee Approve All Timesheets* en el usuario aprobador.
 
 ![Editar conjunto de permisos en usuario](images/APImg/approvalProcessManagement/editPermissionSetOnUser.png "Editar conjunto de permisos en usuario")
 

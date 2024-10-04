@@ -28,13 +28,14 @@ The following section is a step-by-step guide for creating a standard approval p
 
 #### Step 2: Specify Entry Criteria
 
-*No action to do*  
+*No Action To Do*  
 ![Approval Process Creation Step 2](images/APImg/approvalProcessCreation/approvalProcessCreationStep2.png "Approval Process Creation Step 2")
 
-#### Step 3: Specify Approver Field And Record Editability Properties
+#### Step 3: Specify Approver FielD And Record Editability Properties
 
 1. Specify Approver Field (for automated approval routing)
    Select: *Manager*
+   This step is important only if you wish to designate the manager as the approver (after completing the approval process creation)
 
 2. Record Editability
    Select: *Administrators or the currently assigned approver can edit records during the approval process.*  
@@ -43,12 +44,12 @@ The following section is a step-by-step guide for creating a standard approval p
 
 #### Step 4: Select Notification Templates
 
-*No action to do*  
+*No Action To Do*  
 ![Approval Process Creation Step 4](images/APImg/approvalProcessCreation/approvalProcessCreationStep4.png "Approval Process Creation Step 4")
 
 #### Step 5: Select Fields To Display On Approval Page Layout
 
-*No action to do*  
+*No Action To Do*  
 ![Approval Process Creation Step 5](images/APImg/approvalProcessCreation/approvalProcessCreationStep5.png "Approval Process Creation Step 5")
 
 #### Step 6: Specify Initial Submitters
@@ -75,7 +76,7 @@ These actions must be included for the approval process to function as intended.
 #### 2.1. Initial Submission Actions
 
 1. Add existing  
-2. Add: *Field update: update status to submitted*
+2. Add: *Field Update: Update Status to Submitted*
 
 ![Initial Submission Add Action](images/APImg/approvalProcessManagement/initialSubmissionAddAction.png "Initial Submission Add Action")
 
@@ -84,7 +85,7 @@ These actions must be included for the approval process to function as intended.
 #### 2.2. Final Approval Actions
 
 1. Edit record lock and select: *Unlock record for editing*  
-2. Add existing and add: *Field update: update status to approved*
+2. Add existing and add: *Field Update: Update Status to Approved*
 
 ![Final Approval Edit And Add Action](images/APImg/approvalProcessManagement/finalApprovalAddAction.png "Final Approval Edit And Add Action")
 
@@ -96,8 +97,8 @@ These actions must be included for the approval process to function as intended.
 
 1. Add existing  
 2. Add:  
-   a. *Field update: update status to rejected*  
-   b. *Email alert: send email notification to assignee on rejection* (this is an email alert sent to the timesheet submitter if their timesheet is rejected by the approver. if not needed, this email alert should not be added)
+   a. *Field Update: Update Status to Rejected*  
+   b. *Email alert: Send Email Notification to Assignee on Rejection* (this is an email alert sent to the timesheet submitter if their timesheet is rejected by the approver. if not needed, this email alert should not be added)
 
 ![Final Approval Add Action](images/APImg/approvalProcessManagement/finalRejectionAddAction.png "Final Approval Add Action")
 
@@ -106,7 +107,7 @@ These actions must be included for the approval process to function as intended.
 #### 2.4. Recall Actions
 
 1. Add existing  
-2. Add: *Field update: update status to draft*
+2. Add: *Field Update: Update Status to Draft*
 
 ![Recall Add Action](images/APImg/approvalProcessManagement/recallAddAction.png "Recall Add Action")
 
@@ -126,7 +127,7 @@ The approver may be the submitter's manager or a specific user responsible for a
 
 #### 3.2. Permission Set Assignment
 
-In setup > users, set the *Mobee approve all timesheets* permission set on the approver user.
+In Setup > Users, set the *Mobee Approve All Timesheets* permission set on the approver user.
 
 ![Edit Permission Set On User](images/APImg/approvalProcessManagement/editPermissionSetOnUser.png "Edit Permission Set On User")
 
