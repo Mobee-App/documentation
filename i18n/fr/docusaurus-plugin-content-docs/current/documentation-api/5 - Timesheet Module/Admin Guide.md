@@ -20,11 +20,11 @@ Vous y trouverez des instructions étape par étape pour ajouter de nouveaux pro
 Étape 2:  Clique sur le bouton du toolbar “New Project”, pour créer un projet à partir de l’opportunité. 
 
 
-![alt_text](images/newProject.png "image_tooltip")
+![alt_text](images/timesheetInitialSetup/newProject.png "image_tooltip")
 
 Le système lancera une boîte de dialogue avec les variables initiées à partir de l'opportunité comme suit: à compléter selon vos besoins.
 
-![alt_text](images/newProject.png "image_tooltip")
+![alt_text](images/timesheetInitialSetup/newProject.png "image_tooltip")
 
 
 Le formulaire "New Project" est présenté à l’utilisateur , avec beaucoup de champs pré-remplis à partir de l'opportunité. Cela permet de faciliter la saisie et réduit ainsi les erreurs.
@@ -38,7 +38,7 @@ Le formulaire "New Project" est présenté à l’utilisateur , avec beaucoup de
 1. Accédez à la liste des projets en cliquant sur l'onglet "Projets" dans la barre de navigation supérieure.
 2. Sélectionnez le projet auquel vous souhaitez ajouter un nouvel "Assignment".
 
-![alt_text](images/project.png "image_tooltip")
+![alt_text](images/timesheetInitialSetup/project.png "image_tooltip")
 
 
 Étape 2 : Ajouter un nouvel "Assignment"
@@ -50,7 +50,7 @@ Le formulaire "New Project" est présenté à l’utilisateur , avec beaucoup de
         
 Le formulaire "New Assignment" est présenté à l'utilisateur, avec beaucoup de champs pré-remplis à partir du projet. Cela permet de faciliter la saisie et réduit ainsi les erreurs.
 
-![alt_text](images/newAssignment.png "image_tooltip")
+![alt_text](images/timesheetInitialSetup/newAssignment.png "image_tooltip")
 
 
 
@@ -71,7 +71,7 @@ Chaque Chaque collégue utilisateur “Salesforce Communité”  est créer comm
 Étape 2 : Accéder aux "Time Entries".
 
 * Les “Time entries” sont affichés dans l’onglet:
-![alt_text](images/contactTimeEntries.png "image_tooltip")
+![alt_text](images/timesheetInitialSetup/contactTimeEntries.png "image_tooltip")
 
 
 ## Consulter les "Time Entries" des collègues utilisateurs "Standard Salesforce"
@@ -84,4 +84,4 @@ Chaque Chaque collégue utilisateur “Salesforce Communité”  est créer comm
 * Choisir “User” , et le système va vous dirigera vers l’utilisateur concerné.
 * Le timesheet sera affiché au début de la page comme suit:
 
-![alt_text](images/userTimeEntries.png "image_tooltip")
+![alt_text](images/timesheetInitialSetup/userTimeEntries.png "image_tooltip")
