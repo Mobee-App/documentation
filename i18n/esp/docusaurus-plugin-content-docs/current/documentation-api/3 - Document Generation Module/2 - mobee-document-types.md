@@ -1,14 +1,14 @@
-# Tipos de Plantillas y Sintaxis
+# Tipos de plantillas y sintaxis
 
-## Tipos de Plantillas
+## Tipos de plantillas
 
 Mobee admite dos tipos de plantillas:
 
-### Plantilla de Documento Simple
+### Plantilla de documento simple
 
 Cuando la casilla **Documento Combinado** no está marcada, la plantilla está diseñada para una generación unitaria. Esto significa que la plantilla incluye información de un único registro. Por ejemplo, si creas una plantilla simple para el objeto "Contacto", incorporará la información de un solo contacto y sus datos relacionados.
 
-### Plantilla de Documento Combinado
+### Plantilla de documento combinado
 
 Cuando la casilla **Documento Combinado** está marcada, indica que la plantilla se generará para múltiples registros simultáneamente. Esta plantilla utiliza una sintaxis especial para recorrer una lista de registros. Para acceder a los campos de cada registro en un documento combinado, tu plantilla debe comenzar recorriendo la lista de elementos utilizando la etiqueta `{#items}{/}`. Consulta la [sección de bucles](#Loops) para más detalles.
 
@@ -53,7 +53,7 @@ El contacto {Name} {#HasOptedOutOfEmail == 1}ha{/}{#HasOptedOutOfEmail == 0}no h
 El contacto Sr. John Doe ha optado por no recibir correos electrónicos.
 ```
 
-### Expresiones Lógicas
+### Expresiones lógicas
 
 Puedes utilizar los siguientes operadores para expresiones lógicas más complejas:
 
@@ -109,7 +109,7 @@ Como se mencionó anteriormente, los bucles comienzan con el símbolo "#". Ejemp
 
 **Nota:** Cada campo de combinación utilizado en la sección de bucle se refiere a los campos del objeto relacionado actual. Si el campo no se encuentra en el objeto relacionado, el motor lo referencia desde el objeto principal.
 
-## Imágenes Dinámicas
+## Imágenes dinámicas
 
 Las imágenes dinámicas pueden integrarse fácilmente en tus documentos generados mediante el uso de marcadores dinámicos. Por ejemplo, si posees un campo llamado `ProfilePicture__c` que contiene la URL de una imagen o la imagen codificada como una cadena Base64, puedes incorporarla en tu documento usando la etiqueta designada: `{%ProfilePicture__c}` (comenzando con el símbolo `%`).
 
@@ -143,7 +143,7 @@ Para incorporar una imagen usando una URL, sigue estos pasos:
 
 Ahora has configurado las configuraciones de sitio remoto y URLs confiables para recuperar la imagen de manera segura mediante HTTP. Luego, puedes usar la etiqueta `{%ProfilePicture__c}` para incluir dinámicamente la imagen en los documentos generados.
 
-## Funcionalidades Adicionales
+## Funcionalidades adicionales
 
 Mobee proporciona varias etiquetas y filtros para ayudar a los usuarios a personalizar sus documentos.
 
@@ -169,12 +169,12 @@ Hola Sr. JOHN DOE!
 
 Los siguientes filtros están soportados:
 
-**Filtros de Cadenas:**
+**Filtros de cadenas:**
 
 - `lower`: Convierte el texto a minúsculas.
 - `upper`: Convierte el texto a mayúsculas.
 
-**Filtros de Fechas:**
+**Filtros de fechas:**
 
 - `shortDate`: Convierte la fecha en un formato corto y conciso.
 - `followingMonth`: Retorna el mes siguiente basado en una fecha dada.
@@ -225,7 +225,7 @@ Las funciones `followingMonth`, `followingYear`, `lastWorkingDayOfMonth` y `form
 ]]
 ```
 
-**Filtros de Listas:**
+**Filtros de listas:**
 
 - **`groupBy`**: Crea un objeto compuesto de claves generadas a partir de los resultados de agrupar cada elemento de la colección según las claves dadas. Se pueden realizar múltiples agrupaciones proporcionando las claves separadas por punto y coma. El orden de los valores agrupados está determinado por el orden de las claves dadas.
 
@@ -238,9 +238,9 @@ Ejemplo de uso:
 Agrupando los datos según las propiedades `Project`, `PricebookEntry.Product2.Type` y `PricebookEntry.Product2.Family`.
 
 ```markdown
-Nombre de Cotización: {Name}
+Nombre de cotización: {Name}
 
-Número de Contrato: {Contract.ContractNumber}
+Número de contrato: {Contract.ContractNumber}
 
 {#QuoteLineItems | groupBy: 'Project;PricebookEntry.Product2.Type;PricebookEntry.Product2.Family'}
 {$groupedKey1}

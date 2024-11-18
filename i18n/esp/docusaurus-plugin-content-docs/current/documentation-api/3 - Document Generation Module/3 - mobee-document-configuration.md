@@ -1,223 +1,225 @@
-# Configuration and Usage
 
-## User Profile Requirements and Permissions
+# Configuración y uso
 
-To utilize the module, users must meet the following prerequisites:
+## Requisitos y permisos del perfil de usuario
 
-- Possession of a Mobee license.
-- Assignment of either the "Mobee User" or "Mobee Administrator" permission set.
-- Enable User External Credentials Through User Profiles if needed.
+Para utilizar el módulo, los usuarios deben cumplir con los siguientes requisitos previos:
 
-## Retrieve and Reset Document Generation Token
+- Poseer una licencia de Mobee.
+- Asignación de un conjunto de permisos "Usuario de Mobee" o "Administrador de Mobee".
+- Habilitar las Credenciales Externas de Usuario a través de los Perfiles de Usuario si es necesario.
 
-1. Open the Mobee Settings by navigating to the **App Launcher** and searching for **Mobee Settings**.
+## Recuperar y restablecer el token de generación de documentos
 
-2. Click on "Mobee Settings" in the "Items" section.
+1. Abre la Configuración de Mobee navegando a **Lanzador de Aplicaciones** y buscando **Configuración de Mobee**.
 
-![Sample Image](./img/Mobee-Settings-Tab.png)
+2. Haz clic en "Configuración de Mobee" en la sección "Artículos".
 
-3. In Mobee Settings, navigate to the "Document Generation" tab.
+![Imagen de ejemplo](./img/Mobee-Settings-Tab.png)
 
-4. Within the "Document Generation" tab, you will find Your Organization Token if your Organization is subscribed to the Mobee Document Generation service. Utilize this token to authorize your access to the document generation. You can click on the button to the left of the 'Reset Button' to copy the token to your clipboard or select and copy it.
+3. En la Configuración de Mobee, navega a la pestaña "Generación de Documentos".
 
-![Sample Image](./img/Mobee-Token.png)
+4. Dentro de la pestaña "Generación de Documentos", encontrarás tu Token de Organización si tu organización está suscrita al servicio de Generación de Documentos de Mobee. Utiliza este token para autorizar tu acceso a la generación de documentos. Puedes hacer clic en el botón a la izquierda del 'Botón de Restablecer' para copiar el token al portapapeles o seleccionarlo y copiarlo.
 
-If you need to reset the token, locate the "Reset Token" button on the right. Clicking this button will allow you to generate a new token for your Organization.
+![Imagen de ejemplo](./img/Mobee-Token.png)
 
-![Sample Image](./img/Token-Reset.png)
+Si necesitas restablecer el token, localiza el botón "Restablecer Token" a la derecha. Al hacer clic en este botón podrás generar un nuevo token para tu organización.
 
-**Note:** Make sure to update the token in the [Custom Headers](#access-authorization) when you reset it in the Mobee Settings.
+![Imagen de ejemplo](./img/Token-Reset.png)
 
-## Access Authorization
+**Nota:** Asegúrate de actualizar el token en los [Encabezados Personalizados](#access-authorization) cuando lo restablezcas en la Configuración de Mobee.
 
-Mobee's document generation relies on an external service, making authorization vital for security. By employing Token authentication, only authenticated entities can access the service, eliminating the risk of unauthorized use and ensuring robust protection against data breaches.
+## Autorización de acceso
 
-### Mobee Document Generator External Credential Setup
+La generación de documentos de Mobee depende de un servicio externo, lo que hace que la autorización sea vital para la seguridad. Al emplear la autenticación por token, solo las entidades autenticadas pueden acceder al servicio, eliminando el riesgo de uso no autorizado y garantizando una protección robusta contra violaciones de datos.
 
-This section outlines a step-by-step guide on how to set up external credentials for Mobee Document Generator, including creating a custom authentication protocol, adding parameters, custom headers, and integrating with Uprizon for authentication.
+### Configuración de credenciales externas para el generador de documentos de mobee
 
-### Setup External Credentials
+Esta sección describe una guía paso a paso sobre cómo configurar credenciales externas para el Generador de Documentos de Mobee, que incluye la creación de un protocolo de autenticación personalizado, agregar parámetros, encabezados personalizados e integración con Uprizon para la autenticación.
 
-1. Open the external credentials management interface by navigating to **Setup** > **Security** > **Named Credentials**.
+### Configuración de credenciales externas
 
-![Sample Image](./img/Setup-Named-Credential.png)
+1. Abre la interfaz de gestión de credenciales externas navegando a **Configuración** > **Seguridad** > **Credenciales Nombradas**.
 
-2. Click on the "External Credentials" tab.
+![Imagen de ejemplo](./img/Setup-Named-Credential.png)
 
-![Sample Image](./img/Named-Credentials.png)
+2. Haz clic en la pestaña "Credenciales Externas".
 
-3. Locate the external credential with the label "Document Generation External Credentials" and click on it.
+![Imagen de ejemplo](./img/Named-Credentials.png)
 
-![Sample Image](./img/External-Credentials.png)
+3. Localiza la credencial externa con la etiqueta "Credenciales Externas de Generación de Documentos" y haz clic en ella.
 
-![Sample Image](./img/External-Credentials-Page.png)
+![Imagen de ejemplo](./img/External-Credentials.png)
 
-4. In the "Document Generation External Credentials," find the **Custom Headers** with the Name "Authorization", click on the arrow on the right and select "Edit".
+![Imagen de ejemplo](./img/External-Credentials-Page.png)
 
-![Sample Image](./img/Custom-Headers.png)
+4. En las "Credenciales Externas de Generación de Documentos", encuentra los **Encabezados Personalizados** con el Nombre "Authorization", haz clic en la flecha a la derecha y selecciona "Editar".
 
-![Sample Image](./img/Custom-Headers-Edit-Button.png)
+![Imagen de ejemplo](./img/Custom-Headers.png)
 
-5. Inside the Custom Headers Window, Add The Token To The Custom Header:
+![Imagen de ejemplo](./img/Custom-Headers-Edit-Button.png)
 
-    Replace the **Value** by the [token](#retrieve-and-reset-document-generation-token) provided by in the Mobee Settings Page:
-     - **Name:** Authorization
-      - **Value:** Bearer [Token provided by Mobee]
+5. Dentro de la Ventana de Encabezados Personalizados, agrega el Token al Encabezado Personalizado:
 
-    **Note:** Before saving, ensure that the token has the "Bearer " prefix. If not, add the prefix with a trailing space at the end. 
-    
-    For example: If the token is `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c`, make it: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c`
+    Reemplaza el **Valor** por el [token](#retrieve-and-reset-document-generation-token) proporcionado en la Página de Configuración de Mobee:
+     - **Nombre:** Authorization
+     - **Valor:** Bearer [Token proporcionado por Mobee]
 
-    Click on "Save" to save the custom header.
-    
-![Sample Image](./img/Custom-Headers-Windows.png)
+    **Nota:** Antes de guardar, asegúrate de que el token tenga el prefijo "Bearer ". Si no lo tiene, agrégalo con un espacio al final. 
 
-**Note:** Make sure to update the token in the [Custom Headers](#access-authorization) when you reset it in the Mobee Settings.
+    Por ejemplo: Si el token es `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c`, hazlo: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c`
 
-## Creating a Document Template
+    Haz clic en "Guardar" para guardar el encabezado personalizado.
 
-1. Navigate to the **Mobee Documents Templates** Salesforce Tab to initiate the creation of a new template.
-2. Click on the "**New**" button and furnish a suitable name for the template.
+![Imagen de ejemplo](./img/Custom-Headers-Windows.png)
 
-![Alt text](img/prep_word.png)
+**Nota:** Asegúrate de actualizar el token en los [Encabezados Personalizados](#access-authorization) cuando lo restablezcas en la Configuración de Mobee.
 
+## Crear una plantilla de documento
 
-After the successful creation of the template, the next step involves associating it with a specific Salesforce object. Follow the steps below:
+1. Navega a la pestaña de **Plantillas de Documentos de Mobee** en Salesforce para iniciar la creación de una nueva plantilla.
+2. Haz clic en el botón "**Nuevo**" y proporciona un nombre adecuado para la plantilla.
 
-1. Access the newly created template by selecting its name from the list.
-2. Within the initial section, click the "**Choose Main Object**" button located on the right.
-3. Utilize the lookup search field to designate the desired main object.
-4. Opt for a Salesforce field on the selected object to serve as the naming convention for the generated file. Supported types include text fields and formulas. The **Name** field is selected by default.
+![Texto alternativo](img/prep_word.png)
 
-![Sample Image](img/prep_word2.png)
+Después de la creación exitosa de la plantilla, el siguiente paso es asociarla con un objeto específico de Salesforce. Sigue los siguientes pasos:
 
-5.  After the selection of the main object and naming field, proceed to upload your Word document template by selecting the "**Upload**" button. Please note that only files with the `.docx` extension are supported.
+1. Accede a la plantilla recién creada seleccionando su nombre de la lista.
+2. En la sección inicial, haz clic en el botón "**Elegir Objeto Principal**" ubicado a la derecha.
+3. Utiliza el campo de búsqueda para designar el objeto principal deseado.
+4. Opta por un campo de Salesforce en el objeto seleccionado que servirá como convención de nombres para el archivo generado. Se admiten tipos como campos de texto y fórmulas. El campo **Nombre** es seleccionado por defecto.
 
-![Sample Image](img/prep_word3.png)
+![Imagen de ejemplo](img/prep_word2.png)
 
-## Generate Documents from Template
+5. Después de la selección del objeto principal y el campo de nombre, procede a cargar tu plantilla de documento Word seleccionando el botón "**Subir**". Ten en cuenta que solo se admiten archivos con la extensión `.docx`.
 
-Mobee offers a range of options to facilitate document generation tailored to your specific requirements. The package encompasses pre-built components ready for immediate use, seamlessly integratable into your pages. Moreover, Mobee provides functionalities allowing you to customize your entire document generation processes using Lightning or even Apex.
+![Imagen de ejemplo](img/prep_word3.png)
 
-### Lightning Web Component
+## Generar documentos desde la plantilla
 
-For manual document generation within a screen, Mobee presents a fundamental Lightning Web Component designed to generate documents for the current record based on a specified template ID.
+Mobee ofrece una variedad de opciones para facilitar la generación de documentos adaptados a tus requisitos específicos. El paquete incluye componentes preconstruidos listos para usar e integrarse sin problemas en tus páginas. Además, Mobee proporciona funcionalidades que permiten personalizar todo el proceso de generación de documentos utilizando Lightning o incluso Apex.
 
-**Below are the component parameters:**
+### Componente web lightning
 
-![Document Generation Lightning Web Component](img/document_generator_lwc.png)
+Para la generación manual de documentos dentro de una pantalla, Mobee presenta un componente web Lightning fundamental diseñado para generar documentos para el registro actual basado en un ID de plantilla especificado.
 
-- **Current Record Id:** When placed on a record page, this parameter can be left empty, as it automatically detects the ID of the current record.
+**A continuación, se muestran los parámetros del componente:**
 
-- **Multiple Record Ids (Comma Separated):** This parameter can be left empty when generating unitary documents and will be used for combined document templates later.
+![Generador de Documentos Web Lightning](img/document_generator_lwc.png)
 
-- **Attach to Record:** A flag indicating whether the user wishes to attach the generated document to the Notes & Attachments of the current record. If unchecked, the document will be automatically downloaded.
+- **ID del Registro Actual:** Cuando se coloca en una página de registro, este parámetro puede dejarse vacío, ya que detecta automáticamente el ID del registro actual.
 
-- **Current Object API Name:** When placed on a record page, this parameter can be left empty, as it automatically detects the object API Name of the current record.
+- **IDs de Múltiples Registros (separados por comas):** Este parámetro puede dejarse vacío cuando se generen documentos unitarios y se usará para plantillas de documentos combinados más adelante.
 
-- **Selected Template Id:** Informs the component about the template to be used for the generation.
+- **Adjuntar al Registro:** Un indicador de si el usuario desea adjuntar el documento generado a las Notas y Archivos del registro actual. Si no se marca, el documento se descargará automáticamente.
 
-- **Show Generate Button:** A flag indicating whether a physical button is desired to trigger the generation. If unchecked, document generation will be triggered upon loading the page containing the component.
+- **Nombre API del Objeto Actual:** Cuando se coloca en una página de registro, este parámetro puede dejarse vacío, ya que detecta automáticamente el nombre API del objeto del registro actual.
 
-- **Output Format:** This parameter indicates the desired format for the generated file. Mobee currently supports `docx` and `pdf`.
+- **ID de Plantilla Seleccionada:** Informa al componente sobre la plantilla que se utilizará para la generación.
 
-**Usage:**
+- **Mostrar Botón de Generación:** Un indicador de si se desea un botón físico para activar la generación. Si no se marca, la generación de documentos se activará al cargar la página que contiene el componente.
 
-This component is suitable for use in both **"Record Lightning Pages"** and **"Flow Screens."** To harness the full capabilities of this component, it is recommended to use it in **Flow Screens**. Leveraging Flow's flexibility enables dynamic fetching of the desired template based on specific search criteria, providing a dynamic parameter to the component, and avoiding the inclusion of parameters in hard text.
+- **Formato de Salida:** Este parámetro indica el formato deseado para el archivo generado. Mobee actualmente admite `docx` y `pdf`.
 
-Here's an example of its usage in a Screen Flow.
+**Uso:**
 
-![Screen Flow LWC](img/screen_flow_lwc.png)
+Este componente es adecuado para su uso en **"Páginas Lightning de Registro"** y **"Pantallas de Flujos"**. Para aprovechar al máximo las capacidades de este componente, se recomienda usarlo en **Pantallas de Flujos**. Aprovechar la flexibilidad de Flow permite obtener dinámicamente la plantilla deseada según criterios de búsqueda específicos, proporcionando un parámetro dinámico al componente y evitando la inclusión de parámetros en texto fijo.
 
-### Action Button
+Aquí tienes un ejemplo de su uso en un Flujo de Pantalla.
+
+![Flujo de Pantalla LWC](img/screen_flow_lwc.png)
+
+### Botón de acción
+
+El paquete Mobee se integra sin problemas con las páginas de registros de Salesforce, proporcionando un Flow listo para usar que se puede agregar fácilmente como un botón de acción.
 
 The Mobee package seamlessly integrates with Salesforce record pages, providing an out-of-the-box Flow that can be effortlessly added as an action button.
 
-**Creating the Action Button:**
+**Creación del botón de acción:**
 
-1. Navigate to the object manager and select the object where you want the generation button to be available.
-2. Go to the "Buttons, Links, and Actions" section and click on the "New Action" button.
-3. Choose the "Lightning Web Component" option for the "Action Type," and select "Mobee:documentGeneratorAction" for the "Lightning Web Component."
+1. Navega al administrador de objetos y selecciona el objeto donde deseas que esté disponible el botón de generación.
+2. Ve a la sección "Botones, Enlaces y Acciones" y haz clic en el botón "Nueva Acción".
+3. Elige la opción "Componente Web Lightning" para el "Tipo de Acción" y selecciona "Mobee:documentGeneratorAction" para el "Componente Web Lightning".
 
-![Add Action Button](./img/ajouter_button_action.png)
+![Añadir Botón de Acción](./img/ajouter_button_action.png)
 
-**Adding the Action Button to a Page Layout:**
+**Añadir el botón de acción a un diseño de página:**
 
-Once the action button is created, follow these steps to add it to a desired "Page Layout."
+Una vez que el botón de acción esté creado, sigue estos pasos para agregarlo a un "Diseño de Página" deseado.
 
-1. Open the "Page Layouts" section from the object manager and select the desired page where you want to add your button.
-2. Locate your newly created button in the "Mobile & Lightning Actions" Section.
-3. Drag the button and drop it into the "Salesforce Mobile and Lightning Experience Action" section.
+1. Abre la sección "Diseños de Página" desde el administrador de objetos y selecciona la página donde deseas agregar tu botón.
+2. Localiza el botón recién creado en la sección "Acciones Móviles y Lightning".
+3. Arrastra el botón y colócalo en la sección "Acción en Salesforce Mobile y Lightning Experience".
 
-![Sample Image](./img/ajouter_button_action2.jpg)
+![Imagen de Ejemplo](./img/ajouter_button_action2.jpg)
 
-**Utilizing the Added Button:**
+**Utilización del botón añadido:**
 
-To utilize the added button, follow these steps:
+Para utilizar el botón añadido, sigue estos pasos:
 
-1. Navigate to a record of the same object type as the created document template.
-2. Click the "Generate Document" action button.
-3. Select the desired template from the provided selection list.
-4. The document will be generated and automatically downloaded.
+1. Navega a un registro del mismo tipo de objeto que la plantilla de documento creada.
+2. Haz clic en el botón de acción "Generar Documento".
+3. Selecciona la plantilla deseada de la lista proporcionada.
+4. El documento será generado y descargado automáticamente.
 
-![Sample Image](./img/generer_apartir_modele_creer.png)
+![Imagen de Ejemplo](./img/generer_apartir_modele_creer.png)
 
-### List View Button
+### Botón de vista de lista
 
-Similar to the aforementioned action button, Mobee extends its functionality by offering a Flow that can be invoked from list view buttons. This feature emphasizes the capability to generate documents for multiple records simultaneously.
+Similar al botón de acción mencionado anteriormente, Mobee extiende su funcionalidad ofreciendo un flujo que puede ser invocado desde los botones de vista de lista. Esta característica resalta la capacidad de generar documentos para múltiples registros simultáneamente.
 
-**Creating a List View Button:**
+**Creación de un botón de vista de lista:**
 
-Follow these steps to create the button:
+Sigue estos pasos para crear el botón:
 
-1. Prepare a template to be used on the desired main object.
-2. From the Setup screen, select the desired main object.
-3. Go to the "Buttons, Links, and Actions" section.
-4. Click on the top-right "New Button or Link" button.
-5. Complete the required Label and Name input fields.
-6. Select List Button from the "Display Type" and ensure that the "Display Checkboxes (for Multi-Record Selection)" option is checked.
-7. In the formula text area, input the following path and replace the template ID with your desired template: `/flow/Mobee__ListViewDocumentGenerator?templateId=a057Q000005Yd7BQAS&attachToRecord=false&outputFormat=pdf`
+1. Prepara una plantilla que se utilizará en el objeto principal deseado.
+2. Desde la pantalla de configuración, selecciona el objeto principal deseado.
+3. Ve a la sección "Botones, Enlaces y Acciones".
+4. Haz clic en el botón "Nuevo Botón o Enlace" en la parte superior derecha.
+5. Completa los campos requeridos de Etiqueta y Nombre.
+6. Selecciona "Botón de Lista" en el "Tipo de Visualización" y asegúrate de que la opción "Mostrar Casillas de Verificación (para Selección de Múltiples Registros)" esté marcada.
+7. En el área de texto de la fórmula, ingresa la siguiente ruta y reemplaza el ID de la plantilla con tu plantilla deseada: `/flow/Mobee__ListViewDocumentGenerator?templateId=a057Q000005Yd7BQAS&attachToRecord=false&outputFormat=pdf`
 
-![List View Button](img/list_view_button.png)
+![Botón de Vista de Lista](img/list_view_button.png)
 
-**Adding the Button to the List View:**
+**Añadir el botón a la vista de lista:**
 
-To add the button to the list view, follow these steps:
+Para añadir el botón a la vista de lista, sigue estos pasos:
 
-1. From the "Object Manager", access the "**List View Button Layout**" section.
-2. For the list view layout, click the dropdown button on the right and select "Edit."
-3. In the List View Editor, find your button in the "Custom Buttons" section and add it to the Selected Buttons List.
-4. Click on Save.
+1. Desde el "Administrador de Objetos", accede a la sección "Diseño de Botón de Vista de Lista".
+2. Para el diseño de vista de lista, haz clic en el botón desplegable a la derecha y selecciona "Editar".
+3. En el Editor de Vista de Lista, encuentra tu botón en la sección "Botones Personalizados" y agrégalo a la lista de Botones Seleccionados.
+4. Haz clic en Guardar.
 
-**Utilizing the Added Button:**
+**Utilización del botón añadido:**
 
-To utilize the list view button, follow these steps:
+Para utilizar el botón de vista de lista, sigue estos pasos:
 
-1. Go to the object list view.
-2. Select your desired records by clicking on the checkbox on each line.
-3. Locate your button in the button list in the top actions section.
-4. Click on the button, which will open the flow in a new page and generate the documents.
+1. Ve a la vista de lista del objeto.
+2. Selecciona los registros deseados haciendo clic en la casilla de verificación de cada línea.
+3. Localiza tu botón en la lista de botones en la sección de acciones superiores.
+4. Haz clic en el botón, lo que abrirá el flujo en una nueva página y generará los documentos.
 
-**Note:** This "Custom Button" can also be used for **Related List Views**.
+**Nota:** Este "Botón Personalizado" también se puede usar para **Vistas de lista relacionadas**.
 
-### Apex Client
+### Cliente Apex
 
-Document generation is not always a user-triggered functionality; at times, there's a need to generate documents from triggers, jobs, and other automated processes. To facilitate this, Mobee provides an Apex function that enables seamless document generation tailored to specific requirements.
+La generación de documentos no siempre es una funcionalidad activada por el usuario; a veces, es necesario generar documentos desde triggers, trabajos y otros procesos automatizados. Para facilitar esto, Mobee proporciona una función Apex que permite la generación de documentos sin problemas adaptados a requisitos específicos.
 
-The function is accessible within the Mobee package by invoking the `Mobee.DocumentTemplaterController.generateDocuments` function.
+La función es accesible dentro del paquete Mobee invocando la función `Mobee.DocumentTemplaterController.generateDocuments`.
 
-Similar to the Lightning Web Component, this Apex function takes four parameters as input:
+Al igual que el Componente Web Lightning, esta función Apex toma cuatro parámetros como entrada:
 
-1. A list of Salesforce record IDs for which documents need to be generated. (It can be a list containing a single ID)
-2. The Mobee Document Template ID to be used as the template for the generation.
-3. The desired output format (`docx` or `pdf`).
-4. A flag indicating whether to attach the generated file to the given record.
+1. Una lista de IDs de registros de Salesforce para los cuales se deben generar documentos. (Puede ser una lista que contenga un solo ID).
+2. El ID de la Plantilla de Documento de Mobee que se utilizará como plantilla para la generación.
+3. El formato de salida deseado (`docx` o `pdf`).
+4. Una bandera que indica si se debe adjuntar el archivo generado al registro dado.
 
-This function returns a `Map` containing the generated file as `Blob` indexed by their respective record IDs.
+Esta función devuelve un `Map` que contiene el archivo generado como `Blob` indexado por sus respectivos IDs de registro.
 
-Here's an example of utilizing this Apex function:
+Aquí tienes un ejemplo de cómo utilizar esta función Apex:
 
-**Context:** In this example, the Mobee Template Main Object is the `Application__c` custom object, and the template Id is stored in the `ContractTemplate__c` lookup field, which is on the parent field `Sector__c`.
+**Contexto:** En este ejemplo, el Objeto Principal de la Plantilla de Mobee es el objeto personalizado `Application__c`, y el ID de la plantilla se almacena en el campo de búsqueda `ContractTemplate__c`, que está en el campo padre `Sector__c`.
 
 ```java
 public class DocumentGeneration {
