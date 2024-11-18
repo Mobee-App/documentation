@@ -227,3 +227,33 @@ Les fonctions `followingMonth`, `followingYear`, `lastWorkingDayOfMonth` et `for
   formatMatcher: 'basic' | 'best fit'
 ]]
 ```
+
+**Filtres de Liste :**  
+
+- **`groupBy`** : Crée un objet composé de clés générées à partir des résultats du regroupement de chaque élément de la collection selon les clés fournies. Plusieurs regroupements peuvent être effectués en indiquant les clés de regroupement, séparées par un point-virgule. L'ordre des valeurs regroupées est déterminé par l'ordre des clés données.  
+
+  - **Retourne** : Un objet contenant deux propriétés :  
+    - `$groupedKey#` : La clé pour chaque niveau de regroupement, où `#` est incrémenté pour chaque niveau de regroupement (commençant à 1).  
+    - `$groupedItems#` : Les éléments associés à chaque clé regroupée. Si plusieurs regroupements sont effectués, chaque niveau d'éléments regroupés contiendra une autre `$groupedKey#` et `$groupedItems#`, incrémentant l'index pour chaque niveau de regroupement supplémentaire.  
+
+**Exemple d'utilisation :**  
+
+Regrouper les données fournies selon les propriétés `Project`, `PricebookEntry.Product2.Type` et `PricebookEntry.Product2.Family`.  
+
+```markdown
+Nom du devis : {Name}  
+
+Numéro de contrat : {Contract.ContractNumber}  
+
+{#QuoteLineItems | groupBy: 'Project;PricebookEntry.Product2.Type;PricebookEntry.Product2.Family'}  
+{$groupedKey1}  
+{#$groupedItems1}  
+    {$groupedKey2}  
+    {#$groupedItems2}  
+          {$groupedKey3}  
+          {#$groupedItems3}  
+                {Quantity}  
+                {PricebookEntry.Product2.Name}  
+                {PricebookEntry.Product2.Description}  
+                {Mobee__TotalPrice__c | currency: 'EUR'}{/}{/}{/}{/}  
+```  
