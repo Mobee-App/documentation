@@ -227,3 +227,33 @@ The `followingMonth`, `followingYear`, `lastWorkingDayOfMonth`, and `formatDate`
   formatMatcher: 'basic' | 'best fit'
 ]]
 ```
+
+**List Filters:**
+
+- **`groupBy`**: Creates an object composed of keys generated from the results of grouping each element of the collection according to the given keys. Multiple groupings can be performed by providing the keys to group on, separated by a semicolon. The order of grouped values is determined by the order of the given keys.
+
+  - **Returns**: An object containing two properties:
+    - `$groupedKey#`: The key for each grouping level, where `#` is incremented by each grouping level (starting at 1).
+    - `$groupedItems#`: The items associated with each grouped key. If multiple groupings are performed, each level of grouped items will contain another `$groupedKey#` and `$groupedItems#`, incrementing the index for each additional grouping level.
+
+Usage example:
+
+Grouping the given data on the `Project`, `PricebookEntry.Product2.Type` and `PricebookEntry.Product2.Family` properties.
+
+```markdown
+Quote Name: {Name}
+
+Contract Number: {Contract.ContractNumber}
+
+{#QuoteLineItems | groupBy: 'Project;PricebookEntry.Product2.Type;PricebookEntry.Product2.Family'}
+{$groupedKey1}
+{#$groupedItems1}
+    {$groupedKey2}
+    {#$groupedItems2}
+          {$groupedKey3}
+          {#$groupedItems3}
+                {Quantity} 
+                {PricebookEntry.Product2.Name}
+                {PricebookEntry.Product2.Description}
+                {Mobee__TotalPrice__c | currency: 'EUR'}{/}{/}{/}{/}
+```
