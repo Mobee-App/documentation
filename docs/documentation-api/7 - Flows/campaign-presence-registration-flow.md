@@ -1,4 +1,6 @@
-## Campaign Presence Registration: Enhancing Campaign Membership Management through Flow
+# Campaign Presence Registration
+
+Enhancing Campaign Membership Management through Flow
 
 ### **Overview**
 
