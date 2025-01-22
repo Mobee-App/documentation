@@ -227,3 +227,211 @@ The `followingMonth`, `followingYear`, `lastWorkingDayOfMonth`, and `formatDate`
   formatMatcher: 'basic' | 'best fit'
 ]]
 ```
+
+**List Filters:**
+
+#### `groupBy` Function Documentation
+
+The `groupBy` function organizes elements in a collection by grouping them based on specified keys. Multiple levels of grouping can be achieved by providing multiple keys, separated by semicolons. The grouping order follows the sequence of the specified keys.
+
+**Returns**
+
+The function returns an object containing the following properties:
+
+- **`$groupedKey#`**: Represents the grouping key at each level, where `#` denotes the grouping level, starting from 1.
+- **`$groupedItems#`**: Contains the items associated with each grouping key. When multiple levels of grouping are applied, each level contains its own `$groupedKey#` and `$groupedItems#`, incrementing the index for each deeper level.
+
+**Usage Example**
+
+**Scenario:**
+
+Grouping invoice items by `Category` and `Subcategory`.
+
+**Template:**
+
+```markdown
+Invoice Number: {InvoiceNumber}
+
+{#InvoiceItems | groupBy: 'Category;Subcategory'}
+- Category: {$groupedKey1}
+  {#$groupedItems1}
+  - Subcategory: {$groupedKey2}
+    {#$groupedItems2}
+    - Item: {ItemName}
+      Quantity: {Quantity}
+      Price: {Price | currency: 'USD'}
+    {/}
+  {/}
+{/}
+```
+
+**Sample Data (Table Format):**
+
+| Category    | Subcategory | Item Name    | Quantity | Price |
+| ----------- | ----------- | ------------ | -------- | ----- |
+| Electronics | Laptops     | Dell XPS 13  | 2        | 1200  |
+| Electronics | Laptops     | MacBook Pro  | 1        | 2000  |
+| Electronics | Phones      | iPhone 14    | 3        | 999   |
+| Furniture   | Chairs      | Office Chair | 5        | 150   |
+
+**Sample Data (JSON Format):**
+
+```json
+{
+  "InvoiceNumber": "INV-2024-001",
+  "InvoiceItems": [
+    {
+      "Category": "Electronics",
+      "Subcategory": "Laptops",
+      "ItemName": "Dell XPS 13",
+      "Quantity": 2,
+      "Price": 1200
+    },
+    {
+      "Category": "Electronics",
+      "Subcategory": "Laptops",
+      "ItemName": "MacBook Pro",
+      "Quantity": 1,
+      "Price": 2000
+    },
+    {
+      "Category": "Electronics",
+      "Subcategory": "Phones",
+      "ItemName": "iPhone 14",
+      "Quantity": 3,
+      "Price": 999
+    },
+    {
+      "Category": "Furniture",
+      "Subcategory": "Chairs",
+      "ItemName": "Office Chair",
+      "Quantity": 5,
+      "Price": 150
+    }
+  ]
+}
+```
+
+**Expected Output:**
+
+Invoice Number: INV-2024-001
+
+- **Category:** Electronics
+  - **Subcategory:** Laptops
+    - Item: Dell XPS 13
+      Quantity: 2
+      Price: $1,200.00
+    - Item: MacBook Pro
+      Quantity: 1
+      Price: $2,000.00
+  - **Subcategory:** Phones
+    - Item: iPhone 14
+      Quantity: 3
+      Price: $999.00
+
+- **Category:** Furniture
+  - **Subcategory:** Chairs
+    - Item: Office Chair
+      Quantity: 5
+      Price: $150.00
+
+This example illustrates how the `groupBy` function can be used to organize data effectively based on hierarchical categories.
+
+---
+
+#### `sortBy` Function
+
+The `sortBy` function helps you arrange items in a list based on specific fields, such as sorting by category and price.
+
+**Example**
+
+**Template:**
+
+```markdown
+{#InvoiceItems | sortBy: 'Category;Price'}
+- {ItemName}: {Price}
+{/}
+```
+
+**Expected Output:**
+
+```markdown
+- Office Chair: 150
+- Dell XPS 13: 1200
+- MacBook Pro: 2000
+```
+
+---
+
+#### `htmlList` Function
+
+The `htmlList` function turns an HTML string into a simple list.
+
+**Example**
+
+**Template:**
+```markdown
+{richTextField: htmlList}
+```
+**Data**
+```markdown
+{richTextField: '<ul><li>Item 1</li><li>Item 2</li></ul>'}
+```
+
+**Expected Output:**
+
+```markdown
+- Item 1
+- Item 2
+```
+
+---
+
+#### `multiPicklist` Function
+
+The `multiPicklist` function converts a string into a list using specific options, such as a separator and bullet symbol.
+
+**Example**
+
+**Data**
+```markdown
+{fruits: 'Apple;Orange;Banana'}
+```
+
+**Template:**
+
+```markdown
+{fruits | multiPicklist: '[["separator": ";", "bulletSymbol": "-" ]]'}
+```
+
+**Expected Output:**
+
+```markdown
+- Apple
+- Orange
+- Banana
+```
+
+---
+
+#### `where` Function
+
+The `where` function helps you filter items that match specific conditions, such as selecting only electronic items.
+
+**Example**
+
+**Template:**
+
+```markdown
+{#InvoiceItems | where: 'Category=="Electronics"'}
+- {ItemName}
+{/}
+```
+
+**Expected Output:**
+
+```markdown
+- Dell XPS 13
+- MacBook Pro
+- iPhone 14
+```
