@@ -252,3 +252,86 @@ public class DocumentGeneration {
     }
 }
 ```
+## Compression de PDF
+
+Mobee propose une fonctionnalité permettant de compresser les fichiers PDF afin de réduire leur taille. Les utilisateurs peuvent fournir soit un chemin de fichier local, soit une URL vers un fichier PDF, qui sera ensuite téléchargé et compressé.
+
+### Utilisation
+
+**Paramètres d'entrée**
+
+- **Chemin du fichier ou URL** : L'emplacement du fichier PDF à compresser, soit en tant que chemin local, soit en tant qu'URL en ligne.
+- **Résolution des images en couleur (par défaut : 120 DPI)** : Définit la résolution des images en couleur dans le PDF. Des valeurs plus élevées offrent une meilleure qualité d'image mais augmentent la taille du fichier.
+- **Résolution des images en niveaux de gris (par défaut : 120 DPI)** : Contrôle la résolution des images en niveaux de gris, qui contiennent des nuances de gris sans couleur. L'ajustement de ce paramètre affecte la clarté des images en niveaux de gris.
+- **Résolution des images monochromes (par défaut : 120 DPI)** : Spécifie la résolution des images monochromes (noir et blanc) dans le PDF. Cela influence la netteté du texte et des illustrations.
+
+**Remarques importantes :**
+
+- La résolution par défaut pour tous les types d'images est fixée à 120 DPI.
+- Des valeurs de résolution plus élevées améliorent la qualité des images mais augmentent également la taille du fichier.
+- Ajustez les paramètres de résolution en fonction de votre équilibre entre qualité d'image et taille du fichier.
+
+### Client Apex
+
+La compression de PDF n'est pas toujours déclenchée manuellement par les utilisateurs. Parfois, des processus automatisés tels que des déclencheurs ou des tâches planifiées doivent compresser des documents. Pour ces besoins, Mobee propose une fonction Apex permettant une compression transparente des documents adaptée à des besoins spécifiques.
+
+La fonction est disponible dans le package Mobee via `Mobee.DocumentsApiClient.compressDocument`.
+
+Cette fonction Apex nécessite quatre paramètres en entrée :
+
+1. Une liste d'ID d'enregistrements Salesforce pour les documents à compresser (ou une seule URL).
+2. Résolution des images en couleur.
+3. Résolution des images en niveaux de gris.
+4. Résolution des images monochromes.
+
+**Exemple d'utilisation :**
+
+Dans l'exemple suivant, le document à compresser est identifié par son **ID d'enregistrement Salesforce** ou son **URL**.
+
+```java
+/**
+ * @description Cette classe fournit une fonctionnalité pour compresser les fichiers PDF de facture
+ * avant de les enregistrer dans Salesforce.
+ *
+ * @usage Compresse le blob PDF donné en utilisant les options de compression spécifiées
+ * et enregistre la version compressée via InvoiceController.
+ */
+public with sharing class InvoiceController {
+
+    /**
+     * @description Compresse un fichier PDF de facture donné en utilisant des paramètres prédéfinis
+     * pour réduire la taille du fichier tout en conservant la lisibilité.
+     *
+     * @param invoicePdfBlob Le fichier PDF original au format Blob.
+     *
+     * @throws IllegalArgumentException Si le blob fourni est nul ou vide.
+     *
+     * @example
+     * Blob pdfBlob = [SELECT Body FROM ContentVersion WHERE Title = 'SampleInvoice'].Body;
+     * InvoiceController.compressInvoice(pdfBlob);
+     */
+    public static void compressInvoice(Blob invoicePdfBlob) {
+        if (invoicePdfBlob == null || invoicePdfBlob.size() == 0) {
+            throw new IllegalArgumentException('Le blob PDF de la facture ne peut pas être nul ou vide.');
+        }
+
+        // Définition des paramètres de compression
+        Map<String, String> compressionOptions = new Map<String, String>{
+            'ColorImageResolution' => '72',  // Définir la résolution des images couleur à 72 DPI
+            'GrayImageResolution'  => '72',  // Définir la résolution des images en niveaux de gris à 72 DPI
+            'MonoImageResolution'  => '72'   // Définir la résolution des images monochromes à 72 DPI
+        };
+
+        try {
+            Blob compressedInvoice = DocumentsApiClient.compressDocument(invoicePdfBlob, compressionOptions);
+            InvoiceController.saveInvoice(compressedInvoice);
+            System.debug('Facture compressée et enregistrée avec succès.');
+        } catch (Exception ex) {
+            System.debug('Erreur lors de la compression : ' + ex.getMessage());
+            throw new AuraHandledException('Échec de la compression de la facture : ' + ex.getMessage());
+        }
+    }
+}
+```
+
+Cet exemple montre comment compresser efficacement et stocker des factures PDF dans Salesforce tout en maintenant un équilibre optimal entre qualité et taille du fichier.

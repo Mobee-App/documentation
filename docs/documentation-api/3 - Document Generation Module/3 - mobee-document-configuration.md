@@ -250,3 +250,87 @@ public class DocumentGeneration {
     }
 }
 ```
+
+## Compress PDF
+
+Mobee provides a feature to compress PDF files, helping to reduce their size. Users can provide either a local file path or a URL to a PDF file, which will then be downloaded and compressed.
+
+### Usage
+
+**Input Parameters**
+
+- **File Path or URL**: The location of the PDF file to be compressed, either as a local path or an online URL.
+- **Color Image Resolution (default: 120 DPI)**: Sets the resolution of color images within the PDF. Higher values provide better image quality but result in larger file sizes.
+- **Grayscale Image Resolution (default: 120 DPI)**: Controls the resolution of grayscale images, which contain shades of gray but no color. Adjusting this setting affects the clarity of grayscale images.
+- **Monochrome Image Resolution (default: 120 DPI)**: Specifies the resolution for monochrome (black and white) images in the PDF. This impacts the sharpness of text and line art.
+
+**Important Notes:**
+
+- The default resolution for all image types is set to 120 DPI.
+- Higher resolution settings increase image quality but also enlarge the file size.
+- Adjust the resolution settings based on your balance between image quality and file size.
+
+### Apex Client
+
+PDF compression isn't always triggered manually by users. Sometimes, automated processes such as triggers or scheduled jobs need to compress documents. To support these scenarios, Mobee provides an Apex function that allows seamless document compression tailored to specific needs.
+
+The function is available in the Mobee package through `Mobee.DocumentsApiClient.compressDocument`.
+
+This Apex function requires four input parameters:
+
+1. A list of Salesforce record IDs for the documents to be compressed (or a single URL).
+2. Color Image Resolution.
+3. Grayscale Image Resolution.
+4. Monochrome Image Resolution.
+
+**Example Use Case:**
+
+In the following example, the document to be compressed is identified by its Salesforce **record ID** or **URL**.
+
+```java
+/**
+ * @description This class provides functionality to compress PDF invoice files
+ * before saving them to Salesforce.
+ *
+ * @usage Compresses the given PDF blob using specified compression options
+ * and saves the compressed version via InvoiceController.
+ */
+public with sharing class InvoiceController {
+
+    /**
+     * @description Compresses a given PDF invoice blob using predefined settings
+     * to reduce file size while maintaining readability.
+     *
+     * @param invoicePdfBlob The original PDF invoice file in Blob format.
+     *
+     * @throws IllegalArgumentException If the provided blob is null or empty.
+     *
+     * @example
+     * Blob pdfBlob = [SELECT Body FROM ContentVersion WHERE Title = 'SampleInvoice'].Body;
+     * InvoiceController.compressInvoice(pdfBlob);
+     */
+    public static void compressInvoice(Blob invoicePdfBlob) {
+        if (invoicePdfBlob == null || invoicePdfBlob.size() == 0) {
+            throw new IllegalArgumentException('The invoice PDF blob cannot be null or empty.');
+        }
+
+        // Define compression settings
+        Map<String, String> compressionOptions = new Map<String, String>{
+            'ColorImageResolution' => '72',  // Set color image resolution to 72 DPI
+            'GrayImageResolution'  => '72',  // Set grayscale image resolution to 72 DPI
+            'MonoImageResolution'  => '72'   // Set monochrome image resolution to 72 DPI
+        };
+
+        try {
+            Blob compressedInvoice = DocumentsApiClient.compressDocument(invoicePdfBlob, compressionOptions);
+            InvoiceController.saveInvoice(compressedInvoice);
+            System.debug('Invoice successfully compressed and saved.');
+        } catch (Exception ex) {
+            System.debug('Error during compression: ' + ex.getMessage());
+            throw new AuraHandledException('Failed to compress the invoice: ' + ex.getMessage());
+        }
+    }
+}
+```
+
+This example demonstrates how to efficiently compress and store PDF invoices in Salesforce while maintaining an optimal balance between quality and file size.
