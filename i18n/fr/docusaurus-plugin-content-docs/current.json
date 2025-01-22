@@ -23,6 +23,14 @@
     "message": "Module de feuille de temps (Timesheet)",
     "description": "Module de feuille de temps (Timesheet)"
   },
+  "sidebar.tutorialSidebar.category.Notifications Banner": {
+    "message": "Bannière de notifications",
+    "description": "Bannière de notifications"
+  },
+  "sidebar.tutorialSidebar.category.Flows": {
+    "message": "Flux",
+    "description": "Flux"
+  },
   "sidebar.tutorialSidebar.category.README": {
     "message": "README",
     "description": "The label for category README in sidebar tutorialSidebar"

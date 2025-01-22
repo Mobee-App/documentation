@@ -27,6 +27,14 @@
     "message": "Documentación de Mobee",
     "description": "Documentación de Mobee"
   },
+  "sidebar.tutorialSidebar.category.Notifications Banner": {
+    "message": "Banner de notificaciones",
+    "description": "Banner de notificaciones"
+  },
+  "sidebar.tutorialSidebar.category.Flows": {
+    "message": "Flujos",
+    "description": "Flujos"
+  },
   "sidebar.tutorialSidebar.category.Documentación de Mobee": {
     "message": "Documentación de Mobee",
     "description": "The label for category Documentación de Mobee in sidebar tutorialSidebar"
