@@ -230,30 +230,168 @@ Les fonctions `followingMonth`, `followingYear`, `lastWorkingDayOfMonth` et `for
 
 **Filtres de Liste :**  
 
-- **`groupBy`** : Crée un objet composé de clés générées à partir des résultats du regroupement de chaque élément de la collection selon les clés fournies. Plusieurs regroupements peuvent être effectués en indiquant les clés de regroupement, séparées par un point-virgule. L'ordre des valeurs regroupées est déterminé par l'ordre des clés données.  
+#### Documentation de la fonction `groupBy`
 
-  - **Retourne** : Un objet contenant deux propriétés :  
-    - `$groupedKey#` : La clé pour chaque niveau de regroupement, où `#` est incrémenté pour chaque niveau de regroupement (commençant à 1).  
-    - `$groupedItems#` : Les éléments associés à chaque clé regroupée. Si plusieurs regroupements sont effectués, chaque niveau d'éléments regroupés contiendra une autre `$groupedKey#` et `$groupedItems#`, incrémentant l'index pour chaque niveau de regroupement supplémentaire.  
+La fonction `groupBy` permet d'organiser les éléments d'une collection en les regroupant en fonction de clés spécifiées. Plusieurs niveaux de regroupement peuvent être réalisés en fournissant plusieurs clés séparées par des points-virgules. L'ordre des regroupements suit la séquence des clés spécifiées.
 
-**Exemple d'utilisation :**  
+**Retourne**
 
-Regrouper les données fournies selon les propriétés `Project`, `PricebookEntry.Product2.Type` et `PricebookEntry.Product2.Family`.  
+La fonction retourne un objet contenant les propriétés suivantes :
+
+- **`$groupedKey#`** : Représente la clé de regroupement à chaque niveau, où `#` indique le niveau de regroupement, à partir de 1.
+- **`$groupedItems#`** : Contient les éléments associés à chaque clé de regroupement. Si plusieurs niveaux de regroupement sont appliqués, chaque niveau contient sa propre clé `$groupedKey#` et ses éléments `$groupedItems#`, incrémentant l'index pour chaque niveau supplémentaire.
+
+**Exemple d'utilisation**
+
+**Scénario :**
+
+Regrouper les articles de la facture par `Catégorie` et `Sous-catégorie`.
+
+**Modèle :**
 
 ```markdown
-Nom du devis : {Name}  
+Numéro de facture : {InvoiceNumber}
 
-Numéro de contrat : {Contract.ContractNumber}  
+{#InvoiceItems | groupBy: 'Category;Subcategory'}
+- Catégorie : {$groupedKey1}
+  {#$groupedItems1}
+  - Sous-catégorie : {$groupedKey2}
+    {#$groupedItems2}
+    - Article : {ItemName}
+      Quantité : {Quantity}
+      Prix : {Price | currency: 'USD'}
+    {/}
+  {/}
+{/}
+```
 
-{#QuoteLineItems | groupBy: 'Project;PricebookEntry.Product2.Type;PricebookEntry.Product2.Family'}  
-{$groupedKey1}  
-{#$groupedItems1}  
-    {$groupedKey2}  
-    {#$groupedItems2}  
-          {$groupedKey3}  
-          {#$groupedItems3}  
-                {Quantity}  
-                {PricebookEntry.Product2.Name}  
-                {PricebookEntry.Product2.Description}  
-                {Mobee__TotalPrice__c | currency: 'EUR'}{/}{/}{/}{/}  
-```  
+**Données d'exemple (Format Tableau) :**
+
+| Catégorie    | Sous-catégorie | Nom de l'article | Quantité | Prix |
+|--------------|----------------|-----------------|----------|------|
+| Électronique | Ordinateurs     | Dell XPS 13      | 2        | 1200 |
+| Électronique | Ordinateurs     | MacBook Pro      | 1        | 2000 |
+| Électronique | Téléphones      | iPhone 14        | 3        | 999  |
+| Mobilier     | Chaises         | Chaise de bureau | 5        | 150  |
+
+**Sortie attendue :**
+
+Numéro de facture : INV-2024-001
+
+- **Catégorie :** Électronique
+  - **Sous-catégorie :** Ordinateurs
+    - Article : Dell XPS 13
+      Quantité : 2
+      Prix : $1,200.00
+    - Article : MacBook Pro
+      Quantité : 1
+      Prix : $2,000.00
+  - **Sous-catégorie :** Téléphones
+    - Article : iPhone 14
+      Quantité : 3
+      Prix : $999.00
+
+- **Catégorie :** Mobilier
+  - **Sous-catégorie :** Chaises
+    - Article : Chaise de bureau
+      Quantité : 5
+      Prix : $150.00
+
+---
+
+#### Fonction `sortBy`
+
+La fonction `sortBy` permet de trier les éléments d'une liste selon des champs spécifiques, comme la catégorie et le prix.
+
+**Exemple**
+
+**Modèle :**
+
+```markdown
+{#InvoiceItems | sortBy: 'Category;Price'}
+- {ItemName}: {Price}
+{/}
+```
+
+**Sortie attendue :**
+
+```markdown
+- Chaise de bureau: 150
+- Dell XPS 13: 1200
+- MacBook Pro: 2000
+```
+
+---
+
+#### Fonction `htmlList`
+
+La fonction `htmlList` transforme une chaîne HTML en une liste simple.
+
+**Exemple**
+
+**Modèle :**
+```markdown
+{richTextField: htmlList}
+```
+**Données**
+```markdown
+{richTextField: '<ul><li>Article 1</li><li>Article 2</li></ul>'}
+```
+
+**Sortie attendue :**
+
+```markdown
+- Article 1
+- Article 2
+```
+
+---
+
+#### Fonction `multiPicklist`
+
+La fonction `multiPicklist` convertit une chaîne en liste en utilisant des options spécifiques, comme un séparateur et un symbole de puce.
+
+**Exemple**
+
+**Données**
+```markdown
+{fruits: 'Pomme;Orange;Banane'}
+```
+
+**Modèle :**
+
+```markdown
+{fruits | multiPicklist: '[{"separator": ";", "bulletSymbol": "-"}]'}
+```
+
+**Sortie attendue :**
+
+```markdown
+- Pomme
+- Orange
+- Banane
+```
+
+---
+
+#### Fonction `where`
+
+La fonction `where` permet de filtrer les éléments qui correspondent à certaines conditions, comme sélectionner uniquement les articles électroniques.
+
+**Exemple**
+
+**Modèle :**
+
+```markdown
+{#InvoiceItems | where: 'Category=="Électronique"'}
+- {ItemName}
+{/}
+```
+
+**Sortie attendue :**
+
+```markdown
+- Dell XPS 13
+- MacBook Pro
+- iPhone 14
+```
