@@ -54,7 +54,12 @@ function HomepageHeader() {
           <Link
             className="button button--secondary button--lg"
             to="/docs/documentation-api">
-            <Translate id="homepage.gettingStartedButton" >Getting Started </Translate>
+            <Translate id="homepage.gettingStartedButton">Getting Started</Translate>
+          </Link>
+          <Link
+            className="button button--secondary button--lg margin-left--md"
+            to="/docs/documentation-api">
+            <Translate id="homepage.askForDemoButton">Ask for a Demo</Translate>
           </Link>
         </div>
       </div>
@@ -69,25 +74,18 @@ export default function Home() {
       title={`Documentation`}
       description="Description will go into a meta tag in <head />">
       <HomepageHeader />
-      <main>
-        {/* Render the Feature components here */}
+      {/* <main>
         <section className={styles.features}>
           <div className="container">
             <div className="row">
               <Feature
                 imageUrl="https://i0.wp.com/mobee-app.com/wp-content/uploads/2022/09/logo-by-uprizon-final.png?fit=448%2C148&ssl=1"
                 title="Watch What we do"
-                description={
-                  <Translate id="homepage.feature1Description">
-                    Docusaurus was designed from the ground up to be easily installed and
-                    used to get your website up and running quickly.
-                  </Translate>
-                }
               />
             </div>
           </div>
         </section>
-      </main>
+      </main> */}
     </Layout>
   );
 }
