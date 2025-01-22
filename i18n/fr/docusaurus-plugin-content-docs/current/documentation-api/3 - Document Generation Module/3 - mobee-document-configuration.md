@@ -1,4 +1,4 @@
-# Configuration et Utilisation
+# Configuration et utilisation
 
 ## Exigences de profil et autorisations
 
@@ -8,7 +8,7 @@ Pour utiliser le module, les utilisateurs doivent remplir les prérequis suivant
 - Attribution soit de l'ensembles d'autorisations "Utilisateur Mobee" ou "Administrateur Mobee".
 - Activer les Identifiants externes utilisateur via les profils utilisateur.
 
-# Récupération et Réinitialisation du Jeton de Génération de Documents
+# Récupération et réinitialisation du jeton de génération de documents
 
 1. Ouvrez les Paramètres Mobee en naviguant vers le **Lanceur d'applications** et en recherchant **Paramètres de Mobee**.
 
@@ -77,7 +77,7 @@ Vous avez maintenant terminé la configuration des identifiants externes pour le
 **Attention:** Assurez-vous de mettre à jour le jeton dans les en-têtes personnalisés lorsque ce dernier est mis à jour dans la configuration Mobee.
 
 
-## Création d'un modèle de Document
+## Création d'un modèle de document
 
 1. Accédez à l'onglet **Modèles de Documents Mobee** dans Salesforce pour lancer la création d'un nouveau modèle.
 2. Cliquez sur le bouton "**Nouveau**" et attribuez un nom approprié au modèle.

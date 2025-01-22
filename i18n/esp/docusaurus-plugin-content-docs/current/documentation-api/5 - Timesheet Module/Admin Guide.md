@@ -17,11 +17,11 @@ Paso 1: Acceder al módulo "Oportunidades"
 
 Paso 2: Haga clic en el botón "Nuevo Proyecto" en la barra de herramientas para crear un proyecto a partir de la oportunidad.
 
-![alt_text](images/newProject.png "image_tooltip")
+![alt_text](images/timesheetInitialSetup/newProject.png "image_tooltip")
 
 El sistema abrirá un cuadro de diálogo con variables inicializadas a partir de la oportunidad, como se muestra a continuación: (complete los campos requeridos según sus necesidades)
 
-![alt_text](images/newProject.png "image_tooltip")
+![alt_text](images/timesheetInitialSetup/newProject.png "image_tooltip")
 
 El formulario "Nuevo Proyecto" se presenta al usuario, con muchos campos prellenados a partir de la oportunidad. Esto facilita la entrada de datos y reduce errores.
 
@@ -34,7 +34,7 @@ Paso 1: Acceder a la página del proyecto
 1. Acceda a la lista de proyectos haciendo clic en la pestaña "Proyectos" en la barra de navegación superior.
 2. Seleccione el proyecto al que desea agregar una nueva "Asignación".
 
-![alt_text](images/project.png "image_tooltip")
+![alt_text](images/timesheetInitialSetup/project.png "image_tooltip")
 
 Paso 2: Agregar una Nueva "Asignación"
 * En la página del proyecto relevante,
@@ -44,7 +44,7 @@ Paso 2: Agregar una Nueva "Asignación"
 
 El formulario "Nueva Asignación" se presenta al usuario, con muchos campos prellenados a partir del proyecto. Esto facilita la entrada de datos y reduce errores.
 
-![alt_text](images/newAssignment.png "image_tooltip")
+![alt_text](images/timesheetInitialSetup/newAssignment.png "image_tooltip")
 
 ## Consultar las Time Entries de Usuarios de la Comunidad de Salesforce
 
@@ -62,7 +62,7 @@ Paso 1: Acceder a los "Contactos"
 Paso 2: Acceder a las "Time Entries".
 
 * Las Time Entries se muestran en la pestaña:
-![alt_text](images/contactTimeEntries.png "image_tooltip")
+![alt_text](images/timesheetInitialSetup/contactTimeEntries.png "image_tooltip")
 
 ## Consultar las Time Entries de Usuarios Estándar de Salesforce
 
@@ -72,4 +72,4 @@ Paso 2: Acceder a las "Time Entries".
 * Elija "Usuario" y el sistema lo dirigirá al usuario relevante.
 * La hoja de tiempo se mostrará en la parte superior de la página de la siguiente manera:
 
-![alt_text](images/userTimeEntries.png "image_tooltip")
+![alt_text](images/timesheetInitialSetup/userTimeEntries.png "image_tooltip")
