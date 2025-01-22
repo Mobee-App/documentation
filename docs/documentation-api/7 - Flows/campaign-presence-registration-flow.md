@@ -10,7 +10,7 @@ The "Campaign Presence Registration" flow is aimed at streamlining the process o
 
 The primary objective of the "Campaign Presence Registration" flow is to facilitate seamless management of campaign memberships by utilizing an email address as the key data point. This flow enhances the user experience in campaign management by offering options to verify, update, or create records, ensuring that each interaction is effectively capitalized upon for campaign membership management.
 
-### **Full Customizability Tailored to User Needs**:
+### **Full Customizability Tailored to User Needs**
 
 This flow provides comprehensive customization, allowing it to be adapted to meet specific user and business requirements. It not only addresses fundamental use-cases involving adding and updating members in a campaign but also provides a flexible platform to:
 - Introduce additional fields for updating.
@@ -18,7 +18,7 @@ This flow provides comprehensive customization, allowing it to be adapted to mee
 - Customize user interaction screens for enhanced user experience.
 - Integrate additional checks or processes as per the business workflow.
 
-### **Flow Functionality**:
+### **Flow Functionality**
 
 1. **Email Address Entry**:
    - The flow initiates by accepting an email address as input.

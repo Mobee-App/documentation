@@ -2,7 +2,7 @@
 To deploy your changes, you need to execute these commands:
 ```bash
 npm run build
-GIT_USER=<github_username> yarn deploy
+GIT_USER=<github_username> npm run deploy
 ```
 ## Translate Markdown files
 1. Open the docusaurus.config.js file and add the following code snippet to enable language translation features:
