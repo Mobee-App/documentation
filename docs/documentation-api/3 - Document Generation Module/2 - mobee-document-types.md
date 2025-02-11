@@ -146,89 +146,196 @@ Proceed with the following steps to incorporate the URL into the trusted URLs wi
 
 You have now set up remote site settings and trusted URLs to securely retrieve the image over HTTP. You can then use the `{% ProfilePicture__c}` tag to dynamically include the image in your generated documents.
 
-## Additional functionalities
+## Filters
 
-Mobee provides several tags and filters to help users customize their documents.
+With filters, it is possible to manipulate any given data field. Mobee suggest multiple filters designed to format, manipulate, and customize dynamic content within document templates. These filters help users format dates, change text case, and generate tailored content.
 
-### Dates
+**Usage Example**
 
-The `{docUtils.today}` tag is a predefined element that enables the inclusion of the current date in a document template during the generation process. In addition to the filters outlined below, users have the flexibility to manipulate this date according to their specific requirements.
+**Scenario:**
+A user is generating a contract document that includes custom date formatting and dynamically formatted names. The system should return dates in different formats and convert names to uppercase or lowercase as required.
 
-### Filters
-
-Filters are predefined functions designed for the manipulation of strings, dates, and numbers within document templates. They can be applied to any tag by appending the pipe character `|` followed by the desired filter.
-
-Here is an illustrative example of the syntax:
-
+**Template:**
 ```markdown
 Hello {Salutation} {FirstName} {LastName | upper}!
+Today's date is {docUtils.today | formatDate: '[["year": "numeric", "month": "long", "day": "numeric"]]'}.
+The contract start date is {StartDate | shortDate}.
+Next year, this date will be {StartDate | followingYear}.
 ```
 
-**Output:**
+**Sample Input Data:**
 
+| Field      | Value       |
+|------------|-------------|
+| Salutation | Mr.         |
+| FirstName  | John        |
+| LastName   | Doe         |
+| StartDate  | 2022-01-21  |
+
+**Expected Output:**
 ```markdown
 Hello Mr. John DOE!
+Today's date is January 21, 2022.
+The contract start date is 21/01/2022.
+Next year, this date will be 2023.
 ```
 
-The following tags and filters are currently supported:
+### String Filters
 
-**String filters:**
+- **`lower`**: Converts text to lowercase.
+  
+  **Example:**
+  ```markdown
+  {"Hello World" | lower}
+  ```
+  **Output:**
+  ```
+  hello world
+  ```
 
-- `lower`: Utilized to convert text to lowercase.
-- `upper`: Utilized to convert text to uppercase.
+- **`upper`**: Converts text to uppercase.
 
-**Date Filters:**
+  **Example:**
+  ```markdown
+  {"hello world" | upper}
+  ```
+  **Output:**
+  ```
+  HELLO WORLD
+  ```
 
-- `shortDate`: Utilized to convert the date in a concise shorter format.
-- `followingMonth`: Utilized to return the subsequent month based on a given date.
-- `followingYear`: Utilized to return the subsequent year based on a given date.
-- `lastWorkingDayOfMonth`: Utilized to return the last working day of the month based on a given date.
-- `formatDate`: A versatile filter for formatting various date values.
+---
 
-Usage example:
+### Date Filters
 
-```markdown
-The created date is {StartDate | shortDate}
-The following month is {StartDate | followingMonth: '[["year": "numeric", "month": "long"]]'}
-The following year is {StartDate | followingYear: '[["year": "numeric"]]'}
-The last working day of the month is {StartDate | lastWorkingDayOfMonth}
-```
+- **`shortDate`**: Formats the date in a concise format.
 
-**Output:**
+  **Example:**
+  ```markdown
+  {StartDate | shortDate}
+  ```
+  **Output:**
+  ```
+  21/01/2022
+  ```
 
-```markdown
-The created date is 21/01/2022
-The following month is février 2022
-The following year is 2023
-The last working day of the month is 31/01/2022
-```
+- **`followingMonth`**: Returns the next month from the given date.
 
-The `followingMonth`, `followingYear`, `lastWorkingDayOfMonth`, and `formatDate` functions accept the following formatting options:
+  **Example:**
+  ```markdown
+  {StartDate | followingMonth: '[["year": "numeric", "month": "long"]]'}
+  ```
+  **Output:**
+  ```
+  February 2022
+  ```
+
+- **`followingYear`**: Returns the year after the given date.
+
+  **Example:**
+  ```markdown
+  {StartDate | followingYear: '[["year": "numeric"]]'}
+  ```
+  **Output:**
+  ```
+  2023
+  ```
+
+- **`lastWorkingDayOfMonth`**: Returns the last working day of the month for the given date.
+
+  **Example:**
+  ```markdown
+  {StartDate | lastWorkingDayOfMonth}
+  ```
+  **Output:**
+  ```
+  31/01/2022
+  ```
+
+- **`formatDate`**: Formats the date based on the specified options.
+
+  **Example:**
+  ```markdown
+  {StartDate | formatDate: '[["year": "numeric", "month": "short", "day": "2-digit"]]'}
+  ```
+  **Output:**
+  ```
+  21 Jan 2022
+  ```
+
+---
+
+#### Formatting Options for Date Filters
+
+The date filters (`followingMonth`, `followingYear`, `lastWorkingDayOfMonth`, and `formatDate`) support customizable formatting using the following options:
 
 ```json
 [[
-  weekday: 'narrow' | 'short' | 'long',
-  era: 'narrow' | 'short' | 'long',
-  year: 'numeric' | '2-digit',
-  month: 'numeric' | '2-digit' | 'narrow' | 'short' | 'long',
-  day: 'numeric' | '2-digit',
-  hour: 'numeric' | '2-digit',
-  minute: 'numeric' | '2-digit',
-  second: 'numeric' | '2-digit',
-  timeZoneName: 'short' | 'long',
-
-  // Time zone to express it in
-  timeZone: 'Asia/Shanghai',
-  // Force 12-hour or 24-hour
-  hour12: true | false,
-
-  // Rarely-used options
-  hourCycle: 'h11' | 'h12' | 'h23' | 'h24',
-  formatMatcher: 'basic' | 'best fit'
+  "weekday": "narrow" | "short" | "long",
+  "era": "narrow" | "short" | "long",
+  "year": "numeric" | "2-digit",
+  "month": "numeric" | "2-digit" | "narrow" | "short" | "long",
+  "day": "numeric" | "2-digit",
+  "hour": "numeric" | "2-digit",
+  "minute": "numeric" | "2-digit",
+  "second": "numeric" | "2-digit",
+  "timeZoneName": "short" | "long",
+  "timeZone": "Asia/Shanghai",
+  "hour12": true | false,
+  "hourCycle": "h11" | "h12" | "h23" | "h24",
+  "formatMatcher": "basic" | "best fit"
 ]]
 ```
 
-**List Filters:**
+This flexibility ensures users can easily tailor date formats to their specific needs, making documents accurate and localized for diverse audiences.
+
+### Number Filters
+
+#### `currency` Function
+
+The `currency` function is designed to format numeric values as currencies, making it easy to present financial data in documents. By specifying a 3-letter currency ISO code, the function formats the input number and appends the corresponding currency symbol based on the locale of the document template.
+
+To handle dynamic currency requirements, such as using the currency associated with the current record (e.g., an invoice or account), the function allows you to pass dynamic values like `$record.CurrencyIsoCode`.
+
+**Returns**
+The function returns a formatted string representing the number as a currency, including:
+- The appropriate currency symbol.
+- Number formatting (thousands separators and decimal points) based on the document's locale.
+
+**Usage Example**
+
+**Scenario:**
+A company generates invoices in multiple currencies depending on the country of the customer. The currency symbol should dynamically adjust based on the specific invoice’s currency, ensuring proper presentation of financial data.
+
+**Template:**
+```markdown
+Account’s Annual Revenue: { Account.AnnualRevenue | currency: '$record.Account.CurrencyIsoCode'}
+Invoice Amount: {Amount | currency: '$record.CurrencyIsoCode'}
+```
+
+**Sample Input Data:**
+```json
+{
+  "Account": {
+    "AnnualRevenue": 13000000,
+    "CurrencyIsoCode": "USD"
+  },
+  "Amount": 15123,
+  "CurrencyIsoCode": "JPY"
+}
+```
+
+**Expected Output:**
+```markdown
+Account’s Annual Revenue: $13,000,000.00
+Invoice Amount: ¥15,123
+```
+
+The `currency` function simplifies the presentation of monetary values by dynamically adapting to various currencies, making documents more user-friendly and suitable for international audiences.
+
+---
+
+### List Filters
 
 #### `groupBy` Function Documentation
 

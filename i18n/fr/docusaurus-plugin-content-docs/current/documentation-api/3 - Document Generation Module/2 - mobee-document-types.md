@@ -146,252 +146,367 @@ Procédez aux étapes suivantes pour incorporer l'URL dans les URL de confiance 
 
 Vous avez maintenant configuré les paramètres du site distant et les URL de confiance pour récupérer en toute sécurité l'image via HTTP. Vous pouvez ensuite utiliser la balise `{%ProfilePicture__c}` pour inclure dynamiquement l'image dans vos documents générés.
 
-## Fonctionnalités supplémentaires
+## Filtres
 
-Mobee fournit plusieurs balises et filtres pour aider les utilisateurs à personnaliser leurs documents.
-
-### Dates
-
-La balise `{docUtils.today}` est un élément prédéfini qui permet d'inclure la date du jour dans un modèle de document pendant le processus de génération. A l'aide des filtres décrits ci-dessous, les utilisateurs ont la flexibilité de manipuler cette date selon leurs besoins spécifiques.
-
-### Filtres
-
-Les filtres sont des fonctions prédéfinies conçues pour la manipulation de chaînes de caractères, dates et nombres dans les modèles de documents. Ils peuvent être appliqués à n'importe quelle balise en ajoutant le caractère pipe `|` suivi du filtre souhaité.
-
-Voici un exemple illustratif de la syntaxe :
-
-```markdown
-Bonjour {Salutation} {FirstName} {LastName | upper} !
-```
-
-**Résultat :**
-
-```markdown
-Bonjour M. John DOE !
-```
-
-Les balises et filtres suivants sont actuellement pris en charge :
-
-**Filtres de chaîne :**
-
-- `lower` : Utilisé pour convertir le texte en minuscules.
-- `upper` : Utilisé pour convertir le texte en majuscules.
-
-**Filtres de date :**
-
-- `shortDate` : Utilisé pour convertir la date dans un format abrégé plus court.
-- `followingMonth` : Utilisé pour retourner le mois suivant en fonction d'une date donnée.
-- `followingYear` : Utilisé pour retourner l'année suivante en fonction d'une date donnée.
-- `lastWorkingDayOfMonth` : Utilisé pour retourner le dernier jour ouvrable du mois en fonction d'une date donnée.
-- `formatDate` : Un filtre polyvalent pour formater différentes valeurs de date.
-
-Exemple d'utilisation :
-
-```markdown
-La date de création est {DateDeDébut | shortDate}
-Le mois suivant est {DateDeDébut | followingMonth: '[["year": "numeric", "month": "long"]]'}
-L'année suivante est {DateDeDébut | followingYear: '[["year": "numeric"]]'}
-Le dernier jour ouvrable du mois est {DateDeDébut | lastWorkingDayOfMonth}
-```
-
-**Résultat :**
-
-```markdown
-La date de création est 21/01/2022
-Le mois suivant est février 2022
-L'année suivante est 2023
-Le dernier jour ouvrable du mois est 31/01/2022
-```
-
-Les fonctions `followingMonth`, `followingYear`, `lastWorkingDayOfMonth` et `formatDate` acceptent les options de formatage suivantes :
-
-```json
-[[
-  weekday: 'narrow' | 'short' | 'long',
-  era: 'narrow' | 'short' | 'long',
-  year: 'numeric' | '2-digit',
-  month: 'numeric' | '2-digit' | 'narrow' | 'short' | 'long',
-  day: 'numeric' | '2-digit',
-  hour: 'numeric' | '2-digit',
-  minute: 'numeric' | '2-digit',
-  second: 'numeric' | '2-digit',
-  timeZoneName: 'short' | 'long',
-
-  // Time zone to express it in
-  timeZone: 'Asia/Shanghai',
-  // Force 12-hour or 24-hour
-  hour12: true | false,
-
-  // Rarely-used options
-  hourCycle: 'h11' | 'h12' | 'h23' | 'h24',
-  formatMatcher: 'basic' | 'best fit'
-]]
-```
-
-**Filtres de Liste :**  
-
-#### Documentation de la fonction `groupBy`
-
-La fonction `groupBy` permet d'organiser les éléments d'une collection en les regroupant en fonction de clés spécifiées. Plusieurs niveaux de regroupement peuvent être réalisés en fournissant plusieurs clés séparées par des points-virgules. L'ordre des regroupements suit la séquence des clés spécifiées.
-
-**Retourne**
-
-La fonction retourne un objet contenant les propriétés suivantes :
-
-- **`$groupedKey#`** : Représente la clé de regroupement à chaque niveau, où `#` indique le niveau de regroupement, à partir de 1.
-- **`$groupedItems#`** : Contient les éléments associés à chaque clé de regroupement. Si plusieurs niveaux de regroupement sont appliqués, chaque niveau contient sa propre clé `$groupedKey#` et ses éléments `$groupedItems#`, incrémentant l'index pour chaque niveau supplémentaire.
+Avec les filtres, il est possible de manipuler n'importe quel champ de données fourni. Mobee propose plusieurs filtres conçus pour formater, manipuler et personnaliser le contenu dynamique au sein des modèles de documents. Ces filtres aident les utilisateurs à formater les dates, à modifier la casse du texte et à générer un contenu adapté.
 
 **Exemple d'utilisation**
 
-**Scénario :**
+**Scénario :**  
+Un utilisateur génère un document contractuel qui inclut un formatage de date personnalisé et des noms formatés dynamiquement. Le système doit retourner les dates dans différents formats et convertir les noms en majuscules ou minuscules selon les besoins.
 
-Regrouper les articles de la facture par `Catégorie` et `Sous-catégorie`.
-
-**Modèle :**
-
+**Modèle :**  
 ```markdown
-Numéro de facture : {InvoiceNumber}
-
-{#InvoiceItems | groupBy: 'Category;Subcategory'}
-- Catégorie : {$groupedKey1}
-  {#$groupedItems1}
-  - Sous-catégorie : {$groupedKey2}
-    {#$groupedItems2}
-    - Article : {ItemName}
-      Quantité : {Quantity}
-      Prix : {Price | currency: 'USD'}
-    {/}
-  {/}
-{/}
+Bonjour {Salutation} {FirstName} {LastName | upper} !  
+La date d'aujourd'hui est {docUtils.today | formatDate: '[["year": "numeric", "month": "long", "day": "numeric"]]'} .  
+La date de début du contrat est {StartDate | shortDate}.  
+L'année prochaine, cette date sera {StartDate | followingYear}.  
 ```
 
-**Données d'exemple (Format Tableau) :**
+**Données d'entrée :**
 
-| Catégorie    | Sous-catégorie | Nom de l'article | Quantité | Prix |
-|--------------|----------------|-----------------|----------|------|
-| Électronique | Ordinateurs     | Dell XPS 13      | 2        | 1200 |
-| Électronique | Ordinateurs     | MacBook Pro      | 1        | 2000 |
-| Électronique | Téléphones      | iPhone 14        | 3        | 999  |
-| Mobilier     | Chaises         | Chaise de bureau | 5        | 150  |
+| Champ       | Valeur      |
+|-------------|-------------|
+| Salutation  | M.          |
+| FirstName   | John        |
+| LastName    | Doe         |
+| StartDate   | 2022-01-21  |
 
-**Sortie attendue :**
-
-Numéro de facture : INV-2024-001
-
-- **Catégorie :** Électronique
-  - **Sous-catégorie :** Ordinateurs
-    - Article : Dell XPS 13
-      Quantité : 2
-      Prix : $1,200.00
-    - Article : MacBook Pro
-      Quantité : 1
-      Prix : $2,000.00
-  - **Sous-catégorie :** Téléphones
-    - Article : iPhone 14
-      Quantité : 3
-      Prix : $999.00
-
-- **Catégorie :** Mobilier
-  - **Sous-catégorie :** Chaises
-    - Article : Chaise de bureau
-      Quantité : 5
-      Prix : $150.00
+**Sortie attendue :**  
+```markdown
+Bonjour M. John DOE !  
+La date d'aujourd'hui est 21 janvier 2022.  
+La date de début du contrat est 21/01/2022.  
+L'année prochaine, cette date sera 2023.  
+```
 
 ---
 
-#### Fonction `sortBy`
+### Filtres de chaînes de caractères
 
-La fonction `sortBy` permet de trier les éléments d'une liste selon des champs spécifiques, comme la catégorie et le prix.
+- **`lower`** : Convertit le texte en minuscules.
 
-**Exemple**
+  **Exemple :**  
+  ```markdown
+  {"Bonjour Monde" | lower}
+  ```  
+  **Sortie :**  
+  ```
+  bonjour monde
+  ```
+
+- **`upper`** : Convertit le texte en majuscules.
+
+  **Exemple :**  
+  ```markdown
+  {"bonjour monde" | upper}
+  ```  
+  **Sortie :**  
+  ```
+  BONJOUR MONDE
+  ```
+
+---
+
+### Filtres de dates
+
+- **`shortDate`** : Formate la date en un format concis.
+
+  **Exemple :**  
+  ```markdown
+  {StartDate | shortDate}
+  ```  
+  **Sortie :**  
+  ```
+  21/01/2022
+  ```
+
+- **`followingMonth`** : Retourne le mois suivant la date donnée.
+
+  **Exemple :**  
+  ```markdown
+  {StartDate | followingMonth: '[["year": "numeric", "month": "long"]]'}
+  ```  
+  **Sortie :**  
+  ```
+  février 2022
+  ```
+
+- **`followingYear`** : Retourne l'année suivant la date donnée.
+
+  **Exemple :**  
+  ```markdown
+  {StartDate | followingYear: '[["year": "numeric"]]'}
+  ```  
+  **Sortie :**  
+  ```
+  2023
+  ```
+
+- **`lastWorkingDayOfMonth`** : Retourne le dernier jour ouvrable du mois de la date donnée.
+
+  **Exemple :**  
+  ```markdown
+  {StartDate | lastWorkingDayOfMonth}
+  ```  
+  **Sortie :**  
+  ```
+  31/01/2022
+  ```
+
+- **`formatDate`** : Formate la date selon les options spécifiées.
+
+  **Exemple :**  
+  ```markdown
+  {StartDate | formatDate: '[["year": "numeric", "month": "short", "day": "2-digit"]]'}
+  ```  
+  **Sortie :**  
+  ```
+  21 janv. 2022
+  ```
+
+---
+
+#### Options de formatage pour les filtres de dates
+
+Les filtres de dates (`followingMonth`, `followingYear`, `lastWorkingDayOfMonth`, et `formatDate`) prennent en charge des options de formatage personnalisées comme suit :
+
+```json
+[[
+  "weekday": "narrow" | "short" | "long",
+  "era": "narrow" | "short" | "long",
+  "year": "numeric" | "2-digit",
+  "month": "numeric" | "2-digit" | "narrow" | "short" | "long",
+  "day": "numeric" | "2-digit",
+  "hour": "numeric" | "2-digit",
+  "minute": "numeric" | "2-digit",
+  "second": "numeric" | "2-digit",
+  "timeZoneName": "short" | "long",
+  "timeZone": "Europe/Paris",
+  "hour12": true | false,
+  "hourCycle": "h11" | "h12" | "h23" | "h24",
+  "formatMatcher": "basic" | "best fit"
+]]
+```
+
+Cela garantit que les utilisateurs peuvent facilement adapter les formats de date à leurs besoins spécifiques, rendant les documents précis et localisés pour divers publics.
+
+---
+
+### Filtres numériques
+
+#### Fonction `currency`
+
+La fonction `currency` est conçue pour formater les valeurs numériques en devises, ce qui facilite la présentation des données financières dans les documents. En spécifiant un code ISO de devise à 3 lettres, la fonction formate le nombre d'entrée et ajoute le symbole de la devise correspondant en fonction de la langue définie dans le modèle du document.
+
+Pour gérer des devises dynamiques, telles que la devise associée à l'enregistrement actuel (par exemple, une facture ou un compte), la fonction permet de passer des valeurs dynamiques comme `$record.CurrencyIsoCode`.
+
+**Retourne**  
+La fonction renvoie une chaîne formatée représentant le nombre comme une devise, incluant :
+- Le symbole de la devise approprié.
+- Le formatage du nombre (séparateurs de milliers et décimales) selon la langue du document.
+
+**Exemple d'utilisation**
+
+**Scénario :**  
+Une entreprise génère des factures dans plusieurs devises selon le pays du client. Le symbole de la devise doit s'ajuster dynamiquement en fonction de la devise spécifique de la facture, garantissant une présentation correcte des données financières.
 
 **Modèle :**
-
 ```markdown
-{#InvoiceItems | sortBy: 'Category;Price'}
-- {ItemName}: {Price}
+Revenus annuels du compte : { Account.AnnualRevenue | currency: '$record.Account.CurrencyIsoCode'}  
+Montant de la facture : {Amount | currency: '$record.CurrencyIsoCode'}  
+```
+
+**Données d'entrée :**
+
+| Champ            | Valeur       |
+|------------------|--------------|
+| AnnualRevenue    | 13000000     |
+| CurrencyIsoCode  | USD          |
+| Amount           | 15123        |
+| CurrencyIsoCode  | JPY          |
+
+**Sortie attendue :**  
+```markdown
+Revenus annuels du compte : $13,000,000.00  
+Montant de la facture : ¥15,123  
+```
+
+La fonction `currency` simplifie la présentation des valeurs monétaires en s’adaptant dynamiquement à diverses devises, ce qui rend les documents plus conviviaux et adaptés à des audiences internationales.
+
+---
+
+### Filtres de liste
+
+#### Documentation de la fonction `groupBy`
+
+La fonction `groupBy` organise les éléments d'une collection en les regroupant selon des clés spécifiées. Plusieurs niveaux de regroupement peuvent être obtenus en fournissant plusieurs clés, séparées par des points-virgules. L'ordre des regroupements suit la séquence des clés spécifiées.
+
+**Retourne**  
+La fonction renvoie un objet contenant les propriétés suivantes :
+
+- **`$groupedKey#`** : Représente la clé de regroupement à chaque niveau, où `#` indique le niveau de regroupement, à partir de 1.
+- **`$groupedItems#`** : Contient les éléments associés à chaque clé de regroupement. Si plusieurs niveaux de regroupement sont appliqués, chaque niveau contient sa propre clé `$groupedKey#` et ses éléments `$groupedItems#`.
+
+**Exemple d'utilisation**
+
+**Scénario :**  
+Regrouper les articles de facture par `Category` et `Subcategory`.
+
+**Modèle :**
+```markdown
+Numéro de facture : {InvoiceNumber}  
+
+{#InvoiceItems | groupBy: 'Category;Subcategory'}  
+- Catégorie : {$groupedKey1}  
+  {#$groupedItems1}  
+  - Sous-catégorie : {$groupedKey2}  
+    {#$groupedItems2}  
+    - Article : {ItemName}  
+      Quantité : {Quantity}  
+      Prix : {Price | currency: 'USD'}  
+    {/}  
+  {/}  
+{/}  
+```
+
+**Données d'entrée (Format Tableau) :**
+
+| Catégorie     | Sous-catégorie | Nom de l'article   | Quantité | Prix  |
+|---------------|----------------|--------------------|----------|-------|
+| Électronique  | Ordinateurs    | Dell XPS 13        | 2        | 1200  |
+| Électronique  | Ordinateurs    | MacBook Pro        | 1        | 2000  |
+| Électronique  | Téléphones     | iPhone 14          | 3        | 999   |
+| Mobilier      | Chaises        | Chaise de bureau   | 5        | 150   |
+
+**Sortie attendue :**  
+Numéro de facture : INV-2024-001  
+
+- **Catégorie :** Électronique  
+  - **Sous-catégorie :** Ordinateurs  
+    - Article : Dell XPS 13  
+      Quantité : 2  
+      Prix : $1,200.00  
+    - Article : MacBook Pro  
+      Quantité : 1  
+      Prix : $2,000.00  
+  - **Sous-catégorie :** Téléphones  
+    - Article : iPhone 14  
+      Quantité : 3  
+      Prix : $999.00  
+
+- **Catégorie :** Mobilier  
+  - **Sous-catégorie :** Chaises  
+    - Article : Chaise de bureau  
+      Quantité : 5  
+      Prix : $150.00  
+
+Cette fonction illustre comment regrouper efficacement des données selon des catégories hiérarchiques.
+
+#### Fonction `sortBy`
+
+La fonction `sortBy` permet de trier les éléments d'une liste selon des champs spécifiques, tels que la catégorie ou le prix.
+
+**Exemple d'utilisation**
+
+**Modèle :**
+```markdown
+{#InvoiceItems | sortBy: 'Category;Price'}  
+- {ItemName} : {Price}  
 {/}
 ```
 
-**Sortie attendue :**
+**Données d'entrée (Format Tableau) :**
 
+| Catégorie     | Nom de l'article   | Prix  |
+|---------------|--------------------|-------|
+| Mobilier      | Chaise de bureau   | 150   |
+| Électronique  | Dell XPS 13        | 1200  |
+| Électronique  | MacBook Pro        | 2000  |
+
+**Sortie attendue :**  
 ```markdown
-- Chaise de bureau: 150
-- Dell XPS 13: 1200
-- MacBook Pro: 2000
+- Chaise de bureau : 150  
+- Dell XPS 13 : 1200  
+- MacBook Pro : 2000  
 ```
 
 ---
 
 #### Fonction `htmlList`
 
-La fonction `htmlList` transforme une chaîne HTML en une liste simple.
+La fonction `htmlList` convertit une chaîne HTML en une liste simple.
 
-**Exemple**
+**Exemple d'utilisation**
 
-**Modèle :**
+**Modèle :**  
 ```markdown
 {richTextField: htmlList}
 ```
-**Données**
+
+**Données :**  
 ```markdown
 {richTextField: '<ul><li>Article 1</li><li>Article 2</li></ul>'}
 ```
 
-**Sortie attendue :**
-
+**Sortie attendue :**  
 ```markdown
-- Article 1
-- Article 2
+- Article 1  
+- Article 2  
 ```
 
 ---
 
 #### Fonction `multiPicklist`
 
-La fonction `multiPicklist` convertit une chaîne en liste en utilisant des options spécifiques, comme un séparateur et un symbole de puce.
+La fonction `multiPicklist` convertit une chaîne de texte délimitée en une liste avec des options spécifiées, telles qu'un séparateur et un symbole de puce.
 
-**Exemple**
+**Exemple d'utilisation**
 
-**Données**
+**Données :**  
 ```markdown
 {fruits: 'Pomme;Orange;Banane'}
 ```
 
-**Modèle :**
-
+**Modèle :**  
 ```markdown
-{fruits | multiPicklist: '[{"separator": ";", "bulletSymbol": "-"}]'}
+{fruits | multiPicklist: '[["separator": ";", "bulletSymbol": "-"]]' }
 ```
 
-**Sortie attendue :**
-
+**Sortie attendue :**  
 ```markdown
-- Pomme
-- Orange
-- Banane
+- Pomme  
+- Orange  
+- Banane  
 ```
 
 ---
 
 #### Fonction `where`
 
-La fonction `where` permet de filtrer les éléments qui correspondent à certaines conditions, comme sélectionner uniquement les articles électroniques.
+La fonction `where` permet de filtrer les éléments qui correspondent à certaines conditions, par exemple, sélectionner uniquement les articles électroniques.
 
-**Exemple**
+**Exemple d'utilisation**
 
-**Modèle :**
-
+**Modèle :**  
 ```markdown
-{#InvoiceItems | where: 'Category=="Électronique"'}
-- {ItemName}
+{#InvoiceItems | where: 'Category=="Électronique"'}  
+- {ItemName}  
 {/}
 ```
 
-**Sortie attendue :**
+**Données d'entrée (Format Tableau) :**
 
+| Catégorie     | Nom de l'article   | Prix  |
+|---------------|--------------------|-------|
+| Électronique  | Dell XPS 13        | 1200  |
+| Électronique  | MacBook Pro        | 2000  |
+| Électronique  | iPhone 14          | 999   |
+| Mobilier      | Chaise de bureau   | 150   |
+
+**Sortie attendue :**  
 ```markdown
-- Dell XPS 13
-- MacBook Pro
-- iPhone 14
+- Dell XPS 13  
+- MacBook Pro  
+- iPhone 14  
 ```
