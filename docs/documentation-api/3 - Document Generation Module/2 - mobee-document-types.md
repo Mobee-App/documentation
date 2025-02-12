@@ -542,3 +542,40 @@ The `where` function helps you filter items that match specific conditions, such
 - MacBook Pro
 - iPhone 14
 ```
+
+#### `sum` Function
+
+The `sum` function allows you to calculate the total of values within a specific field in a list. The result of this calculation can be accessed using the `$result` placeholder. Like other placeholders, you can apply various number filters to it like the `currency`.
+
+
+**Example**
+
+**Template:**
+
+```markdown
+{#Opportunities | sum: 'Amount'}{$result | currency: 'EUR'}{/}
+```
+
+**Expected Output:**
+
+```markdown
+15 123,00 €
+```
+
+#### `product` Function
+
+The `product` function allows you to calculate the product (multiplication) of values within a specific field in a list. The result of this calculation can be accessed using the `$result` placeholder. Like other placeholders, you can apply various number filters to it.
+
+**Example**
+
+**Template:**
+
+```markdown
+{#Items | product: 'Value'}{$result | formatNumber: '[["maximumSignificantDigits": 3]]'}{/}
+```
+
+**Expected Output:**
+
+```markdown
+123.000
+```

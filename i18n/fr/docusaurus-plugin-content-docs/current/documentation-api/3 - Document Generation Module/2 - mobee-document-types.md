@@ -510,3 +510,39 @@ La fonction `where` permet de filtrer les éléments qui correspondent à certai
 - MacBook Pro  
 - iPhone 14  
 ```
+
+#### Fonction `sum`
+
+La fonction `sum` permet de calculer la somme des valeurs d'un champ spécifique dans une liste. Le résultat de ce calcul peut être accédé en utilisant le marqueur `$result`. Comme pour les autres marqueurs, vous pouvez appliquer divers filtres numériques, tels que le filtre `currency`.
+
+**Exemple**
+
+**Modèle :**
+
+```markdown
+{#Opportunities | sum: 'Amount'}{$result | currency: 'EUR'}{/}
+```
+
+**Résultat attendu :**
+
+```markdown
+15 123,00 €
+```
+
+#### Fonction `product`
+
+La fonction `product` permet de calculer le produit (multiplication) des valeurs d'un champ spécifique dans une liste. Le résultat de ce calcul peut être accédé en utilisant la balise `$result`. Comme pour les autres balise, vous pouvez appliquer divers filtres numériques.
+
+**Exemple**
+
+**Modèle :**
+
+```markdown
+{#Items | product: 'Value'}{$result | formatNumber: '[["maximumSignificantDigits": 3]]'}{/}
+```
+
+**Résultat attendu :**
+
+```markdown
+123.000
+```
