@@ -529,8 +529,6 @@ La fonction `sum` permet de calculer la somme des valeurs d'un champ spécifique
 15 123,00 €
 ```
 
----
-
 #### Fonction `product`
 
 La fonction `product` permet de calculer le produit (multiplication) des valeurs d'un champ spécifique dans une liste. Le résultat de ce calcul peut être accédé en utilisant la balise `$result`. Comme pour les autres balise, vous pouvez appliquer divers filtres numériques.
