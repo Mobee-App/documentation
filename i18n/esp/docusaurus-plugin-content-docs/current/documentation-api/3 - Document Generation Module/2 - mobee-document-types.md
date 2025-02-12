@@ -516,3 +516,39 @@ La función `where` permite filtrar elementos que cumplan ciertas condiciones, p
 - MacBook Pro  
 - iPhone 14  
 ```
+
+#### Función `sum`
+
+La función `sum` permite calcular la suma de los valores de un campo específico en una lista. El resultado de este cálculo se puede acceder utilizando el marcador `$result`. Al igual que con otros marcadores, puedes aplicar diversos filtros numéricos, como el filtro `currency`.
+
+**Ejemplo**
+
+**Plantilla:**
+
+```markdown
+{#Opportunities | sum: 'Amount'}{$result | currency: 'EUR'}{/}
+```
+
+**Resultado esperado:**
+
+```markdown
+15 123,00 €
+```
+
+### Función `product`
+
+La función `product` permite calcular el producto (multiplicación) de los valores de un campo específico en una lista. El resultado de este cálculo se puede acceder utilizando el marcador `$result`. Al igual que con otros marcadores, puedes aplicar diversos filtros numéricos.
+
+**Ejemplo**
+
+**Plantilla:**
+
+```markdown
+{#Items | product: 'Value'}{$result | formatNumber: '[["maximumSignificantDigits": 3]]'}{/}
+```
+
+**Resultado esperado:**
+
+```markdown
+123.000
+```
