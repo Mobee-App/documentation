@@ -50,6 +50,6 @@ Ce flux offre une flexibilité totale en termes de personnalisation, permettant 
    - S’il n’est pas membre, l'individu est ajouté à la campagne et son statut de membre est initialisé (ex : 'Répondu').
    - S’il est déjà membre, le statut est mis à jour en conséquence.  
 
-   ![Sample Image](./img/photo2.PNG)
+   ![Sample Image](./img/photo2.png)
 
 Le flux "Campaign Presence Registration" assure une gestion structurée et efficace des adhésions aux campagnes tout en conservant la flexibilité nécessaire pour ajuster le flux en fonction des besoins commerciaux évolutifs et en veillant à ce qu'aucun lead potentiel ne soit perdu dans le processus.

@@ -50,6 +50,6 @@ This flow provides comprehensive customization, allowing it to be adapted to mee
    - If not a member, the individual is added to the campaign, and their membership status is initialized (e.g., 'Responded').
    - If they are already a member, the status is updated accordingly.  
 
-   ![Sample Image](./img/photo2.PNG)
+   ![Sample Image](./img/photo2.png)
 
 "Campaign Presence Registration" allows users to ensure a structured and efficient method for managing campaign memberships, maintaining the flexibility to adapt the flow in alignment with dynamic business needs while ensuring that no potential leads are lost in the process.

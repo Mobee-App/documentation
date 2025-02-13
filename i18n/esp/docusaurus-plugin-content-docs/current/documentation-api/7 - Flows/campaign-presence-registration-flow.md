@@ -51,6 +51,6 @@ Este flujo permite una personalización completa, adaptándose a los requisitos 
    - Si no es miembro, se le agrega a la campaña y su estado de membresía se inicializa (por ejemplo, 'Respondido').
    - Si ya es miembro, el estado se actualiza según corresponda.
 
-   ![Imagen de ejemplo](./img/photo2.PNG)
+   ![Imagen de ejemplo](./img/photo2.png)
 
 El "Registro de Presencia en Campaña" permite a los usuarios asegurar un método estructurado y eficiente para gestionar las membresías de campaña, manteniendo la flexibilidad para adaptar el flujo a las necesidades dinámicas del negocio y asegurando que ningún cliente potencial se pierda en el proceso.
