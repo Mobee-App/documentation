@@ -535,7 +535,7 @@ La función `sum` permite calcular la suma de los valores de un campo específic
 15 123,00 €
 ```
 
-### Función `product`
+#### Función `product`
 
 La función `product` permite calcular el producto (multiplicación) de los valores de un campo específico en una lista. El resultado de este cálculo se puede acceder utilizando el marcador `$result`. Al igual que con otros marcadores, puedes aplicar diversos filtros numéricos.
 
