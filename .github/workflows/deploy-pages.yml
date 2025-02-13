@@ -3,7 +3,7 @@ name: Deploy Docusaurus to GitHub Pages
 on:
   push:
     branches:
-      - main  # Set this to your default branch
+      - main  # We build the documentation from the main branch
 
 jobs:
   deploy:
@@ -16,7 +16,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'  # You can specify the Node.js version you need
+          node-version: '16'
           cache: 'npm'
 
       - name: Install dependencies
@@ -29,4 +29,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build  # The directory where your Docusaurus build outputs
+          publish_dir: ./build  # The directory where the Docusaurus build outputs

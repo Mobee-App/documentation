@@ -562,7 +562,7 @@ The `sum` function allows you to calculate the total of values within a specific
 15 123,00 €
 ```
 
-#### `product` Function
+### `product` Function
 
 The `product` function allows you to calculate the product (multiplication) of values within a specific field in a list. The result of this calculation can be accessed using the `$result` placeholder. Like other placeholders, you can apply various number filters to it.
 
