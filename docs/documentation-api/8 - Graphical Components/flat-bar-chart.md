@@ -1,16 +1,16 @@
-# Polar Chart
+# Flat Bar Chart
 
-![Polar Chart Showcase](./img/polar_chart.png)
+![Flat Bar Chart Showcase](./img/flat_bar.png)
 
 ## Overview
 
-The 'Polar Chart' Lightning Web Component (LWC) offers a dynamic and interactive visualization tool for displaying performance metrics within Salesforce. This component is designed to represent data in a circular graph format, providing users with a clear and intuitive way to assess and compare actual values against target objectives. By leveraging the Polar Chart, users can effectively monitor key performance indicators (KPIs) and make informed decisions based on visual data insights.
+The 'Flat Bar Chart' Lightning Web Component (LWC) provides a clear and effective visualization tool for displaying comparative data within Salesforce. This component is designed to represent data in a horizontal bar chart format, allowing users to easily compare different categories or metrics side by side. By leveraging the Flat Bar Chart, users can quickly assess performance, identify trends, and make data-driven decisions.
 
 ## How Does It Work?
 
 The Polar Chart displays data as a circular graph, with segments representing different metrics. The chart includes:
 - **Actual Value**: The current value of the metric.
-- **Target Value**: The target objective value to reach 100% of the circle.
+- **Target Value**: The target or threshold value that the current value is measured against.
 - **Title**: A specific title for the chart, providing context to the data being displayed.
 - **Format Pipe**: An optional function to customize the format of the displayed values (e.g., percentage formatting).
 

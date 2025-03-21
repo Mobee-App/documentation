@@ -1,16 +1,16 @@
-# Polar Chart
+# Gauge Chart
 
-![Polar Chart Showcase](./img/polar_chart.png)
+![Gauge Chart Showcase](./img/gauge_chart.png)
 
 ## Overview
 
-The 'Polar Chart' Lightning Web Component (LWC) offers a dynamic and interactive visualization tool for displaying performance metrics within Salesforce. This component is designed to represent data in a circular graph format, providing users with a clear and intuitive way to assess and compare actual values against target objectives. By leveraging the Polar Chart, users can effectively monitor key performance indicators (KPIs) and make informed decisions based on visual data insights.
+The 'Gauge Chart' Lightning Web Component (LWC) offers a dynamic and interactive visualization tool for displaying performance metrics within Salesforce. This component is designed to represent data in a gauge format, providing users with a clear and intuitive way to assess progress towards a target or threshold. By leveraging the Gauge Chart, users can effectively monitor key performance indicators (KPIs) and make informed decisions based on visual data insights.
 
 ## How Does It Work?
 
 The Polar Chart displays data as a circular graph, with segments representing different metrics. The chart includes:
 - **Actual Value**: The current value of the metric.
-- **Target Value**: The target objective value to reach 100% of the circle.
+- **Target Value**: The target objective value to reach 100% of the gauge.
 - **Title**: A specific title for the chart, providing context to the data being displayed.
 - **Format Pipe**: An optional function to customize the format of the displayed values (e.g., percentage formatting).
 
