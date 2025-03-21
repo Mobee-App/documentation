@@ -1,6 +1,6 @@
 # Gauge Chart
 
-![Gauge Chart Showcase](./img/gauge_chart.png)
+![Gauge Chart Showcase](./img/gauge_chart.gif)
 
 ## Overview
 
