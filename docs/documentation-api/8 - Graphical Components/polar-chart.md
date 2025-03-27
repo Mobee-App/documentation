@@ -1,6 +1,6 @@
 # Polar Chart
 
-![Polar Chart Showcase](./img/polar_chart.png)
+![Polar Chart Showcase](./img/polar_chart.gif)
 
 ## Overview
 

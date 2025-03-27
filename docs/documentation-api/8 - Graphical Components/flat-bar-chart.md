@@ -1,6 +1,6 @@
 # Flat Bar Chart
 
-![Flat Bar Chart Showcase](./img/flat_bar.png)
+![Flat Bar Chart Showcase](./img/flat_bar.gif)
 
 ## Overview
 
