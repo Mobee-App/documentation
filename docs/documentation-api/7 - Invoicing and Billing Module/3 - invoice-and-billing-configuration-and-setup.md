@@ -1,6 +1,6 @@
 # Configuration and Setup for Invoicing and Billing
 
-This section will guide you through setting up key features such as the approval process, adding the "Generate Invoice" button, configuring Lightning Page assignments, managing user and admin permissions, and assigning Record Types to profiles.
+This section will guide you through setting up key features such as the approval process, adding the "New Invoice" button, configuring Lightning Page assignments, managing user and admin permissions, and assigning Record Types to profiles.
 
 ## Managing Custom Permission Sets
 
@@ -76,13 +76,14 @@ The custom permission sets are already included in the **Mobee Invoicing and Bil
 
 To ensure proper access to specific record types, follow these steps to configure Record Type access for user profiles:
 
-1. **Go to Setup** > **Profiles**.
-2. Select the profile for which you want to assign Record Type permissions.
-3. Under the **Record Type Settings** section, find the **Invoice** object.
-4. Click **Edit** next to the **Invoice** object.
-5. Select the appropriate Record Types (e.g., **Approved Invoice**, **Draft Invoice**) that should be available for the profile.
-6. Set a **Default Record Type** for this profile.
-7. Click **Save**.
+1. **Go to Setup** > **Profiles**.  
+2. Select the profile for which you want to assign Record Type permissions.  
+3. Under the **Apps** section, click **Object Settings**.  
+4. Find and click on the **Invoice** object.  
+5. Click **Edit**.  
+6. In the **Record Types and Page Layout Assignments** section, select the appropriate Record Types **Approved Invoice**, **Draft Invoice** to assign to the profile.
+7. Set **Draft Invoice** as the **Default Record Type**.  
+8. Click **Save**.
 
 This configuration ensures that users with specific profiles can access and work with the relevant record types for the **Invoice** object.
 
@@ -131,3 +132,108 @@ To assign these Lightning Record Pages to the appropriate invoice record types, 
 8. Click **Save**.
 
 By following these steps, you will ensure that the correct **Lightning Record Pages** are assigned to the appropriate invoice record types, maintaining clear and distinct views for different invoice statuses.
+
+
+---
+
+## Adding the New Invoice Button to the Page
+
+To streamline the invoicing process, you can add a **New Invoice** button to the relevant page layouts, allowing users to create invoices quickly through a flow.
+
+Follow the steps below to add the **New Invoice** button.
+
+---
+
+### Add the New Invoice Button to the Page Layout
+
+1. In the left-hand panel, select **Page Layouts**.
+2. Select the page layout where you want to add the **New Invoice** button (e.g., Opportunity Layout).
+3. In the layout editor, scroll down to the **Salesforce Mobile and Lightning Experience Actions** section.
+4. Drag the **New Invoice** button from the panel to the **Salesforce Mobile and Lightning Experience Actions** section.
+5. Click **Save**.
+
+---
+
+By following these steps, you’ll have a **New Invoice** button on your page, providing users with an easy way to initiate the invoice creation process through the associated Flow.
+
+---
+
+## Setting Up the Approval Process for the Invoice Object
+
+An approval process for invoices ensures that each invoice follows a consistent review and approval workflow. In this section, we will guide you through setting up the approval process using Salesforce's Approval Process Wizard, complete with details for each step.
+
+---
+
+### Step 1: Creating the Approval Process with the Wizard
+
+1. **Go to Setup** > **Approval Processes**.
+2. In the **Jump Start Wizard**, choose **Create New Approval Process**.
+3. Select the **Invoice** object.
+4. **Enter the name of the approval process** (e.g., "Invoice Approval Process") and provide a description.
+5. **Select Entry Criteria**:
+   - Set conditions that determine when an invoice enters the approval process (e.g., Use **Formula evaluates to true** and set the formula to trigger the process when the status is **Draft**: `ISPICKVAL(Status__c, 'Draft')`).
+
+      ![Entry Criteria - Status = Draft](./img/approval-process/entry-criteria.png)
+10. Click **Next** to proceed with the approval process setup.
+
+---
+
+### Step 2: Define Initial Submission Actions
+
+1. Under **Initial Submission Actions**, choose **Add New** > **Field Update** to update the invoice status to **Submitted for Approval**.
+
+2. Select **Field Update** from the action types dropdown.
+
+   ![Initial Submission Actions - Step 2](./img/approval-process/initial-field-update.png)
+
+3. Create the **Field Update** to change the invoice **Status** field to **Submitted for Approval**.
+
+   ![Initial Submission - Change Status to Submitted for Approval](./img/approval-process/initial-status.png)
+
+4. Save your changes to complete the **Initial Submission Actions** configuration
+   
+---
+
+This completes the setup for locking the record and updating the invoice status during the initial submission for approval.
+   
+---
+
+### Step 3: Final Approval Actions
+
+For the **Final Approval Actions**, you will configure the steps that occur when an invoice is approved.
+
+1. Create a **Field Update** to change the **Invoice Record Type** to **Approved Invoice**.
+
+   ![Final Approval Actions - Record Type](./img/approval-process/final-approval-record-type.PNG)
+
+2. Create a **Field Update** to change the invoice **Status** to **Approved**.
+
+   ![Final Approval Actions - Status](./img/approval-process/final-approval-status.PNG)
+
+---
+
+This completes the setup for unlocking the record, updating the record type, and marking the invoice as approved during the final approval process.
+
+---
+
+### Step 4: Defining Rejection and Recall Actions
+
+1. In the **Rejection Actions**, configure what happens if the invoice is rejected:
+   - **Field Update**: Set the **Invoice Status** to **Draft**.
+   
+   ![Rejection - Change Status to Draft](./img/approval-process/rejection.PNG)
+   
+2. Similarly, configure the **Recall Actions** to update the invoice status to **Draft** when a recall action is performed.
+
+   ![Recall - Change Status to Draft](./img/approval-process/recall.PNG)
+
+---
+
+### Final Step: Activate the Approval Process
+
+1. After setting up the initial submission, approval, rejection, and recall actions, review your approval process settings.
+2. Click **Activate** to make the approval process live for the **Invoice** object.
+
+---
+
+By following these steps, you’ll have a fully functioning approval process for invoices, ensuring that invoices go through proper review and status changes based on approval outcomes.

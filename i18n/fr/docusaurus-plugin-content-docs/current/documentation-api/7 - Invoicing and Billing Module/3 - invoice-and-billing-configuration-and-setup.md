@@ -129,3 +129,109 @@ Les attributions de pages ne sont pas automatiquement gérées par le package, u
 8. Cliquez sur **Enregistrer**.
 
 En suivant ces étapes, vous vous assurez que les **Pages Lightning** appropriées sont attribuées aux types d'enregistrement corrects pour les factures, offrant des vues claires et distinctes selon les statuts des factures.
+
+---
+
+## Ajout du bouton **Nouvelle facture** à la page
+
+Pour simplifier le processus de facturation, vous pouvez ajouter un bouton **Nouvelle facture** aux dispositions de page concernées, permettant aux utilisateurs de créer rapidement des factures via un flux.
+
+Suivez les étapes ci-dessous pour ajouter le bouton **Nouvelle facture**.
+
+---
+
+### Ajouter le bouton **Nouvelle facture** à la disposition de la page
+
+1. Dans le panneau de gauche, sélectionnez **Dispositions de page**.
+2. Choisissez la disposition de page où vous souhaitez ajouter le bouton **Nouvelle facture** (par exemple, la disposition Opportunité).
+3. Dans l'éditeur de disposition, descendez jusqu'à la section **Actions pour Salesforce Mobile et Lightning Experience**.
+4. Faites glisser le bouton **Nouvelle facture** depuis le panneau vers la section **Actions pour Salesforce Mobile et Lightning Experience**.
+5. Cliquez sur **Enregistrer**.
+
+---
+
+En suivant ces étapes, vous aurez un bouton **Nouvelle facture** sur votre page, offrant aux utilisateurs un moyen simple de lancer le processus de création de factures via le flux associé.
+
+---
+
+## Configuration du processus d’approbation pour l’objet Facture
+
+Un processus d’approbation pour les factures garantit que chaque facture suit un workflow cohérent de révision et d’approbation. Dans cette section, nous vous guiderons à travers la configuration du processus d’approbation à l’aide de l’assistant de processus d’approbation de Salesforce, avec des détails pour chaque étape.
+
+---
+
+### Étape 1 : Création du processus d’approbation avec l’assistant
+
+1. **Accédez à Configuration** > **Processus d’approbation**.
+2. Dans l’**Assistant de démarrage**, choisissez **Créer un nouveau processus d’approbation**.
+3. Sélectionnez l’objet **Facture**.
+4. **Saisissez le nom du processus d’approbation** (par exemple, "Processus d’approbation des factures") et fournissez une description.
+5. **Définissez les critères d’entrée** :
+   - Configurez les conditions qui déterminent quand une facture entre dans le processus d’approbation (par exemple, utilisez **La formule évalue à vrai** et définissez la formule pour déclencher le processus lorsque le statut est **Brouillon** : `ISPICKVAL(Status__c, 'Draft')`).
+
+      ![Critères d’entrée - Statut = Brouillon](./img/approval-process/entry-criteria.png)
+
+6. Cliquez sur **Suivant** pour continuer la configuration du processus d’approbation.
+
+---
+
+### Étape 2 : Définir les actions de soumission initiale
+
+1. Dans **Actions de soumission initiale**, choisissez **Ajouter une nouvelle action** > **Mise à jour de champ** pour mettre à jour le statut de la facture en **Soumise pour approbation**.
+
+2. Sélectionnez **Mise à jour de champ** dans le menu déroulant des types d’actions.
+
+   ![Actions de soumission initiale - Étape 2](./img/approval-process/initial-field-update.png)
+
+3. Créez la **Mise à jour de champ** pour changer le champ **Statut** de la facture en **Soumise pour approbation**.
+
+   ![Soumission initiale - Changer le statut en Soumise pour approbation](./img/approval-process/initial-status.png)
+
+4. Enregistrez vos modifications pour finaliser la configuration des **Actions de soumission initiale**.
+
+---
+
+Cette étape configure le verrouillage de l’enregistrement et la mise à jour du statut de la facture lors de la soumission initiale pour approbation.
+
+---
+
+### Étape 3 : Actions finales d’approbation
+
+Pour les **Actions finales d’approbation**, vous configurerez les étapes qui se produisent lorsqu’une facture est approuvée.
+
+1. Créez une **Mise à jour de champ** pour changer le **Type d’enregistrement de la facture** en **Facture approuvée**.
+
+   ![Actions finales d’approbation - Type d’enregistrement](./img/approval-process/final-approval-record-type.PNG)
+
+2. Créez une **Mise à jour de champ** pour changer le **Statut** de la facture en **Approuvée**.
+
+   ![Actions finales d’approbation - Statut](./img/approval-process/final-approval-status.PNG)
+
+---
+
+Cette étape configure le déverrouillage de l’enregistrement, la mise à jour du type d’enregistrement et le marquage de la facture comme approuvée lors de l’approbation finale.
+
+---
+
+### Étape 4 : Définir les actions de rejet et de rappel
+
+1. Dans les **Actions de rejet**, configurez ce qui se passe si la facture est rejetée :
+   - **Mise à jour de champ** : Définissez le **Statut de la facture** sur **Brouillon**.
+   
+   ![Rejet - Changer le statut en Brouillon](./img/approval-process/rejection.PNG)
+   
+2. De même, configurez les **Actions de rappel** pour mettre à jour le statut de la facture en **Brouillon** lorsqu’une action de rappel est effectuée.
+
+   ![Rappel - Changer le statut en Brouillon](./img/approval-process/recall.PNG)
+
+---
+
+### Étape finale : Activer le processus d’approbation
+
+1. Après avoir configuré les actions de soumission initiale, d’approbation, de rejet et de rappel, passez en revue les paramètres de votre processus d’approbation.
+2. Cliquez sur **Activer** pour rendre le processus d’approbation actif pour l’objet **Facture**.
+
+---
+
+En suivant ces étapes, vous aurez un processus d’approbation entièrement fonctionnel pour les factures, garantissant que celles-ci passent par des révisions appropriées et des modifications de statut en fonction des résultats de l’approbation.
+

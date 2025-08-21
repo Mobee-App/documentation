@@ -11,7 +11,7 @@ The **Mobee Invoicing and Billing Module** uses several custom objects to manage
 
 ## Invoice
 
-The **Invoice** object is the main record for billing. It stores details like the customer, the amount due, and the invoice status. It also links to related records like Opportunities, Orders, or Projects.
+The **Invoice** object is the main record for billing. It stores details like the customer, the amount due, and the invoice status. It also links to related records like Opportunities, or Projects.
 
 ![Invoice](./img/invoice-record.png)
 
@@ -31,7 +31,7 @@ The **Invoice** object is the main record for billing. It stores details like th
 - **Tax Template (Lookup - Tax Template):** Links to the appropriate **Tax Template** used for applying tax rates to the invoice.
 
 ### Usage:
-The **Invoice** record is used to track billing and payments. It pulls information from **Invoice Line Items** for the total amount and taxes. Invoices can be created based on Opportunities, Orders, Projects, or Assignments.
+The **Invoice** record is used to track billing and payments. It pulls information from **Invoice Line Items** for the total amount and taxes. Invoices can be created based on Opportunities, Projects, or Assignments.
 
 ---
 
@@ -100,13 +100,13 @@ The **Tax by Product Category** object ensures that products are taxed appropria
 - **Tax Rate**: The tax rate for this category.
 
 ### Usage:
-When invoicing **products** from an **Opportunity** or **Order**, the process is as follows:
+When invoicing **products** from an **Opportunity**, the process is as follows:
 
 ## **1. Retrieve the Correct Tax Template**:
 - Use the same process as above to retrieve the correct **Tax Template**, based on the **Bill From Account** and matching the **Language** and **Country** from the **Bill To Account**.
 
 ## **2. Check Tax by Product Category**:
-- For each **Opportunity Product** or **Order Product**, check the custom **Tax Category** field (picklist) on the product.
+- For each **Opportunity Product**, check the custom **Tax Category** field (picklist) on the product.
 - Compare this value to the **Product Tax Category** field in the **Tax by Product Category** object.
 - Ensure the **Tax by Product Category** is linked to the same **Tax Template** identified earlier.
 
@@ -117,7 +117,7 @@ When invoicing **products** from an **Opportunity** or **Order**, the process is
   - Apply the tax rate defined in the identified **Tax Template**.
 
 ## **4. Repeat for Each Product**:
-- Perform the above steps for every product in the **Opportunity** or **Order**, ensuring accurate taxation for each.
+- Perform the above steps for every product in the **Opportunity**, ensuring accurate taxation for each.
 
 This process ensures that products are taxed correctly, following both the regional tax rules and product-specific tax categories.
 
