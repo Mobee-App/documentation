@@ -15,6 +15,10 @@ Mobee Data Table dynamically builds its columns and queries based on configurati
 - **Supports every Salesforce Data Type**  The table automatically formats currency, percent, email, and reference fields
 - **Flow Integration:** Input/output variables for selected rows, configuration, and validation.
 
+## Requirements
+
+Make sure that Lightning Web Security (LWS) is activated in your organization. For more information, see the [Salesforce documentation on enabling LWS](https://developer.salesforce.com/docs/platform/lightning-components-security/guide/lws-enable.html).
+
 ## Usage
 
 ### Setting Up the Flow
