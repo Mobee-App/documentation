@@ -19,6 +19,8 @@ Mobee Data Table dynamically builds its columns and queries based on configurati
 
 Make sure that Lightning Web Security (LWS) is activated in your organization. For more information, see the [Salesforce documentation on enabling LWS](https://developer.salesforce.com/docs/platform/lightning-components-security/guide/lws-enable.html).
 
+Assignment of the **Mobee User** permission set is required for users to access and utilize the Data Table.
+
 ## Usage
 
 ### Setting Up the Flow
@@ -28,7 +30,6 @@ To use the Mobee Data Table in a Flow, follow these steps:
 1. **Define the Collection Variable**
    - In Flow Builder, create a variable (e.g., `RecordCollection`) of type "Record" (matching your object).
    - Ensure "Allow multiple values (collection)" is checked.
-   - Mark it as "Available for output" so it can be accessed by the component.
 
 2. **Configure the Data Table Component**
    - Add the Mobee Data Table component to your Flow screen.
