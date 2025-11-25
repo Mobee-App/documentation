@@ -27,9 +27,7 @@ This ensures secure access to the enterprise data source without requiring the a
 
 > ℹ️ *No client-side authentication setup is required — credentials are packaged and maintained by the implementer.*
 
----
-
-### Four Custom Objects
+### Five Custom Objects
 
 To enable the Recherche Entreprise API to interact with Salesforce, you need to configure the connector using four main custom objects. These objects define the connector, the Salesforce target, the fields to map, and the search filters:
 
@@ -37,8 +35,7 @@ To enable the Recherche Entreprise API to interact with Salesforce, you need to 
 - **[Data Table Definition](5-dcm-recherche-entreprise-configuration.md#data-table-definition)** – Links the connector to a specific Salesforce object (Example: Account) and optionally to specific record types. This determines where the API data will be applied.
 - **[Data Attribute Mapping](5-dcm-recherche-entreprise-configuration.md#search-results-display)** – Maps fields from the external API response to Salesforce fields, defining how data is imported into Salesforce records.
 - **[Data Search Mapping](5-dcm-recherche-entreprise-configuration.md#filters--search-inputs)** – Defines the search parameters and filters used to query the external API, controlling how and what data is retrieved.
-
----
+- **[Data Code Mapping](5-dcm-recherche-entreprise-configuration.md#data-code-mapping)** – Defines the translation layer between raw external API codes and standardized internal values. Each mapping links a code to a human-readable label, ensuring consistent normalization for picklists, dropdowns, status fields, etc.
 
 ### Lightning Web Component [(LWC)](5-dcm-recherche-entreprise-configuration.md#lightning-web-component-data-connector)
 

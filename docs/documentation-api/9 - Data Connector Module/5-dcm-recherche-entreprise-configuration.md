@@ -6,9 +6,10 @@
 > See [General Configuration](3-data-connector-module-configuration.md) for steps on assigning permission sets and creating a Data Connector.
 
 1. [**Create the Data Table Definition**](5-dcm-recherche-entreprise-configuration.md#data-table-definition) – Link the connector to a Salesforce object.
-2. [**Configure the Filters & Search Inputs**](5-dcm-recherche-entreprise-configuration.md#filters--search-inputs) – Define filters for searching external data by creating Data Search Mappings
-3. [**Configure the Results Display**](5-dcm-recherche-entreprise-configuration.md#search-results-display) – Define how response data maps to Salesforce fields by creating Data Attribute Mappings
-4. [**Add the Lightning Web Component**](5-dcm-recherche-entreprise-configuration.md#lightning-web-component-data-connector) – Embed the UI where users need it.
+2. [**Configure the Filters & Search Inputs**](5-dcm-recherche-entreprise-configuration.md#filters--search-inputs) – Define filters for searching external data by creating Data Search Mappings.
+3. [**Configure the Results Display**](5-dcm-recherche-entreprise-configuration.md#search-results-display) – Define how response data maps to Salesforce fields by creating Data Attribute Mappings.
+4. [**Configure the Code Mappings (If needed)**](5-dcm-recherche-entreprise-configuration.md#data-code-mapping) – Translate raw API codes into human-readable labels so users see meaningful values instead of codes by creating Data Code Mappings.
+5. [**Add the Lightning Web Component**](5-dcm-recherche-entreprise-configuration.md#lightning-web-component-data-connector) – Embed the UI where users need it.
 
 In the next section, we’ll take a closer look at each of these configuration steps and how the different components work together to power the `Recherche Entreprise` data connector.
 
@@ -93,8 +94,6 @@ To allow users to search accounts using their `Account Name`, set the **SF Objec
  
 ![Salesforce Field API Name](img\SearchAndAttributeCreation\SFAPIPreview.png "Salesforce Field API Name")
 
-<br>
-
 #### 2. Setting the API Query Filter in the Data Search Mapping
 
 - This value comes from the **external API’s documentation**.
@@ -138,8 +137,6 @@ Each result attribute is defined in a **Data Attribute Mapping** record with key
 | **Display in Search Results** | Indicates whether this field should be visible in search result lists | Checked or unchecked |
 | **Is Title** | Marks this field as the main title in search results | Checked or unchecked |
 
----
-
 #### 1. Setting the SF Object Field in the Data Attribute Mapping
 
 - This is the internal API name of the Salesforce field you want the user to fill in.
@@ -151,8 +148,6 @@ Each result attribute is defined in a **Data Attribute Mapping** record with key
 To map the `Account Number` field, set the **SF Object Field** to `AccountNumber`:
  
 ![Salesforce Field API Name](img\SearchAndAttributeCreation\SFAPIAccNumberPreview.png "Salesforce Field API Name")
-
----
 
 #### 2. Setting the API Field in the Data Attribute Mapping
 
@@ -344,9 +339,121 @@ Example of API response:
 | BillingPostalCode | `siege.code_postal` |
 | MainActivityCode__c | `siege.activite_principale` |
 
-3. Example of Data Attribute Mapping Records
+##### Understanding the Difference Between `nom_complet` and `nom_raison_sociale`
+
+When mapping the name of a company or establishment, the Recherche Entreprise API provides two different fields. Selecting the correct one depends on the type of entity you are dealing with.
+
+**`nom_complet`**  
+- The default display name returned by the API.  
+- Always populated for both **individual entities** (sole proprietors) and **legal entities** (companies).
+
+**`nom_raison_sociale`**  
+- The official legal name of the company (also called *legal name* or *corporate name*).  
+- Only populated for **legal entities** (SAS, SARL, SA, associations, etc.).
+
+In most cases, `nom_complet` is the safest field to map when you want consistent behavior across all entity types. Use `nom_raison_sociale` only if you specifically need the legal corporate name for company-only contexts.
+
+#### 3. Example of Data Attribute Mapping Records
 
 ![Data Attribute Mapping Records](img/Objects/DataAttributeMappings_DTD.png "Data Attribute Mapping Records")
+
+---
+
+## Data Code Mapping
+
+### Purpose
+
+Data Code Mapping records define the translation layer between the raw codes returned by the **Recherche Entreprise** API (like the *Nature Juridique*, or the *Activité Principale*) and their labels. This ensures that users see meaningful values instead of cryptic codes.
+
+### Preview
+
+The search results show human-readable labels for the `Nature Juridique` field instead of the raw codes returned by the API.
+
+![Data Code Mapping Examples](img/ComponentPreview/ComponentCodeMappings.png "Data Code Mapping Examples")
+
+### How to Configure Data Code Mapping (Technical Guide 🛠️)
+
+Each **Data Code Mapping** record is connected via a lookup to a **Data Attribute Mapping** record. When several **Data Code Mapping** records are linked to the same **Data Attribute Mapping**, they collectively create a dictionary of **Code → Label** that is used to display meaningful values to users and populate Salesforce fields with the labels.
+
+Each **Data Code Mapping** record includes the following key fields:
+
+| Field | Meaning | Value to Set |
+|-------|---------|--------------|
+| **Data Attribute Mapping** | Links this code mapping to the Salesforce field where the label will be used | Select the related *Data Attribute Mapping* record |
+| **Code** | The exact code received from the Recherche Entreprise API | Example: `A`, `I`, `4711D`, `GE` |
+| **Label** | Human-readable meaning of the code | Example: `Actif`, `Inactif`, `Société commerciale`, `Entrepreneur individuel` |
+
+#### 1. Identifying the Code in the API Response
+
+The Recherche Entreprise API contains several coded fields such as:
+
+- `activite_principale`
+- `etat_administratif`
+- `nature_juridique`
+- `tranche_effectif_salarie`
+- `categorie_entreprise`
+
+**Example API response snippet:**
+
+```json
+{
+  "activite_principale": "4711D",
+  "etat_administratif": "A",
+  "nature_juridique": "5499",
+  "tranche_effectif_salarie": "3",
+  "categorie_entreprise": "SME"
+}
+```
+
+#### 2. Creating the Corresponding Data Code Mapping Records
+
+##### <u>Source</u>
+
+The **Recherche Entreprise** API provides official nomenclatures for many of its coded fields, such as *Nature Juridique* or *Activité Principale – NAF*. These nomenclatures are published by **INSEE** and available in Excel format, containing the complete tables of **Code → Label** pairs:
+
+🌐 https://www.insee.fr/fr/information/2016811
+
+You can use these official files to populate your Data Code Mapping records. This ensures that:
+
+- All possible codes are covered  
+- Labels are accurate and standardized  
+- Users always see the correct terminology defined by INSEE  
+
+> 💡 Using the official nomenclatures is strongly recommended when configuring mappings for fields like `nature_juridique`, `activite_principale`, or any other coded attribute returned by the Recherche Entreprise API.
+
+##### <u>Upload Method</u>
+
+The most efficient method is to prepare your mappings in a spreadsheet into a CSV and import them into Salesforce using one of the available bulk tools.
+
+Here is the recommended process:
+
+1. **Download the INSEE nomenclature Excel file** for the coded field you want to configure.
+<br/>
+
+2. **Open the Excel file** and manipulate it to prepare it for import:
+   - Clean up the rows that do not constitute a **Code → Label** pair
+   - Add a new column that represents the **Data Attribute Mapping**
+   - Fill this column with the **Name** (or Id) of the **Data Attribute Mapping** that these codes belong to.
+  **N.B:** The column titles are not import as they will be mapped with Salesforce fields during import.
+<br/>
+
+3. **Save the file as CSV**
+<br/>
+
+4. **Open the Salesforce Data Import Wizard** and select your **Data Code Mapping** object.
+<br/>
+
+5. **Upload your CSV**, and during field mapping:
+   - Map the INSEE *Code* column → `Code__c`
+   - Map the INSEE *Libellé* column → `Label__c`
+   - Map your new column → `DataAttributeMapping__c`
+<br/>
+
+6. **Run the import** and verify the records in Salesforce.
+
+#### 3. Example of Data Code Mapping Records
+
+![Data Code Mappings](img/Objects/DataCodeMappings_DAM.png "Data Code Mappings")
 
 ---
 
@@ -359,15 +466,11 @@ Example of API response:
 
 > 💡 This component is configuration-driven — it uses the data and mappings defined in the **Data Connector**, **Data Table Definition**, **Data Attribute Mappings**, and **Data Search Mappings** to function.
 
----
-
 ### Adding the Component as a List View Button
 
 The Data Connector can be launched directly from a list view button, giving users quick access to the component without navigating through other menus.
 
 In this guide, we will illustrate how to enable the Data Connector for any object by creating the required Lightning Page, Lightning Tab, and List View button.
-
----
 
 #### 1. Creating the Lightning Page
 
@@ -382,8 +485,6 @@ In this guide, we will illustrate how to enable the Data Connector for any objec
 4. Add the **Data Connector** component to the page and configure its parameters, then save and activate it  
    ![Add Data Connector](img\ComponentConfiguration\6_InsertDataConnector.png "Add Data Connector")
 
----
-
 #### 2. Create / Verify the Lightning Tab
 
 1. From **Setup**, search for **Tabs**
@@ -391,8 +492,6 @@ In this guide, we will illustrate how to enable the Data Connector for any objec
 3. Check if a tab is already created for your Lightning Page *(3a)*
 4. If not, create a new tab and link it to the page *(3b)*  
    ![Check Lightning Tab](img\ComponentConfiguration\7_CheckIfTabCreated.png "Check Lightning Tab")
-
----
 
 #### 3. Create a List View Button
 
@@ -409,8 +508,6 @@ In this guide, we will illustrate how to enable the Data Connector for any objec
    ![Create New Button Link](img\ComponentConfiguration\10_CreatingButtonLink.png "Create New Button Link")
 
 5. Save the button
-
----
 
 #### 4. Add the Button to the List View
 

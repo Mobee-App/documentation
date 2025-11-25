@@ -32,13 +32,14 @@ Each Data Connector relies on a secure authentication method to communicate with
 - A **token or API key** stored securely in Mobee Settings
 - Or other secure authentication mechanisms provided by the platform or API
 
-### Four [Custom Objects](2-data-connector-module-custom-objects.md#salesforce-objects-data-settings)
+### Five [Custom Objects](2-data-connector-module-custom-objects.md#salesforce-objects-data-settings)
 
 Define the structure, filters, fields, and mappings between Salesforce and external APIs.
 - [Data Connector](2-data-connector-module-custom-objects.md#1-data-connector)
 - [Data Table Definition](2-data-connector-module-custom-objects.md#2-data-table-definition)
 - [Data Attribute Mapping](2-data-connector-module-custom-objects.md#3-data-attribute-mapping)
 - [Data Search Mapping](2-data-connector-module-custom-objects.md#4-data-search-mapping)
+- [Data Code Mapping](2-data-connector-module-custom-objects.md#5-data-code-mapping)
 
 ### User Interface & Automation Models
 
