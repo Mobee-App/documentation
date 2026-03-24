@@ -504,7 +504,10 @@ In this guide, we will illustrate how to enable the Data Connector for any objec
 3. Choose **List Button** as the display type
 
 4. In the URL, reference the Lightning Tab you created  
-   _Example:_ `/lightning/n/Mobee__TestingNewLightningPage`  
+   _Example:_ `/lightning/n/Mobee__TestingNewLightningPage`
+
+   > **Note:** Checking **Display Checkboxes (for Multi-Record Selection)** may cause issues within **Console App**. Leave this option unchecked unless multi-record selection is specifically required outside of a Console App context.  
+     
    ![Create New Button Link](img\ComponentConfiguration\10_CreatingButtonLink.png "Create New Button Link")
 
 5. Save the button
