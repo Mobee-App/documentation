@@ -159,7 +159,16 @@ Yousign needs a publicly accessible endpoint in Salesforce to send event notific
 
 ### Step 6 — Configure Public Site Access Settings
 
-The public site's guest profile must be granted access to the required Mobee permission sets and to the Sign Events platform event.
+The public site's guest user must be granted the **Mobee** license, the required Mobee permission sets, and access to the Sign Events platform event.
+
+#### Assign the Mobee License to the Guest User
+
+1. Go to **Setup > Installed Packages**
+2. Find the **Mobee** package and click **Manage Licenses**
+3. Click **Add Users**
+4. Select the **YS Webhooks** site guest user and click **Add**
+
+#### Open the Public Access Settings
 
 1. From the **YS Webhooks** site detail page, click **Public Access Settings**
    > *(If the page was closed: Setup > User Interface > Sites and Domains > Sites → select **YS Webhooks**)*
@@ -168,13 +177,13 @@ The public site's guest profile must be granted access to the required Mobee per
 
 #### Assign Permission Sets to the Guest User
 
-2. From the **Public Access Settings** profile page, click the **View Users** button
-3. Click on the **guest user** to open their user record
-4. Scroll down to **Permission Set Assignments** and click **Edit Assignments**
-5. Add the following two permission sets:
+1. From the **Public Access Settings** profile page, click the **View Users** button
+2. Click on the **guest user** to open their user record
+3. Scroll down to **Permission Set Assignments** and click **Edit Assignments**
+4. Add the following two permission sets:
    - `Mobee External Credential Access` *(created in Step 2)*
    - `Mobee Signature Access`
-6. Click **Save**
+5. Click **Save**
 
 ![Permission Set — Mobee Signature Access overview](img/Mobee_Signature_Access_Permission.png)
 
@@ -182,12 +191,12 @@ The public site's guest profile must be granted access to the required Mobee per
 
 #### Grant Platform Event Permissions
 
-5. From the top of the Profile page, click the **Edit** button *(next to View Users)*
-6. Scroll down to **Platform Event Permissions**
-7. On the **Sign Events** object, enable:
+1. From the top of the Profile page, click the **Edit** button *(next to View Users)*
+2. Scroll down to **Platform Event Permissions**
+3. On the **Sign Events** object, enable:
    - **Read** ✅
    - **Create** ✅
-8. Click **Save**
+4. Click **Save**
 
 ![Profile page showing Platform Event Permissions with Read and Create enabled for Sign Events](img/Sign_Events_Access.png)
 
@@ -209,15 +218,16 @@ Now that Salesforce has a public endpoint, you need to register it in Yousign so
 
    | Field | Value |
    |---|---|
-   | Endpoint | *(Site URL from above)* + `/services/apexrest/ys/webhooks` |
+   | Endpoint | *(Site URL from above)* + `/services/apexrest/Mobee/ys/webhooks` |
    | Description | `Salesforce - Sandbox` *(or Production)* |
    | Environment | `Sandbox` or `Production` |
    | Scope | All scopes (current and future ones) |
    | Subscribed Events | All events |
+   | Active | ✅ Checked |
 
    The endpoint URL should look like:
    ```
-   https://XXXXXXX.my.salesforce-sites.com/yswebhooks/services/apexrest/ys/webhooks
+   https://XXXXXXX.my.salesforce-sites.com/yswebhooks/services/apexrest/Mobee/ys/webhooks
    ```
 
 5. Click **Create Webhook**
