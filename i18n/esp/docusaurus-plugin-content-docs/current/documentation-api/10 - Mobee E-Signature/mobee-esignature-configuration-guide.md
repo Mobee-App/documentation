@@ -159,7 +159,16 @@ Yousign necesita un punto de acceso público en Salesforce para enviar notificac
 
 ### Paso 6 — Configurar los parámetros de acceso del sitio público
 
-El perfil de invitado del sitio público debe tener acceso a los conjuntos de permisos de Mobee requeridos y al evento de plataforma Sign Events.
+El usuario invitado del sitio público debe tener la licencia **Mobee**, los conjuntos de permisos de Mobee requeridos y acceso al evento de plataforma Sign Events.
+
+#### Asignar la licencia Mobee al usuario invitado
+
+1. Vaya a **Configuración > Paquetes instalados**
+2. Busque el paquete **Mobee** y haga clic en **Gestionar licencias**
+3. Haga clic en **Agregar usuarios**
+4. Seleccione el usuario invitado del sitio **YS Webhooks** y haga clic en **Agregar**
+
+#### Abrir la configuración de acceso público
 
 1. Desde la página de detalle del sitio **YS Webhooks**, haga clic en **Configuración de acceso público**
    > *(Si la página fue cerrada: Configuración > Interfaz de usuario > Sitios y dominios > Sitios → seleccione **YS Webhooks**)*
@@ -168,13 +177,13 @@ El perfil de invitado del sitio público debe tener acceso a los conjuntos de pe
 
 #### Asignar conjuntos de permisos al usuario invitado
 
-2. Desde la página de perfil **Configuración de acceso público**, haga clic en el botón **Ver usuarios**
-3. Haga clic en el **usuario invitado** para abrir su registro
-4. Desplácese hasta **Asignaciones de conjuntos de permisos** y haga clic en **Editar asignaciones**
-5. Agregue los siguientes dos conjuntos de permisos:
+1. Desde la página de perfil **Configuración de acceso público**, haga clic en el botón **Ver usuarios**
+2. Haga clic en el **usuario invitado** para abrir su registro
+3. Desplácese hasta **Asignaciones de conjuntos de permisos** y haga clic en **Editar asignaciones**
+4. Agregue los siguientes dos conjuntos de permisos:
    - `Mobee External Credential Access` *(creado en el Paso 2)*
    - `Mobee Signature Access`
-6. Haga clic en **Guardar**
+5. Haga clic en **Guardar**
 
 ![Descripción general del conjunto de permisos — Mobee Signature Access](img/Mobee_Signature_Access_Permission.png)
 
@@ -182,12 +191,12 @@ El perfil de invitado del sitio público debe tener acceso a los conjuntos de pe
 
 #### Otorgar permisos de eventos de plataforma
 
-5. Desde la parte superior de la página de perfil, haga clic en el botón **Editar** *(junto a Ver usuarios)*
-6. Desplácese hasta **Permisos de eventos de plataforma**
-7. En el objeto **Sign Events**, habilite:
+1. Desde la parte superior de la página de perfil, haga clic en el botón **Editar** *(junto a Ver usuarios)*
+2. Desplácese hasta **Permisos de eventos de plataforma**
+3. En el objeto **Sign Events**, habilite:
    - **Lectura** ✅
    - **Creación** ✅
-8. Haga clic en **Guardar**
+4. Haga clic en **Guardar**
 
 ![Página de perfil mostrando los permisos de eventos de plataforma con Lectura y Creación habilitados para Sign Events](img/Sign_Events_Access.png)
 
@@ -209,15 +218,16 @@ Ahora que Salesforce tiene un punto de acceso público, debe registrarlo en Yous
 
    | Campo | Valor |
    |---|---|
-   | Punto de acceso | *(URL del sitio anterior)* + `/services/apexrest/ys/webhooks` |
+   | Punto de acceso | *(URL del sitio anterior)* + `/services/apexrest/Mobee/ys/webhooks` |
    | Descripción | `Salesforce - Sandbox` *(o Producción)* |
    | Entorno | `Sandbox` o `Producción` |
    | Alcance | Todos los alcances (actuales y futuros) |
    | Eventos suscritos | Todos los eventos |
+   | Activo | ✅ Marcado |
 
    La URL del punto de acceso debería verse así:
    ```
-   https://XXXXXXX.my.salesforce-sites.com/yswebhooks/services/apexrest/ys/webhooks
+   https://XXXXXXX.my.salesforce-sites.com/yswebhooks/services/apexrest/Mobee/ys/webhooks
    ```
 
 5. Haga clic en **Crear Webhook**
