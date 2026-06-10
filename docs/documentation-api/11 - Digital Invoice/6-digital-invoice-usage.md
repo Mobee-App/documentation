@@ -1,4 +1,4 @@
-## 5. How the Client Fills the Flow
+## 6. How the Client Fills the Flow
 
 When you click **Generate Factur-X**, the module checks that the invoice has everything it needs. If something is missing, a short screen appears asking you to complete it. You provide each item only **once** — it is saved for next time.
 

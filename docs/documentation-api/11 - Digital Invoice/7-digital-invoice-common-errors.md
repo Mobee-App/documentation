@@ -1,4 +1,4 @@
-## 6. Common Errors and Resolutions
+## 7. Common Errors and Resolutions
 
 | Message | What it means | What to do |
 |---------|---------------|------------|
