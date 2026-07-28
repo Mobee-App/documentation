@@ -1,3 +1,5 @@
+# Digital Invoice Data Model
+
 ## 3. Salesforce Data Model
 
 The module reads information from several records. This section lists the objects and fields used, so you know **where to enter and check** the data that ends up on your Factur-X invoice.

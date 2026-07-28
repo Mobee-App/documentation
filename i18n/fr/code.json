@@ -281,5 +281,93 @@
   "theme.tags.tagsPageTitle": {
     "message": "Tags",
     "description": "The title of the tag list page"
+  },
+
+  "homepage.heroSubtitle": {
+    "message": "Guides professionnels pour l'installation, la configuration et l'utilisation avancée du package Mobee."
+  },
+  "homepage.installationGuideButton": {
+    "message": "Guide d'installation"
+  },
+  "homepage.packageFeaturesHeading": {
+    "message": "Fonctionnalités du package"
+  },
+  "homepage.packageFeaturesSubtitle": {
+    "message": "Découvrez ce que le package Mobee inclut et accédez directement à chaque section de documentation."
+  },
+  "homepage.feature.1": {
+    "message": "Intégration et configuration rapide du package Salesforce"
+  },
+  "homepage.feature.2": {
+    "message": "Génération de QR codes, numérisation et intégration par e-mail"
+  },
+  "homepage.feature.3": {
+    "message": "Génération de documents avec modèles et automatisation"
+  },
+  "homepage.feature.4": {
+    "message": "Configuration de la communauté et fonctionnalités prises en charge"
+  },
+  "homepage.feature.5": {
+    "message": "Suivi du temps et flux d'approbation"
+  },
+  "homepage.feature.6": {
+    "message": "Bannière de notifications configurable"
+  },
+  "homepage.feature.7": {
+    "message": "Modèles de flux réutilisables pour les opérations"
+  },
+  "homepage.feature.8": {
+    "message": "Composants graphiques interactifs pour les tableaux de bord"
+  },
+  "homepage.feature.9": {
+    "message": "Intégrations de connecteurs de données extensibles"
+  },
+  "homepage.feature.10": {
+    "message": "Processus complet de signature électronique Mobee"
+  },
+  "homepage.searchPanelHeading": {
+    "message": "Vous cherchez quelque chose rapidement ?"
+  },
+  "homepage.searchPanelText": {
+    "message": "Utilisez la barre de recherche en haut du site pour trouver exactement ce que vous cherchez plus rapidement, y compris les étapes de configuration spécifiques et les sujets de module."
+  },
+  "homepage.docsModulesHeading": {
+    "message": "Modules de documentation"
+  },
+  "homepage.docsModulesSubtitle": {
+    "message": "Ouvrez n'importe quel module pour accéder aux guides d'implémentation détaillés."
+  },
+  "homepage.openDocumentationLink": {
+    "message": "Ouvrir la documentation"
+  },
+  "homepage.card.installation.description": {
+    "message": "Installez le package, configurez les permissions et intégrez les utilisateurs rapidement."
+  },
+  "homepage.card.qrCode.description": {
+    "message": "Configurez la génération de QR codes, les flux de numérisation et l'utilisation des modèles d'e-mail."
+  },
+  "homepage.card.docGen.description": {
+    "message": "Créez des modèles, configurez les accès et automatisez la production de documents."
+  },
+  "homepage.card.community.description": {
+    "message": "Préparez les ressources communautaires et configurez les fonctionnalités prises en charge."
+  },
+  "homepage.card.timesheet.description": {
+    "message": "Gérez les entrées de temps, les assignations et les processus d'approbation."
+  },
+  "homepage.card.notifications.description": {
+    "message": "Déployez et personnalisez les notifications sur la page pour les utilisateurs."
+  },
+  "homepage.card.flows.description": {
+    "message": "Utilisez des modèles de flux prêts à adapter pour les scénarios métier courants."
+  },
+  "homepage.card.graphical.description": {
+    "message": "Enrichissez les pages Salesforce avec des composants basés sur des graphiques."
+  },
+  "homepage.card.dataConnector.description": {
+    "message": "Configurez des connexions de données externes sécurisées et des mappages de champs."
+  },
+  "homepage.card.esignature.description": {
+    "message": "Configurez l'intégration Yousign et le cycle de vie des signatures dans Salesforce."
   }
 }

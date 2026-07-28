@@ -1,3 +1,5 @@
+# Digital Invoice Flows
+
 ## 4. The Flows — what is collected and what you can edit
 
 The process runs in two flows. The main **Screen Flow** is launched by the button; it calls a **Data Population** step that gathers all the invoice information. Understanding the data population helps you know what you can change to affect the result.

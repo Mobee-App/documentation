@@ -1,3 +1,5 @@
+# Digital Invoice Common Errors
+
 ## 7. Common Errors and Resolutions
 
 | Message | What it means | What to do |

@@ -1,3 +1,5 @@
+# Digital Invoice Architecture
+
 ## 2. Architecture
 
 The module works across two parts. You only ever interact with Salesforce; the generation service runs in the background.

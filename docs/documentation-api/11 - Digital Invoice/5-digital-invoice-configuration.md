@@ -1,3 +1,5 @@
+# Digital Invoice Configuration
+
 ## 5. Configuration — Setting Up the Factur-X Button
 
 This section is for **administrators**. It explains how to make the *Generate Factur-X* button available to users: creating the action from the flow and adding it to the **Approved Invoice Record Page**.

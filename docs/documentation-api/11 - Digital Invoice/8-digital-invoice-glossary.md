@@ -1,3 +1,5 @@
+# Digital Invoice Glossary
+
 ## 8. Glossary
 
 | Term | Meaning |
