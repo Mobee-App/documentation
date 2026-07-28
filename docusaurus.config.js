@@ -14,7 +14,8 @@ const config = {
   url: 'https://mobee-app.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/documentation',
+  baseUrl: '/documentation/',
+  trailingSlash: true,
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -67,7 +68,6 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      baseUrl: '/documentation/',
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
