@@ -76,3 +76,14 @@ Este enfoque permite que cada usuario vea solo las plantillas que corresponden a
 2. Usa filtros de plantillas para reducir errores de usuario
 3. Prueba un flujo por objeto (Case, Opportunity, etc.)
 4. Evita exponer configuraciones técnicas a usuarios finales
+
+## El Flow en acción
+
+Puedes ejecutar este Flow desde un botón de Action en la página de registro de `Case`.
+
+Cuando se abre la ventana modal, los usuarios ven las plantillas disponibles según el `Template Filter` configurado. Si no hay filtro configurado, se muestran todas las plantillas disponibles.
+
+El botón Export se habilita cuando el usuario selecciona una plantilla. Si la plantilla seleccionada es interactiva, se muestra un mensaje indicando que el usuario será redirigido a la interfaz de edición interactiva.
+
+![Modal de selección de plantillas](img/template-selection.png)
+![Mensaje de redirección para documento interactivo](img/interactive-document.png)

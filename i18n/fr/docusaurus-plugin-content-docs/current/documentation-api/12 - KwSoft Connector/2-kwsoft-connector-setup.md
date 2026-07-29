@@ -2,7 +2,30 @@
 
 Cette page explique la configuration initiale a effectuer une seule fois apres l'installation.
 
-## 1. Creer un objet de suivi des documents
+## 1. Configuration du package
+
+Avant de configurer les Flows, validez l'acces au package et l'authentification.
+
+1. Verifiez que le package est installe dans votre org.
+2. Ouvrez la page detail utilisateur et assignez une licence Mobee.
+3. Assignez les deux permission sets requis : `Mobee Document Generation Administrator` et `Mobee Document Generation User`.
+![Mobee Permission Sets](img/user-permissions.png)
+4. Dans Setup, utilisez Quick Find pour ouvrir Named Credentials, puis ouvrez **KwSoft Auth**.
+5. Depuis la named credential, ouvrez l'External Credential associee.
+![KwSoft Named Credentials](img/named-external-credentials.png)
+6. Dans la section Principals, modifiez les parametres d'authentification.
+![KwSoft Edit Auth Params](img/edit-auth-params.png)
+7. Ajoutez les valeurs suivantes dans Authentication Parameters :
+![KwSoft Add Auth Params](img/add-auth-params.png)
+- `clientId` : client ID fourni par KwSoft
+- `username` : username fourni par KwSoft
+- `password` : password fourni par KwSoft
+8. Enregistrez les parametres d'authentification.
+![KwSoft Save Auth Params](img/save-params.png)
+
+Conservez ces identifiants de maniere confidentielle et limitez leur acces aux seuls administrateurs autorises.
+
+## 2. Creer un objet de suivi des documents
 
 Les documents interactifs sont modifies en dehors de Salesforce avant leur finalisation. Vous devez donc conserver dans Salesforce une reference vers ces brouillons.
 
@@ -15,7 +38,7 @@ Creez un objet personnalise (nom d'exemple : KwSoft Document Log) avec au minimu
 
 Cet objet aide les utilisateurs a retrouver et reprendre les documents non termines.
 
-## 2. Ajouter la liste associée sur les enregistrements metier
+## 3. Ajouter la liste associee sur les enregistrements metier
 
 Ajoutez cet objet personnalise comme liste liee dans la mise en page de l'objet principal (par exemple, Case).
 
@@ -25,7 +48,7 @@ Les utilisateurs verront ainsi clairement :
 2. Quels documents sont encore en brouillon
 3. A quel enregistrement chaque document est rattache
 
-## 3. Verifier les permissions utilisateurs
+## 4. Verifier les permissions utilisateurs
 
 Pour les utilisateurs metier :
 
@@ -39,7 +62,7 @@ Pour les administrateurs :
 2. Mettre a jour les mises en page
 3. Maintenir les modeles et metadonnees KwSoft
 
-## 4. Definir votre mode operatoire
+## 5. Definir votre mode operatoire
 
 Choisissez l'une des approches suivantes :
 
@@ -48,7 +71,7 @@ Choisissez l'une des approches suivantes :
 
 La plupart des equipes commencent par le mode simple, puis activent le mode avance une fois les utilisateurs a l'aise.
 
-## 5. Valider avec un utilisateur pilote
+## 6. Valider avec un utilisateur pilote
 
 Avant la mise en production, effectuez un test de bout en bout :
 

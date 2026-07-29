@@ -2,7 +2,30 @@
 
 This page explains the one-time configuration required after installation.
 
-## 1. Create a document log object
+## 1. Package Setup
+
+Before configuring Flows, validate package access and authentication.
+
+1. Confirm the package is installed in your org.
+2. Open the user detail page and assign a Mobee license.
+3. Assign the two required permission sets: `Mobee Document Generation Administrator` and `Mobee Document Generation User`.
+![Mobee Permission Sets](img/user-permissions.png)
+4. In Setup, use Quick Find to open Named Credentials, then open **KwSoft Auth**.
+5. From the named credential, open the related External Credential.
+![KwSoft Named Credentials](img/named-external-credentials.png)
+6. In the Principals section, edit the authentication parameters.
+![KwSoft Edit Auth Params](img/edit-auth-params.png)
+7. Add the following three values in Authentication Parameters:
+![KwSoft Add Auth Params](img/add-auth-params.png)
+- `clientId`: KwSoft-provided client ID
+- `username`: KwSoft-provided username
+- `password`: KwSoft-provided password
+8. Save the authentication parameters.
+![KwSoft Save Auth Params](img/save-params.png)
+
+Keep credentials confidential and limit visibility to authorized administrators only.
+
+## 2. Create a document log object
 
 Interactive documents are edited outside Salesforce before they are finalized. Because of that, you should store a reference to these draft documents in Salesforce.
 
@@ -15,7 +38,7 @@ Create a custom object (example name: KwSoft Document Log) with at least these f
 
 This object helps users find and continue unfinished documents.
 
-## 2. Add related list to business records
+## 3. Add related list to business records
 
 Add the custom object as a related list on the main object page layout (for example, Case).
 
@@ -25,7 +48,7 @@ This gives users a clear view of:
 2. Which documents are still drafts
 3. Which record each document belongs to
 
-## 3. Confirm user permissions
+## 4. Confirm user permissions
 
 For business users:
 
@@ -39,7 +62,7 @@ For administrators:
 2. Update page layouts
 3. Maintain KwSoft templates and metadata
 
-## 4. Decide your operating model
+## 5. Decide your operating model
 
 Choose one of the following approaches:
 
@@ -48,7 +71,7 @@ Choose one of the following approaches:
 
 Most teams start with Simple mode and enable Advanced mode once users are comfortable.
 
-## 5. Validate with a pilot user
+## 6. Validate with a pilot user
 
 Before go-live, run one end-to-end test:
 

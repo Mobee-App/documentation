@@ -76,3 +76,14 @@ This approach lets each user see only the templates that match their own country
 2. Use template filters to reduce user mistakes
 3. Test one Flow path per object (Case, Opportunity, etc.)
 4. Avoid exposing technical settings to end users
+
+## The Flow in Action
+
+You can launch this Flow from an Action button on the `Case` record page.
+
+When the modal opens, users see the available templates based on the configured `Template Filter`. If no filter is configured, all available templates are displayed.
+
+The Export button becomes available after a template is selected. If the selected template is interactive, the user sees a message explaining that they will be redirected to the interactive editing interface.
+
+![Template Selection Modal](img/template-selection.png)
+![Interactive Document Redirection Message](img/interactive-document.png)

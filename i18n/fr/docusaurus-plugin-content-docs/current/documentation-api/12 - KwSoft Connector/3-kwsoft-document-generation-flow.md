@@ -76,3 +76,14 @@ Cette approche permet a chaque utilisateur de ne voir que les modeles correspond
 2. Utiliser les filtres de modele pour reduire les erreurs utilisateur
 3. Tester un chemin de Flow par objet (Case, Opportunity, etc.)
 4. Eviter d'exposer des parametres techniques aux utilisateurs finaux
+
+## Le Flow en action
+
+Vous pouvez lancer ce Flow depuis un bouton d'Action sur la page d'enregistrement `Case`.
+
+Lorsque la fenetre modale s'ouvre, les utilisateurs voient les modeles disponibles selon le `Template Filter` configure. Si aucun filtre n'est configure, tous les modeles disponibles sont affiches.
+
+Le bouton Export devient disponible apres la selection d'un modele. Si le modele choisi est interactif, un message informe l'utilisateur qu'il sera redirige vers l'interface d'edition interactive.
+
+![Fenetre de selection des modeles](img/template-selection.png)
+![Message de redirection pour document interactif](img/interactive-document.png)
