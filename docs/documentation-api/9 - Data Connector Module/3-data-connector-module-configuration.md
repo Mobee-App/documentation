@@ -87,7 +87,7 @@ Once the steps above are completed, continue with the configuration guide for yo
 | Data Connector | Documentation |
 |----------------|--------------|
 | **Recherche Entreprise** | [View Guide](./5-dcm-recherche-entreprise-configuration.md) |
-| **iRaiser** | *(Coming soon)* |
+| **iRaiser** | [View Guide](./7-iraiser-connector-introduction.md) |
 
 📌 Each connector may require additional setup steps depending on its API structure and business use case.
 
