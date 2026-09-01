@@ -1,6 +1,6 @@
 # Interactive Documents and Final Export
 
-## Flow template: Mobee - Export KwSoft Document
+## Flow template: Mobee - Export kwsoft Document
 
 Use this Flow when a document was created in interactive mode and must be finalized as a PDF.
 
@@ -8,7 +8,7 @@ Use this Flow when a document was created in interactive mode and must be finali
 
 Interactive documents are draft versions. They are editable and not yet the final file for archive or sharing.
 
-This second Flow retrieves the edited document from KwSoft and attaches the final PDF to Salesforce.
+This second Flow retrieves the edited document from kwsoft and attaches the final PDF to Salesforce.
 
 ## Required information
 
@@ -23,12 +23,12 @@ In practice, users should not type these values manually. The Flow should read t
 ## Recommended user process
 
 1. User opens a record and sees related draft documents
-2. User opens the selected draft in KwSoft and completes edits
+2. User opens the selected draft in kwsoft and completes edits
 3. User runs the export Flow from Salesforce
 4. Final PDF is attached to the related Salesforce record
 5. Log entry status is updated from Draft to Finalized
 
-![KwSoft Generated Documents Related List](img/kwsoft-documents-related-list.png)
+![kwsoft Generated Documents Related List](img/kwsoft-documents-related-list.png)
 
 ## Redirection behavior
 

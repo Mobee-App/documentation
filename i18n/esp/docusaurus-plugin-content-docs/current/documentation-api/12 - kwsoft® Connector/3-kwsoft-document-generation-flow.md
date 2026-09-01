@@ -1,8 +1,8 @@
 # Flow de generación de documentos
 
-## Plantilla de Flow: Mobee - KwSoft Document Generation
+## Plantilla de Flow: Mobee - kwsoft Document Generation
 
-Este Flow es el punto de entrada principal para los usuarios. Abre plantillas de KwSoft y genera documentos desde registros de Salesforce.
+Este Flow es el punto de entrada principal para los usuarios. Abre plantillas de kwsoft y genera documentos desde registros de Salesforce.
 
 ## Recorrido del usuario
 
@@ -14,7 +14,7 @@ Este Flow es el punto de entrada principal para los usuarios. Abre plantillas de
 
 ## Entradas del componente (vista de administrador)
 
-El componente de KwSoft dentro del Flow usa estas entradas:
+El componente de kwsoft dentro del Flow usa estas entradas:
 
 1. **Current Record Id** - Propósito: identifica el registro de Salesforce usado para los datos y para adjuntar el documento.
 
@@ -45,7 +45,7 @@ Escenario de ejemplo: el usuario tiene dos países asignados.
 
 1. Crea un recurso de tipo Fórmula en el Flow (Texto), por ejemplo `TemplateFilterFormula`.
 2. Construye la expresión con los datos del usuario.
-3. Asigna este recurso de Fórmula al campo **Template Filter** del componente KwSoft.
+3. Asigna este recurso de Fórmula al campo **Template Filter** del componente kwsoft.
 
 Resultado de fórmula de ejemplo:
 METADATA.COUNTRY="{!UserCountry1}" OR METADATA.COUNTRY="{!UserCountry2}"
@@ -68,7 +68,7 @@ Este enfoque permite que cada usuario vea solo las plantillas que corresponden a
 2. El sistema devuelve un enlace editable y un nombre de documento
 3. Debes guardar esta información en el **objeto de registro personalizado**
 
-![Registro personalizado de documentos KwSoft](img/create-kwsoft-document-log.png)
+![Registro personalizado de documentos kwsoft](img/create-kwsoft-document-log.png)
 
 ## Buenas prácticas para administradores
 

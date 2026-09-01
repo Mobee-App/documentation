@@ -1,8 +1,8 @@
 # Flow de generation de documents
 
-## Flow modele : Mobee - KwSoft Document Generation
+## Flow modele : Mobee - kwsoft Document Generation
 
-Ce Flow est le point d'entree principal pour les utilisateurs. Il ouvre les modeles KwSoft et genere des documents a partir d'enregistrements Salesforce.
+Ce Flow est le point d'entree principal pour les utilisateurs. Il ouvre les modeles kwsoft et genere des documents a partir d'enregistrements Salesforce.
 
 ## Parcours utilisateur
 
@@ -14,7 +14,7 @@ Ce Flow est le point d'entree principal pour les utilisateurs. Il ouvre les mode
 
 ## Entrees du composant (vue administrateur)
 
-Le composant KwSoft dans le Flow utilise les entrees suivantes :
+Le composant kwsoft dans le Flow utilise les entrees suivantes :
 
 1. **Current Record Id** - Role : identifie l'enregistrement Salesforce utilise pour les donnees et pour l'attachement du document.
 
@@ -45,7 +45,7 @@ Exemple de scenario : l'utilisateur a deux pays affectes.
 
 1. Creez une ressource Formula dans le Flow (Texte), par exemple `TemplateFilterFormula`.
 2. Construisez l'expression a partir des donnees utilisateur.
-3. Mappez cette ressource Formula vers l'entree **Template Filter** du composant KwSoft.
+3. Mappez cette ressource Formula vers l'entree **Template Filter** du composant kwsoft.
 
 Exemple de resultat de formule :
 METADATA.COUNTRY="{!UserCountry1}" OR METADATA.COUNTRY="{!UserCountry2}"
@@ -68,7 +68,7 @@ Cette approche permet a chaque utilisateur de ne voir que les modeles correspond
 2. Le systeme retourne un lien editable et un nom de document
 3. Vous devez enregistrer ces informations dans l'**objet de suivi personnalise**
 
-![Objet de suivi des documents KwSoft](img/create-kwsoft-document-log.png)
+![Objet de suivi des documents kwsoft](img/create-kwsoft-document-log.png)
 
 ## Bonnes pratiques administrateur
 

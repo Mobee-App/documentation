@@ -1,4 +1,4 @@
-# Configuración del Conector KwSoft
+# Configuración del Conector kwsoft®
 
 Esta página explica la configuración inicial que se realiza una sola vez después de la instalación.
 
@@ -10,18 +10,18 @@ Antes de configurar los Flows, valida el acceso al paquete y la autenticación.
 2. Abre la página de detalle del usuario y asigna una licencia de Mobee.
 3. Asigna los dos permission sets requeridos: `Mobee Document Generation Administrator` y `Mobee Document Generation User`.
 ![Mobee Permission Sets](img/user-permissions.png)
-4. En Setup, usa Quick Find para abrir Named Credentials y entra en **KwSoft Auth**.
+4. En Setup, usa Quick Find para abrir Named Credentials y entra en **kwsoft Auth**.
 5. Desde la named credential, abre la External Credential relacionada.
-![KwSoft Named Credentials](img/named-external-credentials.png)
+![kwsoft Named Credentials](img/named-external-credentials.png)
 6. En la sección Principals, edita los parámetros de autenticación.
-![KwSoft Edit Auth Params](img/edit-auth-params.png)
+![kwsoft Edit Auth Params](img/edit-auth-params.png)
 7. Añade los siguientes valores en Authentication Parameters:
-![KwSoft Add Auth Params](img/add-auth-params.png)
-- `clientId`: client ID proporcionado por KwSoft
-- `username`: username proporcionado por KwSoft
-- `password`: password proporcionado por KwSoft
+![kwsoft Add Auth Params](img/add-auth-params.png)
+- `clientId`: client ID proporcionado por kwsoft
+- `username`: username proporcionado por kwsoft
+- `password`: password proporcionado por kwsoft
 8. Guarda los parámetros de autenticación.
-![KwSoft Save Auth Params](img/save-params.png)
+![kwsoft Save Auth Params](img/save-params.png)
 
 Mantén estas credenciales de forma confidencial y limita su acceso solo a administradores autorizados.
 
@@ -29,7 +29,7 @@ Mantén estas credenciales de forma confidencial y limita su acceso solo a admin
 
 Los documentos interactivos se editan fuera de Salesforce antes de finalizarse. Por eso, debes guardar en Salesforce una referencia a estos borradores.
 
-Crea un objeto personalizado (nombre de ejemplo: KwSoft Document Log) con al menos estos campos:
+Crea un objeto personalizado (nombre de ejemplo: kwsoft Document Log) con al menos estos campos:
 
 1. Document Name (Texto)
 2. Document URL (URL)
@@ -60,7 +60,7 @@ Para administradores:
 
 1. Gestionar Flows
 2. Actualizar diseños de página
-3. Mantener plantillas y metadatos de KwSoft
+3. Mantener plantillas y metadatos de kwsoft
 
 ## 5. Definir el modelo operativo
 

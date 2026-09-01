@@ -1,4 +1,4 @@
-# KwSoft Connector Setup
+# kwsoft® Connector Setup
 
 This page explains the one-time configuration required after installation.
 
@@ -10,18 +10,18 @@ Before configuring Flows, validate package access and authentication.
 2. Open the user detail page and assign a Mobee license.
 3. Assign the two required permission sets: `Mobee Document Generation Administrator` and `Mobee Document Generation User`.
 ![Mobee Permission Sets](img/user-permissions.png)
-4. In Setup, use Quick Find to open Named Credentials, then open **KwSoft Auth**.
+4. In Setup, use Quick Find to open Named Credentials, then open **kwsoft Auth**.
 5. From the named credential, open the related External Credential.
-![KwSoft Named Credentials](img/named-external-credentials.png)
+![kwsoft Named Credentials](img/named-external-credentials.png)
 6. In the Principals section, edit the authentication parameters.
-![KwSoft Edit Auth Params](img/edit-auth-params.png)
+![kwsoft Edit Auth Params](img/edit-auth-params.png)
 7. Add the following three values in Authentication Parameters:
-![KwSoft Add Auth Params](img/add-auth-params.png)
-- `clientId`: KwSoft-provided client ID
-- `username`: KwSoft-provided username
-- `password`: KwSoft-provided password
+![kwsoft Add Auth Params](img/add-auth-params.png)
+- `clientId`: kwsoft-provided client ID
+- `username`: kwsoft-provided username
+- `password`: kwsoft-provided password
 8. Save the authentication parameters.
-![KwSoft Save Auth Params](img/save-params.png)
+![kwsoft Save Auth Params](img/save-params.png)
 
 Keep credentials confidential and limit visibility to authorized administrators only.
 
@@ -29,7 +29,7 @@ Keep credentials confidential and limit visibility to authorized administrators 
 
 Interactive documents are edited outside Salesforce before they are finalized. Because of that, you should store a reference to these draft documents in Salesforce.
 
-Create a custom object (example name: KwSoft Document Log) with at least these fields:
+Create a custom object (example name: kwsoft Document Log) with at least these fields:
 
 1. Document Name (Text)
 2. Document URL (URL)
@@ -60,7 +60,7 @@ For administrators:
 
 1. Manage Flows
 2. Update page layouts
-3. Maintain KwSoft templates and metadata
+3. Maintain kwsoft templates and metadata
 
 ## 5. Decide your operating model
 

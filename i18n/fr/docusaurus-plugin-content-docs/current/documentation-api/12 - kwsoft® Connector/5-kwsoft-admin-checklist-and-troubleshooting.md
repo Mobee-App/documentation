@@ -4,7 +4,7 @@ Utilisez cette page comme reference operationnelle rapide.
 
 ## Checklist avant mise en production
 
-1. Package KwSoft installe
+1. Package kwsoft installe
 2. Les deux Flows modele sont disponibles
 3. Objet de suivi personnalise cree
 4. Liste liee ajoutee sur les mises en page cibles
@@ -53,7 +53,7 @@ Probleme : impossible de finaliser un document interactif
 
 Causes possibles :
 
-1. Le nom du document dans le suivi ne correspond pas a KwSoft
+1. Le nom du document dans le suivi ne correspond pas a kwsoft
 2. Le Related Record Id du suivi est manquant
 3. Le document a ete supprime ou renomme hors du processus prevu
 
