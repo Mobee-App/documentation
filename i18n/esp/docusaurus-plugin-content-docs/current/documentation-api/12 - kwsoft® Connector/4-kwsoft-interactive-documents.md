@@ -1,6 +1,6 @@
 # Documentos interactivos y exportación final
 
-## Plantilla de Flow: Mobee - Export KwSoft Document
+## Plantilla de Flow: Mobee - Export kwsoft Document
 
 Usa este Flow cuando un documento se creó en modo interactivo y debe finalizarse como PDF.
 
@@ -8,7 +8,7 @@ Usa este Flow cuando un documento se creó en modo interactivo y debe finalizars
 
 Los documentos interactivos son versiones en borrador. Se pueden editar y todavía no son el archivo final para archivo o envío.
 
-Este segundo Flow recupera el documento editado desde KwSoft y adjunta el PDF final en Salesforce.
+Este segundo Flow recupera el documento editado desde kwsoft y adjunta el PDF final en Salesforce.
 
 ## Información necesaria
 
@@ -23,12 +23,12 @@ En la práctica, los usuarios no deberían escribir estos valores manualmente. E
 ## Proceso recomendado para el usuario
 
 1. El usuario abre un registro y ve los borradores relacionados
-2. El usuario abre el borrador seleccionado en KwSoft y completa la edición
+2. El usuario abre el borrador seleccionado en kwsoft y completa la edición
 3. El usuario ejecuta el Flow de exportación desde Salesforce
 4. El PDF final se adjunta al registro relacionado en Salesforce
 5. El estado del registro se actualiza de Draft a Finalized
 
-![Lista relacionada de documentos KwSoft](img/kwsoft-documents-related-list.png)
+![Lista relacionada de documentos kwsoft](img/kwsoft-documents-related-list.png)
 
 ## Comportamiento de redirección
 

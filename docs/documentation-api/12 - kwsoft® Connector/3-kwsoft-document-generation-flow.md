@@ -1,8 +1,8 @@
 # Document Generation Flow
 
-## Flow template: Mobee - KwSoft Document Generation
+## Flow template: Mobee - kwsoft Document Generation
 
-This Flow is the main entry point for users. It opens KwSoft templates and generates documents from Salesforce records.
+This Flow is the main entry point for users. It opens kwsoft templates and generates documents from Salesforce records.
 
 ## User journey
 
@@ -14,7 +14,7 @@ This Flow is the main entry point for users. It opens KwSoft templates and gener
 
 ## Component inputs (administrator view)
 
-The KwSoft component in the Flow uses these inputs:
+The kwsoft component in the Flow uses these inputs:
 
 1. **Current Record Id** - Purpose: identifies the Salesforce record used for document data and attachment.
 
@@ -45,7 +45,7 @@ Example scenario: the user has two assigned countries.
 
 1. Create a Formula resource in Flow (Text), for example `TemplateFilterFormula`.
 2. Build the expression from user data.
-3. Map this Formula resource to the **Template Filter** input of the KwSoft component.
+3. Map this Formula resource to the **Template Filter** input of the kwsoft component.
 
 Example formula result:
 METADATA.COUNTRY="{!UserCountry1}" OR METADATA.COUNTRY="{!UserCountry2}"
@@ -68,7 +68,7 @@ This approach lets each user see only the templates that match their own country
 2. System returns an editable link and a document name
 3. You should store this information in the **custom log object**
 
-![KwSoft Custom Log Document](img/create-kwsoft-document-log.png)
+![kwsoft Custom Log Document](img/create-kwsoft-document-log.png)
 
 ## Administrator good practices
 
@@ -76,3 +76,14 @@ This approach lets each user see only the templates that match their own country
 2. Use template filters to reduce user mistakes
 3. Test one Flow path per object (Case, Opportunity, etc.)
 4. Avoid exposing technical settings to end users
+
+## The Flow in Action
+
+You can launch this Flow from an Action button on the `Case` record page.
+
+When the modal opens, users see the available templates based on the configured `Template Filter`. If no filter is configured, all available templates are displayed.
+
+The Export button becomes available after a template is selected. If the selected template is interactive, the user sees a message explaining that they will be redirected to the interactive editing interface.
+
+![Template Selection Modal](img/template-selection.png)
+![Interactive Document Redirection Message](img/interactive-document.png)

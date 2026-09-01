@@ -4,7 +4,7 @@ Use this page as a quick operational reference.
 
 ## Pre-go-live checklist
 
-1. KwSoft package installed
+1. kwsoft package installed
 2. Both template Flows available
 3. Custom log object created
 4. Related list added to target object layouts
@@ -53,7 +53,7 @@ Issue: interactive document cannot be finalized
 
 Possible causes:
 
-1. Document name in log does not match KwSoft
+1. Document name in log does not match kwsoft
 2. Related Record Id in log is missing
 3. Document was removed or renamed outside expected process
 

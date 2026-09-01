@@ -1,6 +1,6 @@
 # Documents interactifs et export final
 
-## Flow modele : Mobee - Export KwSoft Document
+## Flow modele : Mobee - Export kwsoft Document
 
 Utilisez ce Flow lorsqu'un document a ete cree en mode interactif et doit etre finalise en PDF.
 
@@ -8,7 +8,7 @@ Utilisez ce Flow lorsqu'un document a ete cree en mode interactif et doit etre f
 
 Les documents interactifs sont des versions brouillon. Ils sont modifiables et ne constituent pas encore le fichier final pour l'archivage ou le partage.
 
-Ce second Flow recupere le document modifie depuis KwSoft et attache le PDF final dans Salesforce.
+Ce second Flow recupere le document modifie depuis kwsoft et attache le PDF final dans Salesforce.
 
 ## Informations requises
 
@@ -23,12 +23,12 @@ En pratique, les utilisateurs ne devraient pas saisir ces valeurs manuellement. 
 ## Processus utilisateur recommande
 
 1. L'utilisateur ouvre un enregistrement et voit les brouillons associes
-2. L'utilisateur ouvre le brouillon selectionne dans KwSoft et termine l'edition
+2. L'utilisateur ouvre le brouillon selectionne dans kwsoft et termine l'edition
 3. L'utilisateur lance le Flow d'export depuis Salesforce
 4. Le PDF final est attache a l'enregistrement Salesforce lie
 5. Le statut de l'entree de suivi passe de Draft a Finalized
 
-![Liste liee des documents KwSoft](img/kwsoft-documents-related-list.png)
+![Liste liee des documents kwsoft](img/kwsoft-documents-related-list.png)
 
 ## Comportement de redirection
 

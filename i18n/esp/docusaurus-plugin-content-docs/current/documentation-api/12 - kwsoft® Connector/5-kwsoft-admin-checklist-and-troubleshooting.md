@@ -4,7 +4,7 @@ Usa esta página como referencia rápida de operación.
 
 ## Checklist antes de salida a producción
 
-1. Paquete de KwSoft instalado
+1. Paquete de kwsoft instalado
 2. Ambas plantillas de Flow disponibles
 3. Objeto de registro personalizado creado
 4. Lista relacionada añadida en los diseños de página objetivo
@@ -53,7 +53,7 @@ Problema: no se puede finalizar un documento interactivo
 
 Posibles causas:
 
-1. El nombre del documento en el log no coincide con KwSoft
+1. El nombre del documento en el log no coincide con kwsoft
 2. Falta el Related Record Id en el log
 3. El documento se eliminó o renombró fuera del proceso esperado
 
